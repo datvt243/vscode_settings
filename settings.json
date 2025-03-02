@@ -1,0 +1,133 @@
+{
+  "workbench.colorTheme": "Palenight (Mild Contrast)",
+  "workbench.iconTheme": "vscode-icons",
+  "cSpell.userWords": [],
+  "files.autoSave": "onFocusChange",
+  "editor.minimap.enabled": false,
+  "editor.wordWrap": "on",
+  "editor.tabSize": 2,
+  
+  "gitlens.advanced.messages": {
+    "suppressGitMissingWarning": true
+  },
+  "explorer.confirmDelete": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.fontFamily": "FiraCode",
+  "terminal.integrated.fontSize": 13,
+  "editor.cursorBlinking": "phase",
+  "editor.cursorSmoothCaretAnimation": "on",
+
+  //
+  "editor.renderWhitespace": "all",
+  "editor.linkedEditing": true,
+  //
+  "zenMode.hideLineNumbers": false,
+  "zenMode.hideStatusBar": false,
+  "zenMode.fullScreen": true,
+  // vim settings
+  "editor.lineNumbers": "relative",
+  "vim.leader": "<Space>",
+  "vim.useSystemClipboard": true, // Sử dụng clipboard hệ thống
+  "vim.overrideCopy": true, // Dùng `y` để copy vào clipboard hệ thống
+  "vim.hlsearch": true, // Highlight kết quả tìm kiếm
+  "vim.searchHighlightColor": "yellow", 
+  "vim.incsearch": true, // Hiển thị kết quả tìm kiếm khi nhập
+  "vim.ignorecase": true, // Không phân biệt chữ hoa/thường khi tìm kiếm
+  "vim.smartcase": true, // Phân biệt chữ hoa khi tìm kiếm nếu nhập chữ hoa
+  "vim.mouseSelection": true,// Cho phép chọn văn bản bằng chuột
+  "vim.useCtrlKeys": false,
+  "vim.statusBarColorControl": true,
+  "vim.undoHistory": 1000, // Lưu lịch sử undo lên đến 1000 bước
+  "vim.undoAfterCursorMove": false, // Không reset undo khi di chuyển con trỏ
+  "vim.autoindent": true,
+  "vim.showcmd": true,
+  
+  "vim.surround": true,
+  "vim.commentary": true, // Comment code
+  "vim.easymotion": true, // Bật chế độ di chuyển nhanh
+  "vim.indentObject": true, // Chọn theo khối indentation - vii - vai
+  "vim.sneak": true, // Cho phép nhảy nhanh bằng ký tự
+  "vim.sneakUseIgnorecaseAndSmartcase": true, // Áp dụng ignorecase và smartcase vào sneak
+
+  "vim.normalModeKeyBindingsNonRecursive": [
+  
+    // move
+    { "before": ["j"], "after": ["j", "z", "z"] },
+    { "before": ["k"], "after": ["k", "z", "z"] },
+
+    // switch b/w buffers
+    { "before": ["<S-h>"], "commands": [":bprevious"] },
+    { "before": ["<S-tab>"], "commands": [":bprevious"] },
+    { "before": ["<S-l>"], "commands": [":bnext"] },
+    { "before": ["<tab>"], "commands": [":bnext"] },
+
+    // splits - mở cửa sổ editer trái phải
+    { "before": ["leader", "v"], "commands": [":vsplit"] },
+    { "before": ["leader", "s"], "commands": [":split"] },
+
+    // Chuyển sang cửa sổ (editor) bên 
+    { "before": ["leader", "h"], "commands": ["workbench.action.focusLeftGroup"] },
+    { "before": ["leader", "j"], "commands": ["workbench.action.focusBelowGroup"] },
+    { "before": ["leader", "k"], "commands": ["workbench.action.focusAboveGroup"] },
+    { "before": ["leader", "l"], "commands": ["workbench.action.focusRightGroup"] },
+
+    // Điều hướng giữa các lỗi (Diagnostics)
+    { "before": ["[", "d"], "commands": ["editor.action.marker.prev"] },
+    { "before": ["]", "d"], "commands": ["editor.action.marker.prev"] },
+    
+
+    { "before": ["leader", "p"], "commands": ["workbench.action.quickOpen"] },
+    { "before": ["leader", "f"], "commands": ["actions.find"] },
+    { "before": ["leader", "F"], "commands": ["workbench.action.findInFiles"] },
+    { "before": ["leader", "ff"], "commands": ["workbench.action.findInFiles"] },
+
+    // LSP
+    { "before": ["g", "d"], "commands": ["editor.action.revealDefinition"] },
+    { "before": ["g", "D"], "commands": ["editor.action.revealDeclaration"] },
+    { "before": ["g", "r"], "commands": ["editor.action.goToReferences"] },
+    { "before": ["g", "i"], "commands": ["editor.action.goToImplementation"] },
+    { "before": ["g", "y"], "commands": ["editor.action.goToTypeDefinition"] },
+    { "before": ["g", "K"], "commands": ["editor.action.triggerParameterHints"] },
+    { "before": ["K"],  "commands": ["editor.action.showHover"] },
+
+    {
+      "before": ["leader", "y"],
+      "commands": ["vim.showRegisters"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    
+    // block comment /* */
+    { "before": ["leader", "c"], "commands": ["editor.action.blockComment"] },
+
+    // Stay in visual mode while indenting
+    { "before": ["<"], "commands": ["editor.action.outdentLines"] },
+    { "before": [">"], "commands": ["editor.action.indentLines"] },
+
+    // Move selected lines while staying in visual mode
+    { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] }, // Di chuyển dòng hiện tại xuống
+    { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["<D-s>"],
+      "commands": [":w", "<Esc>"]
+    },
+    {
+      "before": ["<C-s>"],
+      "commands": [":w", "<Esc>"]
+    },
+  ],
+  "vim.handleKeys": {
+    "<C-r>": true, // redu
+  },
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#005f5f",
+    "statusBar.noFolderBackground": "#005f5f",
+    "statusBar.debuggingBackground": "#005f5f",
+    "statusBar.foreground": "#ffffff",
+    "statusBar.debuggingForeground": "#ffffff"
+  }
+}
