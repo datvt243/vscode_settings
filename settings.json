@@ -1,62 +1,170 @@
+{
+  "workbench.colorTheme": "Palenight (Mild Contrast)",
+  "workbench.iconTheme": "vscode-icons",
+  "cSpell.userWords": [],
+  "files.autoSave": "onFocusChange",
+  "editor.minimap.enabled": false,
+  "editor.wordWrap": "on",
+  "editor.tabSize": 2,
 
+  "gitlens.advanced.messages": {
+    "suppressGitMissingWarning": true
+  },
+  "explorer.confirmDelete": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.fontFamily": "FiraCode",
+  "terminal.integrated.fontSize": 13,
+  "editor.cursorBlinking": "phase",
+  "editor.cursorSmoothCaretAnimation": "on",
 
+  //
+  "editor.renderWhitespace": "all",
+  "editor.linkedEditing": true,
+  //
+  "zenMode.hideLineNumbers": false,
+  "zenMode.hideStatusBar": false,
+  "zenMode.fullScreen": true,
+  // vim settings
+  "vim.easymotion": true, // Bật chế độ di chuyển nhanh
+  "vim.surround": true,
+  "vim.commentary": true, // Comment code
+  "vim.indentObject": true, // Chọn theo khối indentation - vii - vai
+  "vim.sneak": true, // Cho phép nhảy nhanh bằng ký tự
+  "vim.sneakUseIgnorecaseAndSmartcase": true, // Áp dụng ignorecase và smartcase vào sneak
 
+  "vim.leader": "<Space>",
+  "vim.useSystemClipboard": true, // Sử dụng clipboard hệ thống
+  "vim.overrideCopy": true, // Dùng `y` để copy vào clipboard hệ thống
+  "vim.hlsearch": true, // Highlight kết quả tìm kiếm
+  "vim.searchHighlightColor": "yellow",
+  "vim.incsearch": true, // Hiển thị kết quả tìm kiếm khi nhập
+  "vim.ignorecase": true, // Không phân biệt chữ hoa/thường khi tìm kiếm
+  "vim.smartcase": true, // Phân biệt chữ hoa khi tìm kiếm nếu nhập chữ hoa
+  "vim.mouseSelection": true, // Cho phép chọn văn bản bằng chuột
+  "vim.useCtrlKeys": false,
+  "vim.statusBarColorControl": true,
+  "vim.statusBarColors": {
+    "normal": ["#2E7D32", "#FFFFFF"], // Xanh lá đậm (Normal Mode)
+    "insert": ["#C62828", "#FFFFFF"], // Xanh dương (Insert Mode)
+    "visual": ["#9C27B0", "#FFFFFF"], // Tím (Visual Mode)
+    "visualline": ["#8E24AA", "#FFFFFF"], // Tím đậm (Visual Line Mode)
+    "visualblock": ["#6A1B9A", "#FFFFFF"], // Tím tối hơn (Visual Block Mode)
+    "replace": ["#D84315", "#FFFFFF"], // Cam đậm (Replace Mode)
+    "commandlineinprogress": ["#FF9800", "#FFFFFF"], // Cam sáng (Command Mode)
+    "searchinprogressmode": ["#880E4F", "#FFFFFF"], // Vàng (Search Mode)
+    "easymotionmode": ["#0288D1", "#FFFFFF"], // Xanh biển (EasyMotion)
+    "easymotioninputmode": ["#03A9F4", "#FFFFFF"], // Xanh nước biển nhạt (EasyMotion Input)
+    "surroundinputmode": ["#009688", "#FFFFFF"] // Xanh lục bảo (Surround Mode)
+  },
+  "vim.undoHistory": 1000, // Lưu lịch sử undo lên đến 1000 bước
+  "vim.undoAfterCursorMove": false, // Không reset undo khi di chuyển con trỏ
+  "vim.autoindent": true,
+  "vim.showcmd": true,
 
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // move
+    { "before": ["j"], "after": ["j", "z", "z"] },
+    { "before": ["k"], "after": ["k", "z", "z"] },
 
+    // switch b/w buffers
+    { "before": ["<S-h>"], "commands": [":bprevious"] },
+    { "before": ["<S-tab>"], "commands": [":bprevious"] },
+    { "before": ["<S-l>"], "commands": [":bnext"] },
+    { "before": ["<tab>"], "commands": [":bnext"] },
 
+    // splits - mở cửa sổ editer trái phải
+    { "before": ["leader", "v"], "commands": [":vsplit"] },
+    { "before": ["leader", "s"], "commands": [":split"] },
 
+    // Chuyển sang cửa sổ (editor) bên
+    {
+      "before": ["leader", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["leader", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["leader", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["leader", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
 
-                                           ██████╗  █████╗ ██╗   ██╗██╗██████╗
-                                           ██╔══██╗██╔══██╗██║   ██║██║██╔══██╗
-                                           ██║  ██║███████║██║   ██║██║██║  ██║
-                                           ██║  ██║██╔══██║╚██╗ ██╔╝██║██║  ██║
-                                   ███████╗██████╔╝██║  ██║ ╚████╔╝ ██║██████╔╝
-                                   ╚══════╝╚═════╝ ╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═════╝
+    // Điều hướng giữa các lỗi (Diagnostics)
+    { "before": ["[", "d"], "commands": ["editor.action.marker.prev"] },
+    { "before": ["]", "d"], "commands": ["editor.action.marker.prev"] },
 
+    //
+    { "before": ["leader", "p"], "commands": ["workbench.action.quickOpen"] },
+    { "before": ["leader", "f"], "commands": ["actions.find"] },
+    { "before": ["leader", "F"], "commands": ["workbench.action.findInFiles"] },
+    {
+      "before": ["leader", "f", "f"],
+      "commands": ["workbench.action.findInFiles"]
+    },
 
+    // LSP
+    { "before": ["g", "d"], "commands": ["editor.action.revealDefinition"] },
+    { "before": ["g", "D"], "commands": ["editor.action.revealDeclaration"] },
+    { "before": ["g", "r"], "commands": ["editor.action.goToReferences"] },
+    { "before": ["g", "i"], "commands": ["editor.action.goToImplementation"] },
+    { "before": ["g", "y"], "commands": ["editor.action.goToTypeDefinition"] },
+    {
+      "before": ["g", "K"],
+      "commands": ["editor.action.triggerParameterHints"]
+    },
+    { "before": ["K"], "commands": ["editor.action.showHover"] },
 
+    // Bookmarks - use extension Bookmarks
+    { "before": ["<leader>", "b", "m"], "commands": ["bookmarks.toggle"] },
+    { "before": ["<leader>", "b", "m", "l"], "commands": ["bookmarks.list"] },
 
-                                  Find File                                     f
+    //
+    { "before": ["leader", "y"], "commands": ["vim.showRegisters"] },
+    { "before": ["<leader>", "n"], "commands": [":nohlsearch"] }
+  ],
+  "vim.visualModeKeyBindings": [
+    // block comment /* */
+    { "before": ["leader", "c"], "commands": ["editor.action.blockComment"] },
 
-                                  New File                                      n
+    // Stay in visual mode while indenting
+    { "before": ["<"], "commands": ["editor.action.outdentLines"] },
+    { "before": [">"], "commands": ["editor.action.indentLines"] },
 
-                                  Recent Files                                  r
+    // Move selected lines while staying in visual mode
+    { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] }, // Di chuyển dòng hiện tại xuống
+    { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["<D-s>"],
+      "commands": [":w", "<Esc>"]
+    },
+    {
+      "before": ["<C-s>"],
+      "commands": [":w", "<Esc>"]
+    }
+  ],
 
-                                  Find Text                                     g
+  "vim.handleKeys": {
+    "<C-r>": true // redu
+  },
 
-                                  Config                                        c
-
-                                  Restore Session                               s
-
-                                  Lazy Extras                                   x
-  ~/Workspace/Project/vscode_│   19   ┊ "files.autoSave": "onFocusChange",
-   󰘦 keybindings.json         │   18   ┊ "editor.minimap.enabled": false,
-    README.md                │   17   ┊ "editor.wordWrap": "on",
-   󰘦 settings.json           │   16   ┊ "editor.tabSize": 2,
-   (1 hidden item)            │   15   ┊-                                                                        -
-                              │   14   ┊ "gitlens.advanced.messages": {
-                              │   13   ┊ ┊ "suppressGitMissingWarning": true                                     =
-                              │   12   ┊ },                                                                      =
-                              │   11   ┊ "explorer.confirmDelete": false,                                        =
-                              │   10   ┊ "[typescript]": {                                                       =
-                              │    9   ┊ ┊ "editor.defaultFormatter": "esbenp.prettier-vscode"                   =
-                              │    8   ┊ },                                                                      =
-                              │    7   ┊ "terminal.integrated.fontFamily": "FiraCode",                           -
-                              │    6   ┊ "terminal.integrated.fontSize": 13,                                     -
-                              │    5   ┊ "editor.cursorBlinking": "phase",                                       -
-                              │    4   ┊ "editor.cursorSmoothCaretAnimation": "on",                              -
-                              │    3   ┊                                                                         -
-                              │   2   ┊ //     ● Comments are not permitted in JSON.
-                              │    1   ┊ "editor.renderWhitespace": "all",
-                              │   24   ┊ "editor.linkedEditing": true,                                           -
-                              │   1   ┊ //     ● Comments are not permitted in JSON.
-                              │    2   ┊ "zenMode.hideLineNumbers": false,
-                              │    3   ┊ "zenMode.hideStatusBar": false,                                         -
-                              │    4   ┊ "zenMode.fullScreen": true,                                             -
-                              │   5   ┊ // vim settings     ● Comments are not permitted in JSON.               =
-                              │    6   ┊ "editor.lineNumbers": "relative",
-                              │    7   ┊ "vim.leader": "<Space>",
-                              │   8   ┊ "vim.useSystemClipboard": true, // Sử dụng clipboard hệ thống     ● Comme
-                              │   9   ┊ "vim.overrideCopy": true, // Dùng `y` để copy vào clipboard hệ thống
-                              │  10   ┊ "vim.hlsearch": true, // Highlight kết quả tìm kiếm     ● Comments are no
- NORMAL   main   31  󰘦  settings.json                                       gj   60  18%  24:31   14:46
+  // To improve performance
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#9C27B0",
+    "statusBar.noFolderBackground": "#9C27B0",
+    "statusBar.debuggingBackground": "#9C27B0",
+    "statusBar.foreground": "#FFFFFF",
+    "statusBar.debuggingForeground": "#FFFFFF"
+  }
+}

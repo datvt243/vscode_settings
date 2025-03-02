@@ -1,6 +1,5 @@
 // Place your key bindings in this file to override the defaults
 [
-
   // NAVIGATION - Chuyển giữa Terminal và Panel
   {
     "key": "ctrl+shift+a",
@@ -71,5 +70,16 @@
   {
     "key": "ctrl+z",
     "command": "workbench.action.toggleZenMode"
+  },
+  {
+    "key": "shift+down",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "shift+up",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
   }
 ]
+
