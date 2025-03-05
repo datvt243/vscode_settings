@@ -1,32 +1,220 @@
 {
-  "workbench.colorTheme": "Palenight (Mild Contrast)",
-  "workbench.iconTheme": "vscode-icons",
-  "cSpell.userWords": [],
+
   "files.autoSave": "onFocusChange",
-  "editor.minimap.enabled": false,
   "editor.wordWrap": "on",
   "editor.tabSize": 2,
-
-  "gitlens.advanced.messages": {
-    "suppressGitMissingWarning": true
-  },
-  "explorer.confirmDelete": false,
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "terminal.integrated.fontFamily": "FiraCode",
-  "terminal.integrated.fontSize": 13,
   "editor.cursorBlinking": "phase",
   "editor.cursorSmoothCaretAnimation": "on",
-
-  //
   "editor.renderWhitespace": "all",
   "editor.linkedEditing": true,
+  "editor.lineNumbers": "relative",
+
+  // Không tự động phát hiện indentation từ file, giữ nguyên giá trị tabSize.
+  "editor.detectIndentation": false,
+  // biểu tượng thu gọn/mở rộng code (> bên lề trái).
+  "editor.showFoldingControls": "always",
   //
+
+
+  // ẨN mini-map
+  "editor.minimap.enabled": false,
+  // Cho phép sử dụng Ctrl (Windows/Linux) hoặc Cmd (macOS) để thêm nhiều con trỏ (multi-cursor).
+  "editor.multiCursorModifier": "ctrlCmd",
+  // Đổi con trỏ sang dạng khối (block) thay vì kiểu gạch đứng (line) mặc định.
+  "editor.cursorStyle": "line",
+
+  // Tắt Sticky Scroll, không hiển thị tiêu đề function/class khi cuộn code.
+  "editor.stickyScroll.enabled": false,
+
+  // TERMINAL
+  "terminal.integrated.fontFamily": "FiraCode",
+  "terminal.integrated.fontSize": 13,
+
+  // Xác định kiểu ký tự kết thúc dòng (End Of Line - EOL) khi lưu file.
+  "files.eol": "\n",
+  // Tự động xóa khoảng trắng dư thừa ở cuối dòng khi lưu file.
+  "files.trimTrailingWhitespace": true,
+  // Thêm một dòng trống cuối file khi lưu.
+  "files.insertFinalNewline": true,
+  // ---
+  "breadcrumbs.enabled": false,
+
+  // ZEN MODE
   "zenMode.hideLineNumbers": false,
   "zenMode.hideStatusBar": false,
   "zenMode.fullScreen": true,
-  // vim settings
+
+
+  // WINDOWN
+  // -------------------------------
+
+  // Tăng mức độ phóng to giao diện lên 300%. Mức mặc định là 0, mỗi +1 tương đương +20%.
+  // "window.zoomLevel": 1.0,
+
+  //Ẩn hoàn toàn title bar (thanh tiêu đề cửa sổ).
+  "window.customTitleBarVisibility": "never",
+
+  // USER INTERFACE
+  // -------------------------------
+
+  // Theme
+  "workbench.colorTheme": "Aura Dracula Spirit",
+
+  // ---
+  "workbench.iconTheme": "material-icon-theme",
+
+  // chỉ hiển thị 1 tab duy nhất
+  "workbench.editor.showTabs": "single",
+
+  // StatusBar -  thanh dưới cùng
+  "workbench.statusBar.visible": true,
+
+  // Khi mở vscode, không hiển thị welcome or any file
+  "workbench.startupEditor": "none",
+
+  // Tắt gợi ý mẹo
+  "workbench.tips.enabled": false,
+
+  // Tùy chỉnh màu sắc giao diện của VSCode.
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#9C27B0",
+    "statusBar.noFolderBackground": "#9C27B0",
+    "statusBar.debuggingBackground": "#9C27B0",
+    "statusBar.foreground": "#FFFFFF",
+    "statusBar.debuggingForeground": "#FFFFFF",
+    "editorCursor.background": "#000000"
+  },
+
+
+
+
+  // SIDEBAR
+  // -------------------------------
+
+  // Ẩn mủi tên xuống
+  "material-icon-theme.hidesExplorerArrows": true,
+
+  // Chế độ Sticky Scroll trong cây thư mục (tính năng hiển thị dòng tiêu đề ở trên cùng khi cuộn).
+  "workbench.tree.enableStickyScroll": false,
+
+  // Hiển thị đường kẻ dọc giúp căn chỉnh cấp bậc thư mục.
+  "workbench.tree.renderIndentGuides": "always",
+
+  // ---
+  "workbench.tree.indent": 16,
+
+  // Tính năng gom nhóm các thư mục con vào một dòng nếu chỉ có một thư mục con duy nhất.
+  "explorer.compactFolders": false,
+
+  // Hộp thoại xác nhận khi kéo thả file/thư mục.
+  "explorer.confirmDragAndDrop": true,
+
+  // Hộp thoại xác nhận khi xóa file/thư mục.
+  "explorer.confirmDelete": true,
+
+  // Hiển thị dấu hiệu (badges) trên file/thư mục (ví dụ: dấu hiệu Git thay đổi, lỗi, v.v.).
+  "explorer.decorations.badges": true,
+
+  // Các ký hiệu của Git trong Explorer (ví dụ: chữ “M” màu vàng cho file bị sửa đổi).
+  "git.decorations.enabled": true,
+
+
+  // dart
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off"
+  },
+  "tailwindCSS.emmetCompletions": true,
+  "gitlens.advanced.messages": {
+    "suppressGitMissingWarning": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+
+
+  // CUSTOM UI STYLE
+  // -------------------------------
+  "custom-ui-style.stylesheet": {
+
+    // Ẩn hiệu ứng đổ bóng - Loại bỏ box-shadow của thông báo popup.
+    ".notification-toast": "box-shadow: none !important; transform: scale(1.8)",
+
+    // Ẩn hiệu ứng đổ bóng- Loại bỏ box-shadow trong hộp thoại tìm kiếm file.
+    ".quick-input-widget.show-file-icons": "box-shadow: none !important",
+
+    // Điều chỉnh vị trí hộp thoại tìm kiếm	Đặt vị trí hộp thoại Quick Open (Ctrl+P) cao hơn (top: 25vh).
+    ".quick-input-widget": "top: 25vh !important",
+
+    // Ẩn thanh cuộn - Không hiển thị thanh cuộn trong danh sách tìm kiếm nhanh.
+    ".quick-input-list .scrollbar": "display: none",
+
+    // Ẩn các nút phụ -	Loại bỏ thanh công cụ trong hộp tìm kiếm.
+    ".monaco-action-bar.quick-input-inline-action-bar": "display: none",
+
+    // Làm đẹp hộp tìm kiếm trong editor	Bo tròn góc (border-radius: 4px) và loại bỏ box-shadow.
+    //".editor-widget.find-widget": "box-shadow: none; border-radius: 4px",
+    ".editor-widget.find-widget": "top: 25vh !important; left: 50% !important; transform: translateX(-50%) !important; width: 600px !important; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); border-radius: 6px;",
+
+    // Đổi màu tiêu đề hộp thoại tìm kiếm	Đặt màu nền là #100B15 (màu tím đậm).
+    ".quick-input-titlebar": "background: #100B15 !important",
+
+    // Ẩn đường viền tab editor	Giúp tab không có đường viền dư fới.
+    ".monaco-workbench .part.editor > .content .editor-group-container > .title.title-border-bottom:after": "display: none",
+
+    // Ẩn hiệu ứng shadow trên thanh cuộn	Giúp thanh cuộn trông sạch hơn.
+    ".monaco-scrollable-element > .shadow.top": "display: none",
+
+
+    // Giảm padding của tiêu đề sidebar	Làm sidebar gọn hơn.
+    ".sidebar .title-label": "padding: 10px !important",
+
+    // Loại bỏ đường viền sidebar	Sidebar sẽ không có đường viền.
+    ".sidebar": "border: none !important",
+
+    // Tắt hiệu ứng focus trong danh sách	Không có outline khi focus vào danh sách file.
+    ".monaco-workbench .monaco-list:not(.element-focused):focus:before": "outline: none !important",
+
+    // Ẩn outline khi chọn dòng trong danh sách	Tránh viền focus khó chịu khi di chuyển bằng bàn phím.
+    ".monaco-list-row.focused": "outline: none !important",
+
+    // Ẩn hiệu ứng thanh cuộn trong editor	Giúp editor trông gọn gàng hơn.
+    ".monaco-editor .scroll-decoration": "display: none",
+
+    // Ẩn thanh action trong tab editor	Loại bỏ các nút phụ trên thanh tiêu đề của file đang mở.
+    ".title-actions": "display: none !important",
+
+    // Căn giữa icon file	Giúp biểu tượng file nằm ngay giữa.
+    ".title.show-file-icons .label-container .monaco-icon-label.file-icon": "justify-content: center; padding: 0 !important",
+
+    // Giảm khoảng cách icon file	Làm icon sát với tên file hơn.
+    ".title .monaco-icon-label:after": "margin-right: 0",
+
+    // Đẩy tiêu đề file sang phải	Làm tiêu đề file cách trái 60px.
+    ".monaco-workbench .part.editor > .content .editor-group-container > .title > .label-container > .title-label": "padding-left: 60px",
+
+    // Đẩy icon file xa hơn	Làm icon file có khoảng cách 60px.
+    ".title .monaco-icon-label.file-icon": "margin: 0 60px",
+
+    // Đổi màu con trỏ	Làm con trỏ có hiệu ứng gradient hồng-tím (linear-gradient(135deg, #ffaffc 10%, #DA70D6 100%)).
+    ".monaco-editor .cursors-layer .cursor": "background-image: linear-gradient(135deg, #ffaffc 10%, #DA70D6 100%)"
+
+  },
+
+  // PEACOCK
+  // ------
+  "peacock.affectStatusBar": false,
+
+
+  // VIM
+  // -------------------------------
   "vim.easymotion": true, // Bật chế độ di chuyển nhanh
   "vim.surround": true,
   "vim.commentary": true, // Comment code
@@ -42,19 +230,19 @@
   "vim.incsearch": true, // Hiển thị kết quả tìm kiếm khi nhập
   "vim.ignorecase": true, // Không phân biệt chữ hoa/thường khi tìm kiếm
   "vim.smartcase": true, // Phân biệt chữ hoa khi tìm kiếm nếu nhập chữ hoa
-  "vim.mouseSelection": true, // Cho phép chọn văn bản bằng chuột
+  "vim.mouseSelection": true,// Cho phép chọn văn bản bằng chuột
   "vim.useCtrlKeys": false,
   "vim.statusBarColorControl": true,
   "vim.statusBarColors": {
-    "normal": ["#2E7D32", "#FFFFFF"], // Xanh lá đậm (Normal Mode)
-    "insert": ["#C62828", "#FFFFFF"], // Xanh dương (Insert Mode)
-    "visual": ["#9C27B0", "#FFFFFF"], // Tím (Visual Mode)
-    "visualline": ["#8E24AA", "#FFFFFF"], // Tím đậm (Visual Line Mode)
-    "visualblock": ["#6A1B9A", "#FFFFFF"], // Tím tối hơn (Visual Block Mode)
-    "replace": ["#D84315", "#FFFFFF"], // Cam đậm (Replace Mode)
+    "normal": ["#2E7D32", "#FFFFFF"],           // Xanh lá đậm (Normal Mode)
+    "insert": ["#C62828", "#FFFFFF"],           // Xanh dương (Insert Mode)
+    "visual": ["#9C27B0", "#FFFFFF"],           // Tím (Visual Mode)
+    "visualline": ["#8E24AA", "#FFFFFF"],       // Tím đậm (Visual Line Mode)
+    "visualblock": ["#6A1B9A", "#FFFFFF"],      // Tím tối hơn (Visual Block Mode)
+    "replace": ["#D84315", "#FFFFFF"],          // Cam đậm (Replace Mode)
     "commandlineinprogress": ["#FF9800", "#FFFFFF"], // Cam sáng (Command Mode)
-    "searchinprogressmode": ["#880E4F", "#FFFFFF"], // Vàng (Search Mode)
-    "easymotionmode": ["#0288D1", "#FFFFFF"], // Xanh biển (EasyMotion)
+    "searchinprogressmode": ["#880E4F", "#FFFFFF"],  // Vàng (Search Mode)
+    "easymotionmode": ["#0288D1", "#FFFFFF"],   // Xanh biển (EasyMotion)
     "easymotioninputmode": ["#03A9F4", "#FFFFFF"], // Xanh nước biển nhạt (EasyMotion Input)
     "surroundinputmode": ["#009688", "#FFFFFF"] // Xanh lục bảo (Surround Mode)
   },
@@ -63,7 +251,10 @@
   "vim.autoindent": true,
   "vim.showcmd": true,
 
+
+
   "vim.normalModeKeyBindingsNonRecursive": [
+
     // move
     { "before": ["j"], "after": ["j", "z", "z"] },
     { "before": ["k"], "after": ["k", "z", "z"] },
@@ -79,22 +270,10 @@
     { "before": ["leader", "s"], "commands": [":split"] },
 
     // Chuyển sang cửa sổ (editor) bên
-    {
-      "before": ["leader", "h"],
-      "commands": ["workbench.action.focusLeftGroup"]
-    },
-    {
-      "before": ["leader", "j"],
-      "commands": ["workbench.action.focusBelowGroup"]
-    },
-    {
-      "before": ["leader", "k"],
-      "commands": ["workbench.action.focusAboveGroup"]
-    },
-    {
-      "before": ["leader", "l"],
-      "commands": ["workbench.action.focusRightGroup"]
-    },
+    { "before": ["leader", "h"], "commands": ["workbench.action.focusLeftGroup"] },
+    { "before": ["leader", "j"], "commands": ["workbench.action.focusBelowGroup"] },
+    { "before": ["leader", "k"], "commands": ["workbench.action.focusAboveGroup"] },
+    { "before": ["leader", "l"], "commands": ["workbench.action.focusRightGroup"] },
 
     // Điều hướng giữa các lỗi (Diagnostics)
     { "before": ["[", "d"], "commands": ["editor.action.marker.prev"] },
@@ -104,10 +283,7 @@
     { "before": ["leader", "p"], "commands": ["workbench.action.quickOpen"] },
     { "before": ["leader", "f"], "commands": ["actions.find"] },
     { "before": ["leader", "F"], "commands": ["workbench.action.findInFiles"] },
-    {
-      "before": ["leader", "f", "f"],
-      "commands": ["workbench.action.findInFiles"]
-    },
+    { "before": ["leader", "f", "f"], "commands": ["workbench.action.findInFiles"] },
 
     // LSP
     { "before": ["g", "d"], "commands": ["editor.action.revealDefinition"] },
@@ -115,21 +291,20 @@
     { "before": ["g", "r"], "commands": ["editor.action.goToReferences"] },
     { "before": ["g", "i"], "commands": ["editor.action.goToImplementation"] },
     { "before": ["g", "y"], "commands": ["editor.action.goToTypeDefinition"] },
-    {
-      "before": ["g", "K"],
-      "commands": ["editor.action.triggerParameterHints"]
-    },
-    { "before": ["K"], "commands": ["editor.action.showHover"] },
+    { "before": ["g", "K"], "commands": ["editor.action.triggerParameterHints"] },
+    { "before": ["K"],  "commands": ["editor.action.showHover"] },
 
     // Bookmarks - use extension Bookmarks
     { "before": ["<leader>", "b", "m"], "commands": ["bookmarks.toggle"] },
-    { "before": ["<leader>", "b", "m", "l"], "commands": ["bookmarks.list"] },
+    { "before": ["<leader>", "b", "m", "l"], "commands": ["bookmarks.list" ]},
 
     //
     { "before": ["leader", "y"], "commands": ["vim.showRegisters"] },
-    { "before": ["<leader>", "n"], "commands": [":nohlsearch"] }
+    { "before": ["<leader>", "n"], "commands": [":nohlsearch"] },
+
   ],
   "vim.visualModeKeyBindings": [
+
     // block comment /* */
     { "before": ["leader", "c"], "commands": ["editor.action.blockComment"] },
 
@@ -139,7 +314,7 @@
 
     // Move selected lines while staying in visual mode
     { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] }, // Di chuyển dòng hiện tại xuống
-    { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] }
+    { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
   ],
   "vim.insertModeKeyBindings": [
     {
@@ -149,22 +324,16 @@
     {
       "before": ["<C-s>"],
       "commands": [":w", "<Esc>"]
-    }
+    },
   ],
 
   "vim.handleKeys": {
-    "<C-r>": true // redu
+    "<C-r>": true, // redu
   },
 
   // To improve performance
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1
   },
-  "workbench.colorCustomizations": {
-    "statusBar.background": "#9C27B0",
-    "statusBar.noFolderBackground": "#9C27B0",
-    "statusBar.debuggingBackground": "#9C27B0",
-    "statusBar.foreground": "#FFFFFF",
-    "statusBar.debuggingForeground": "#FFFFFF"
-  }
+
 }
