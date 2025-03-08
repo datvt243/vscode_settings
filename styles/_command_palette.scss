@@ -1,9 +1,9 @@
-@import './variables.scss';
+@use "variables";
 /* Command Palette */
 .quick-input-widget {
   transform: translateY(-50%) !important;
   top: 50% !important;
-  border: 2px solid $pink !important;
+  border: 2px solid variables.$pink !important;
   padding: 10px !important;
   //background: $bgPrimary !important;
   backdrop-filter: blur(3px) !important;

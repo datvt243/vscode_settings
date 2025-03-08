@@ -1,102 +1,19 @@
 
-@import './variables.scss';
+@use './variables.scss';
 
-@import './comment.scss';
-// @import './sidebar.scss';
-@import './file_explorer.scss';
-@import './scroll_bar.scss';
-@import './tooltip.scss';
-@import './command_palette.scss';
-@import './unk.scss';
-@import './list_items.scss';
+@use './comment.scss';
+// @use './sidebar.scss';
+@use './file_explorer.scss';
+@use './scroll_bar.scss';
+@use './tooltip.scss';
+@use './command_palette.scss';
+@use './unk.scss';
+@use './list_items.scss';
 
 
 /* Match Text */
 .currentFindMatchInline {
   background: #000 !important;
 }
-
-
-
-
-
-/* Hide the ">" chevron icon */
-.codicon-tree-item-expanded:before {
-  // display: none !important;
-}
-
-
-
-
-
-/* .monaco-workbench .codicon[class*=codicon-] {
-    opacity: 0 !important;
-} */
-
-/* .explorer-folders-view .monaco-list-row {
-    padding-left: 20px !important;
-} */
-
-/* .monaco-list.list_id_1 .monaco-tl-indent > .indent-guide.active {
-    border: none !important;
-}
-
-.monaco-list.list_id_1 .monaco-tl-indent > .indent-guide.active:hover {
-    border: none !important;
-} */
-
-
-
-/* .composite.title h2::before {
-    display: inline-block;
-    margin-right: 6px;
-    font-size: 1.1rem;
-    content: '';
-} */
-
-
-
-
-
-/* .monaco-hover > div, .monaco-editor-hover > div {
-    padding: 10px !important;
-    width: 600px !important;
-} */
-
-/* Project title's style at the top. */
-.monaco-workbench .part.titlebar>.titlebar-container>.titlebar-center>.window-title>.command-center .action-item.command-center-center {
-    border: none !important;
-    background: transparent !important;
-}
-
-/* Project Title */
-.titlebar-left {
-    justify-content: flex-end !important;
-    flex-grow: 0 !important;
-    width: 75px !important;
-}
-
-
-
-.codicon-search::before {
-    display: none !important;
-}
-
-.codicon-arrow-right, .codicon-arrow-left {
-    display: none !important;
-}
-
-.titlebar-right > * {
-    display: none !important;
-}
-
-.command-center-center {
-    width: auto !important;
-}
-
-
-
-
-
 
 
