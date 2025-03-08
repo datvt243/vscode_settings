@@ -1,0 +1,54 @@
+@import './variables.scss';
+/* Command Palette */
+.quick-input-widget {
+  transform: translateY(-50%) !important;
+  top: 50% !important;
+  border: 2px solid $pink !important;
+  padding: 10px !important;
+  //background: $bgPrimary !important;
+  backdrop-filter: blur(3px) !important;
+  border-radius: 5px !important;
+}
+
+.quick-input-list, .quick-input-list .list_id_6 {
+  min-height: 400px !important;
+}
+
+/* .quick-input-widget::backdrop {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .15);
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(8px);
+} */
+/* Command palette's input box placeholder. */
+.monaco-inputbox input::placeholder {
+  color: rgba(255, 255, 255, .3) !important;
+}
+
+/* Container that holds the VS Code home icon. */
+.editor-group-watermark {
+  max-width: none !important;
+}
+/* Command palette text input */
+.quick-input-filter .monaco-inputbox {
+  border-radius: 5px !important;
+  padding: 10px !important;
+  border: none !important;
+  font-size: 14px !important;
+  margin-bottom: 10px !important;
+}
+
+#command-blur {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .15);
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(8px);
+}
+

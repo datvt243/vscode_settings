@@ -1,0 +1,15 @@
+{
+  "name": "vscode-custom",
+  "version": "1.0.0",
+  "description": "## Settings (settings.json) `Ctr + Shift + P`: Preferences: Open user settings (JSON)",
+  "main": "vscode-script.js",
+  "scripts": {
+    "build": "sass --no-source-map --style=compressed styles/vscode-styles.scss vscode-styles.css",
+    "build:watch": "sass --no-source-map --style=compressed --watch styles/vscode-styles.scss vscode-styles.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.85.1"
+  }
+}

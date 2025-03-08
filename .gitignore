@@ -1,0 +1,27 @@
+# Bỏ qua thư mục node_modules (cần thiết)
+node_modules/
+
+# Bỏ qua file lock
+package-lock.json
+
+# Bỏ qua thư mục build/output
+dist/
+
+# Bỏ qua file môi trường (nếu có)
+.env
+.env.local
+.env.*.local
+
+# Bỏ qua file hệ thống của macOS
+.DS_Store
+
+# Bỏ qua file log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Bỏ qua file backup của trình soạn thảo
+*.swp
+*.swo
+*.bak

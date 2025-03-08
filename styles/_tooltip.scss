@@ -1,0 +1,17 @@
+@import './variables.scss';
+
+/* Tooltip box style */
+
+.monaco {
+  &-editor-hover,
+  &-hover {
+    background-color: $bgPrimary !important; 
+    border-radius: 5px !important;
+    border: 1px solid $pink !important;
+  };
+
+  &-resizable-hover {
+    border: none !important;
+  } 
+
+}

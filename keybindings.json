@@ -1,16 +1,7 @@
 // Place your key bindings in this file to override the defaults
 [
-  // NAVIGATION - Chuyển giữa Terminal và Panel
-  {
-    "key": "ctrl+shift+a",
-    "command": "workbench.action.terminal.focusNext",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+shift+b",
-    "command": "workbench.action.terminal.focusPrevious",
-    "when": "terminalFocus"
-  },
+
+  // NAVIGATION - Chuyển giữa Terminal và Pane
   {
     "key": "ctrl+shift+j",
     "command": "workbench.action.togglePanel"
@@ -21,7 +12,7 @@
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+shift+w",
+    "key": "ctrl+shift+k",
     "command": "workbench.action.terminal.kill",
     "when": "terminalFocus"
   },
@@ -36,50 +27,6 @@
     "key": "ctrl+e",
     "when": "editorTextFocus"
   },
-  {
-    "key": "n",
-    "command": "explorer.newFile",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "command": "renameFile",
-    "key": "r",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "key": "shift+n",
-    "command": "explorer.newFolder",
-    "when": "explorerViewletFocus"
-  },
-  {
-    "key": "shift+n",
-    "command": "workbench.action.newWindow",
-    "when": "!explorerViewletFocus"
-  },
-  {
-    "command": "deleteFile",
-    "key": "d",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
 
-  // EXTRA - Các chức năng khác
-  {
-    "key": "ctrl+shift+5",
-    "command": "editor.emmet.action.matchTag"
-  },
-  {
-    "key": "ctrl+z",
-    "command": "workbench.action.toggleZenMode"
-  },
-  {
-    "key": "shift+down",
-    "command": "editor.action.moveLinesDownAction",
-    "when": "editorTextFocus && vim.mode == 'Normal'"
-  },
-  {
-    "key": "shift+up",
-    "command": "editor.action.moveLinesUpAction",
-    "when": "editorTextFocus && vim.mode == 'Normal'"
-  }
+
 ]
-

@@ -1,0 +1,35 @@
+/* List item label name */
+
+.monaco-list {
+  .monaco-list-rows {
+    background: transparent !important;
+    
+  }
+  .monaco-list-row {
+    &.selected {
+      background-color: #4f5971 !important;
+      opacity: 1 !important;
+      border-top: 1px #727b90 solid;
+      border-bottom: 1px #727b90 solid;
+      .label-name {
+        color: #fff !important;
+        opacity: 1 !important ;
+      }
+    }
+    &.focused {
+      transform: none !important;
+    }
+  } 
+}
+
+.quick-input-list {
+  .monaco-list {
+    .monaco-list-rows {
+      // font-size: 1.2em;
+      .monaco-list-row {
+        height: auto !important;
+      }
+    }
+    
+  } 
+}
