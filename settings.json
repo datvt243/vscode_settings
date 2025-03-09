@@ -171,6 +171,10 @@
 
 
   "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["/"],
+      "commands": ["fuzzySearch.activeTextEditor"],
+    },
     { "before": ["\\"], "commands": ["whichkey.show"] },
     { "before": ["<leader>", "e"], "commands": ["workbench.action.toggleSidebarVisibility"] },
 
