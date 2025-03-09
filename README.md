@@ -35,3 +35,19 @@
 "animations.Focus-Dimming-Mode": "Full Window",
 "animations.Install-Method": "Custom CSS and JS",
 ```
+
+## 3. Whick Key
+```
+"vim.normalModeKeyBindingsNonRecursive": [
+  {
+    "before": ["<space>"],
+    "commands": ["whichkey.show"]
+  }
+],
+"vim.visualModeKeyBindingsNonRecursive": [
+  {
+    "before": ["<space>"],
+    "commands": ["whichkey.show"]
+  }
+]
+```
