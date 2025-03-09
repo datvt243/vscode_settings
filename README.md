@@ -1,9 +1,16 @@
-# Cài đặt Motion cho VSCode Vim extension
+# Cài đặt VSCode
+![img 01](./images/01.png)
 
-## Settings (settings.json)
+| Settings ||
+|-------|-------|
+| Theme | "Aura Dracula Spirit" |
+| Icon | "material-icon-theme" |
+
+
+#### Settings (settings.json)
 `Ctr + Shift + P`: Preferences: Open user settings (JSON)
 
-## Key binding (keybinding.json)
+#### Key binding (keybinding.json)
 `Ctr + Shift + P`: Preferences: Open Keyboard Shortcuts
 
 
@@ -17,6 +24,7 @@
   "file:///Users/_david/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
 ],
 ```
+![img 02](./images/02.png){ width=800px style="display: block; margin: auto; max-width: 100%" }
 
 ## 2. VSCode Animations
 ```
@@ -37,6 +45,7 @@
 ```
 
 ## 3. Whick Key
+Setting dùng với VSCode VIM extension
 ```
 "vim.normalModeKeyBindingsNonRecursive": [
   {
@@ -51,3 +60,4 @@
   }
 ]
 ```
+![img whichkey](./images/which_key.png){ width=800px style="display: block; margin: auto; max-width: 100%" }

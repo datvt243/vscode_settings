@@ -1,6 +1,12 @@
 // Place your key bindings in this file to override the defaults
 [
 
+  {
+    "key": "alt+space",
+    "command": "whichkey.show",
+    "when": "editorTextFocus"
+  },
+  
   // NAVIGATION - Chuyển giữa Terminal và Pane
   {
     "key": "ctrl+shift+j",
@@ -29,4 +35,14 @@
   },
 
 
+  {
+    "key": "ctrl+z",
+    "command": "redo",
+    "when": "editorTextFocus && vim.mode == 'Insert'"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "undo",
+    "when": "editorTextFocus && vim.mode == 'Insert'"
+  }
 ]
