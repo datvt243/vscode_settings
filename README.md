@@ -1,5 +1,8 @@
 # Cài đặt VSCode
-![img 01](./images/01.png)
+<figure style="text-align: center;">
+  <img src="/images/01.png" alt="Which Key" style="width: 100%; display: block; margin: 0 auto;">
+</figure>
+
 
 | Settings ||
 |-------|-------|
@@ -24,7 +27,9 @@
   "file:///Users/_david/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
 ],
 ```
-![img 02](./images/02.png){ width=800px style="display: block; margin: auto; max-width: 100%" }
+<figure style="text-align: center;">
+  <img src="/images/02.png" alt="Custom CSS and Js loader" width="800" style="max-width: 100%; display: block; margin: 0 auto;">
+</figure>
 
 ## 2. VSCode Animations
 ```
@@ -60,4 +65,6 @@ Setting dùng với VSCode VIM extension
   }
 ]
 ```
-![img whichkey](./images/which_key.png){ width=800px style="display: block; margin: auto; max-width: 100%" }
+<figure style="text-align: center;">
+  <img src="/images/which_key.png" alt="Which Key" width="800" style="max-width: 100%; display: block; margin: 0 auto;">
+</figure>
