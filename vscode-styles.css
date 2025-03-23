@@ -116,6 +116,10 @@
   height: auto !important;
 }
 
+.monaco-editor .zone-widget {
+  border: 2px solid #E50046;
+}
+
 /* Match Text */
 .currentFindMatchInline {
   background: #000 !important;

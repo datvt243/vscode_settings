@@ -1,11 +1,6 @@
 // Place your key bindings in this file to override the defaults
+// Place your key bindings in this file to override the defaults
 [
-
-  {
-    "key": "alt+space",
-    "command": "whichkey.show",
-    "when": "editorTextFocus"
-  },
   
   // NAVIGATION - Chuyển giữa Terminal và Pane
   {
@@ -25,17 +20,6 @@
 
   // FILE TREE - Quản lý file nhanh trong Explorer
   {
-    "command": "workbench.action.toggleSidebarVisibility",
-    "key": "ctrl+e"
-  },
-  {
-    "command": "workbench.files.action.focusFilesExplorer",
-    "key": "ctrl+e",
-    "when": "editorTextFocus"
-  },
-
-
-  {
     "key": "ctrl+z",
     "command": "redo",
     "when": "editorTextFocus && vim.mode == 'Insert'"
@@ -45,4 +29,5 @@
     "command": "undo",
     "when": "editorTextFocus && vim.mode == 'Insert'"
   }
+ 
 ]

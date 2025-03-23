@@ -19,6 +19,8 @@
 
 # Extension
 
+## 0. VIM
+  
 ## 1. Custom CSS and Js loader
 ```
 "vscode_custom_css.imports": [
@@ -69,7 +71,7 @@ Setting dùng với VSCode VIM extension
   <img src="/images/which_key.png" alt="Which Key" width="800" style="max-width: 100%; display: block; margin: 0 auto;">
 </figure>
 
-## 4. fuzzy-search
+## 4. fuzzy-search - jacobdufault
 Fuzzy Search trong VSCode là một phương pháp tìm kiếm không cần khớp chính xác 100%, mà vẫn có thể tìm ra kết quả gần đúng với từ khóa nhập vào. Điều này giúp tìm kiếm nhanh hơn và linh hoạt hơn.
 <figure style="text-align: center;">
   <img src="/images/fuzzysearch.png" alt="Which Key" width="800" style="max-width: 100%; display: block; margin: 0 auto;">
@@ -79,3 +81,7 @@ Fuzzy Search trong VSCode là một phương pháp tìm kiếm không cần kh�
 Harpoon là một extension dành cho VSCode, lấy cảm hứng từ plugin Harpoon của Neovim. Nó giúp bạn ghi nhớ (bookmark) các file đang làm việc để có thể chuyển đổi nhanh chóng giữa chúng bằng phím tắt, không cần mở file explorer hay tìm kiếm lại.
 
 ## 6. Better Comments
+
+## 7. multi-command - ryuta46
+
+## 8. Codesnap - adpyke
