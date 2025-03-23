@@ -1,4 +1,4 @@
-{{
+{
   // --------------------------------------
   //
   // --------------------------------------
@@ -885,7 +885,7 @@
     },
     {
       "key": "l",
-      "name": "LSP",
+      "name": "LSP (Language Server Protocol)",
       "type": "bindings",
       "bindings": [
         {
@@ -894,7 +894,7 @@
           "type": "command",
           "command": "editor.action.refactor",
           "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
-        },
+          },
         {
           "key": "a",
           "name": "Auto Fix",
@@ -908,13 +908,13 @@
           "type": "command",
           "command": "workbench.actions.view.problems"
         },
-        {
-          "key": "i",
-          "name": "Implementation",
-          "type": "command",
-          "command": "editor.action.goToImplementation",
-          "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
-        },
+        // {
+        //   "key": "i",
+        //   "name": "Implementation",
+        //   "type": "command",
+        //   "command": "editor.action.goToImplementation",
+        //   "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
+        // },
         {
           "key": "l",
           "name": "Code Lens",
@@ -923,9 +923,16 @@
         },
         {
           "key": "o",
-          "name": "Outline",
+          "name": "Explorer: Focus on Outline View",
           "type": "command",
           "command": "outline.focus"
+        },
+        {
+          "key": "v",
+          "name": "Explorer: Find All References",
+          "type": "command",
+          "command": "references-view.find",
+          "when": "editorHasReferenceProvider"
         },
         {
           "key": "q",
@@ -934,27 +941,21 @@
           "command": "editor.action.quickFix",
           "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
         },
-        {
-          "key": "r",
-          "name": "References",
-          "type": "command",
-          "command": "editor.action.goToReferences",
-          "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
-        },
-        {
-          "key": "R",
-          "name": "Rename (Var, function, etc...)",
-          "type": "command",
-          "command": "editor.action.rename",
-          "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
-        },
-        {
-          "key": "v",
-          "name": "View All References",
-          "type": "command",
-          "command": "references-view.find",
-          "when": "editorHasReferenceProvider"
-        },
+        // {
+        //   "key": "r",
+        //   "name": "References",
+        //   "type": "command",
+        //   "command": "editor.action.goToReferences",
+        //   "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+        // },
+        // {
+        //   "key": "R",
+        //   "name": "Rename (Var, function, etc...)",
+        //   "type": "command",
+        //   "command": "editor.action.rename",
+        //   "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+        // },
+        
         {
           "key": "s",
           "name": "Go To Symbol",
@@ -1134,9 +1135,9 @@
     "editorGutter.modifiedBackground": "#FFA500",
     "editorGutter.addedBackground": "#00FF00",
     "editorGutter.deletedBackground": "#FF0000",
-    "statusBar.background": "#E52020",
-    "statusBar.noFolderBackground": "#E52020",
-    "statusBar.debuggingBackground": "#E52020",
+    "statusBar.background": "#1F7D53",
+    "statusBar.noFolderBackground": "#1F7D53",
+    "statusBar.debuggingBackground": "#1F7D53",
     "statusBar.foreground": "#FFFFFF",
     "statusBar.debuggingForeground": "#FFFFFF",
     "activityBar.activeBackground": "#2a73aa",
