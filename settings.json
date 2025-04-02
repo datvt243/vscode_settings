@@ -18,7 +18,7 @@
   "editor.cursorStyle": "line", // Đổi con trỏ sang dạng khối (block) thay vì kiểu gạch đứng (line) mặc định.
   "editor.stickyScroll.enabled": false, // Tắt Sticky Scroll, không hiển thị tiêu đề function/class khi cuộn code.
   "editor.guides.indentation": true,
-  "editor.wordWrapColumn": 80,
+  "editor.wordWrapColumn": 140,
   "editor.fontFamily": "FiraCode Nerd Font Mono, Menlo, Monaco, 'Courier New', monospac",
 
   // --------------------------------------
@@ -41,6 +41,7 @@
   // --------------------------------------
   "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
   "terminal.integrated.fontSize": 13,
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
 
   // --------------------------------------
   // FILES
@@ -148,7 +149,7 @@
   "vim.ignorecase": true, // Không phân biệt chữ hoa/thường khi tìm kiếm
   "vim.smartcase": true, // Phân biệt chữ hoa khi tìm kiếm nếu nhập chữ hoa
   "vim.mouseSelectionGoesIntoVisualMode": true,
-  "vim.useCtrlKeys": false,
+  "vim.useCtrlKeys": true,
   //"vim.cursorStylePerMode.normal": "",
   "vim.statusBarColorControl": true,
   "vim.statusBarColors": {
@@ -170,16 +171,8 @@
   "vim.showcmd": true,
 
   "vim.normalModeKeyBindingsNonRecursive": [
-    // {
-    //   "before": ["<LeftClick>"],
-    //   "after": ["z", "z"]
-    // },
     { "before": ["/"], "commands": ["fuzzySearch.activeTextEditor"] },
     { "before": ["\\"], "commands": ["whichkey.show"] },
-    {
-      "before": ["<leader>", "e"],
-      "commands": ["workbench.action.toggleSidebarVisibility"]
-    },
 
     { "before": ["<S-tab>"], "commands": ["editor.action.outdentLines"] },
     { "before": ["<tab>"], "commands": ["editor.action.indentLines"] },
@@ -194,25 +187,42 @@
     { "before": ["<Up>"], "after": ["g", "k", "z", "z"] },
     { "before": ["}"], "after": ["}", "z", "z"] },
     { "before": ["{"], "after": ["{", "z", "z"] },
-    // PageUp, PageDown
-    // { "before": ["<PageUp>"], "after": ["<C-u>", "z", "z"] },
 
     // move lines
-    { "before": ["<A-j>"], "commands": ["editor.action.moveLinesDownAction"] },
-    { "before": ["<A-k>"], "commands": ["editor.action.moveLinesUpAction"] },
-
+    { "before": ["<C-j>"], "commands": ["editor.action.moveLinesDownAction"] },
+    {
+      "before": ["<C-Down>"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["<C-k>"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    {
+      "before": ["<C-Up>"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    { "before": ["<C-c>"], "commands": ["editor.action.copyLinesDownAction"] },
     // Editor
-    // { "before": ["leader", "e", "x"], "commands": ["workbench.action.closeActiveEditor"] },
+    // { "before": ["<leader>", "e", "x"], "commands": ["workbench.action.closeActiveEditor"] },
 
+    /**
+      LEADER
+    **/
+
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
     // Buffers
     { "before": ["<S-h>"], "commands": [":bprevious"] },
     { "before": ["<S-l>"], "commands": [":bnext"] },
     {
-      "before": ["leader", "b", "n"],
+      "before": ["<leader>", "b", "n"],
       "commands": ["workbench.action.files.newUntitledFile"]
     }, // New Buffer/UntitiledFile
     {
-      "before": ["leader", "b", "q"],
+      "before": ["<leader>", "b", "q"],
       "commands": ["workbench.action.closeActiveEditor"]
     }, // Close buffer
     {
@@ -220,11 +230,11 @@
       "commands": ["workbench.action.closeActiveEditor"]
     }, // Close buffer
     {
-      "before": ["leader", "b", "u"],
+      "before": ["<leader>", "b", "u"],
       "commands": ["workbench.action.reopenClosedEditor"]
     }, // Re-open buffer
     {
-      "before": ["leader", "b", "y"],
+      "before": ["<leader>", "b", "y"],
       "commands": [
         "editor.action.selectAll",
         "editor.action.clipboardCopyAction",
@@ -232,29 +242,29 @@
       ]
     }, // copy all file (Ctr+A - Ctrl C )
     {
-      "before": ["leader", "b", "c"],
+      "before": ["<leader>", "b", "c"],
       "commands": ["workbench.action.closeOtherEditors"]
     }, // Close others buffer
 
     // splits - mở cửa sổ editer trái phải
-    { "before": ["leader", "v"], "commands": [":vsplit"] },
-    { "before": ["leader", "s"], "commands": [":split"] },
+    { "before": ["<leader>", "v"], "commands": [":vsplit"] },
+    { "before": ["<leader>", "s"], "commands": [":split"] },
 
     // Chuyển sang cửa sổ (editor) bên
     {
-      "before": ["leader", "h"],
+      "before": ["<leader>", "h"],
       "commands": ["workbench.action.focusLeftGroup"]
     },
     {
-      "before": ["leader", "j"],
+      "before": ["<leader>", "j"],
       "commands": ["workbench.action.focusBelowGroup"]
     },
     {
-      "before": ["leader", "k"],
+      "before": ["<leader>", "k"],
       "commands": ["workbench.action.focusAboveGroup"]
     },
     {
-      "before": ["leader", "l"],
+      "before": ["<leader>", "l"],
       "commands": ["workbench.action.focusRightGroup"]
     },
 
@@ -262,68 +272,66 @@
     { "before": ["[", "d"], "commands": ["editor.action.marker.prev"] },
     { "before": ["]", "d"], "commands": ["editor.action.marker.prev"] },
 
-    //
-    { "before": ["leader", "p"], "commands": ["workbench.action.quickOpen"] },
-    { "before": ["leader", "f"], "commands": ["actions.find"] },
-    { "before": ["leader", "F"], "commands": ["workbench.action.findInFiles"] },
+    // LEADER
+    { "before": ["<leader>", "r"], "commands": ["editor.action.rename"] },
+    { "before": ["<leader>", "p"], "commands": ["workbench.action.quickOpen"] },
     {
-      "before": ["leader", "f", "f"],
+      "before": ["<leader>", "P"],
+      "commands": ["workbench.action.showCommands"]
+    },
+    { "before": ["<leader>", "f"], "commands": ["actions.find"] },
+    {
+      "before": ["<leader>", "f", "a"],
       "commands": ["workbench.action.findInFiles"]
     },
 
     // LSP
     { "before": ["g", "d"], "commands": ["editor.action.revealDefinition"] },
+    { "before": ["g", "p"], "commands": ["editor.action.peekDefinition"] },
     { "before": ["g", "D"], "commands": ["editor.action.revealDeclaration"] },
     { "before": ["g", "r"], "commands": ["editor.action.goToReferences"] },
     { "before": ["g", "R"], "commands": ["references-view.find"] },
     { "before": ["g", "i"], "commands": ["editor.action.goToImplementation"] },
-    { "before": ["g", "y"], "commands": ["editor.action.goToTypeDefinition"] },
+    { "before": ["g", "t"], "commands": ["editor.action.peekTypeDefinition"] },
     { "before": ["g", "s"], "commands": ["workbench.action.gotoSymbol"] },
     { "before": ["g", "S"], "commands": ["workbench.action.showAllSymbols"] },
-    // {
-    //   "key": "v",
-    //   "name": "View All References",
-    //   "type": "command",
-    //   "command": "references-view.find",
-    //   "when": "editorHasReferenceProvider"
-    // },
-
-    { "before": ["g", "p", "d"], "commands": ["editor.action.peekDefinition"] },
-    {
-      "before": ["g", "p", "D"],
-      "commands": ["editor.action.peekDeclaration"]
-    },
-    {
-      "before": ["g", "p", "t"],
-      "commands": ["editor.action.peekTypeDefinition"]
-    },
-    {
-      "before": ["g", "p", "i"],
-      "commands": ["editor.action.peekImplementation"]
-    },
-
-    {
-      "before": ["g", "K"],
-      "commands": ["editor.action.triggerParameterHints"]
-    },
     { "before": ["K"], "commands": ["editor.action.showHover"] },
-    { "before": ["leader"], "commands": ["editor.action.rename"] },
 
-    // Bookmarks - use extension Bookmarks
-    { "before": ["leader", "m", "t"], "commands": ["bookmarks.toggle"] },
+    // #Bookmarks - use extension Bookmarks
+    { "before": ["m", "t"], "commands": ["bookmarks.toggle"] },
+    { "before": ["m", "e"], "commands": ["bookmarks.toggleLabeled"] },
+    { "before": ["m", "n"], "commands": ["bookmarks.jumpToNext"] },
+    { "before": ["m", "p"], "commands": ["bookmarks.jumpToPrevious"] },
+    { "before": ["m", "l"], "commands": ["bookmarks.list"] },
+    { "before": ["m", "C"], "commands": ["bookmarks.clear"] },
+    { "before": ["m", "L"], "commands": ["bookmarks.listFromAllFiles"] },
+
+    // #harpoon
     {
-      "before": ["leader", "m", "l"],
-      "commands": ["bookmarks.listFromAllFiles"]
+      "before": ["<leader>", "h", "p"],
+      "commands": ["vscode-harpoon.editorQuickPick"]
+    },
+    {
+      "before": ["<leader>", "h", "a"],
+      "commands": ["vscode-harpoon.addEditor"]
+    },
+    {
+      "before": ["<leader>", "h", "e"],
+      "commands": ["vscode-harpoon.editEditors"]
+    },
+    {
+      "before": ["<leader>", "h", "e"],
+      "commands": ["vscode-harpoon.editEditors"]
     },
 
     //
-    { "before": ["leader", "y"], "commands": ["vim.showRegisters"] },
-    { "before": ["leader", "n"], "commands": [":nohlsearch"] }
+    { "before": ["<leader>", "y"], "commands": ["vim.showRegisters"] },
+    { "before": ["<leader>", "n"], "commands": [":nohlsearch"] }
   ],
   "vim.visualModeKeyBindings": [
     { "before": ["\\"], "commands": ["whichkey.show"] },
-    // block comment /* */
-    { "before": ["leader", "c"], "commands": ["editor.action.blockComment"] },
+
+    { "before": ["<leader>", "c"], "commands": ["editor.action.blockComment"] },
 
     // Stay in visual mode while indenting
     { "before": ["<S-tab>"], "commands": ["editor.action.outdentLines"] },
@@ -331,9 +339,14 @@
 
     // Move selected lines while staying in visual mode
     { "before": ["<A-j>"], "commands": ["editor.action.moveLinesDownAction"] },
-    { "before": ["<A-k>"], "commands": ["editor.action.moveLinesUpAction"] }
+    { "before": ["<A-k>"], "commands": ["editor.action.moveLinesUpAction"] },
     //{ "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
     //{ "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] }
+
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["editor.actions.addSectionToNextFindMatch"]
+    }
   ],
   "vim.insertModeKeyBindings": [
     { "before": ["<D-s>"], "commands": [":w", "<Esc>"] },
@@ -360,7 +373,7 @@
     "TrailLength": 8
   },
   "animations.UseCursorColorForCursorAnimation": true,
-  "animations.Focus-Dimming-Amount": 70,
+  "animations.Focus-Dimming-Amount": 100,
   "animations.Focus-Dimming-Mode": "Full Window",
   "animations.Install-Method": "Custom CSS and JS",
 
@@ -382,39 +395,39 @@
   "whichkey.bindings": [
     {
       "key": "q",
-      "name": "Quick Motion",
+      "name": "[q]uick Motion",
       "type": "bindings",
       "bindings": [
         {
           "key": "f",
-          "name": "Format Document",
+          "name": "[f]ormat Document",
           "type": "command",
           "command": "editor.action.formatDocument",
           "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
         },
         {
           "key": "F",
-          "name": "Format Document With ...",
+          "name": "[F]ormat Document With ...",
           "type": "command",
           "command": "editor.action.formatDocument.multiple",
           "when": "editorHasDocumentFormattingProvider && editorTextFocus"
         },
         {
           "key": "o",
-          "name": "Quick Open Files Recent",
+          "name": "Quick [o]pen Files Recent",
           "type": "command",
           "command": "workbench.action.quickOpen"
         },
         {
           "key": "r",
-          "name": "Rename (Var, function, etc...)",
+          "name": "[r]ename (Var, function, etc...)",
           "type": "command",
           "command": "editor.action.rename",
           "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
         },
         {
           "key": "l",
-          "name": "Git Log (oneline)",
+          "name": "Git [l]og (oneline)",
           "type": "command",
           "command": "multiCommand.runGitLog"
         }
@@ -422,18 +435,18 @@
     },
     {
       "key": "f",
-      "name": "Find & Replace",
+      "name": "[f]ind & Replace",
       "type": "bindings",
       "bindings": [
         {
           "key": "f",
-          "name": "Find and Replace In File",
+          "name": "[f]ind and Replace In File",
           "type": "command",
           "command": "editor.action.startFindReplaceAction"
         },
         {
-          "key": "p",
-          "name": "Find and Replace In Files",
+          "key": "r",
+          "name": "Find and [r]eplace In Files",
           "type": "command",
           "command": "workbench.action.replaceInFiles"
         }
@@ -441,79 +454,68 @@
     },
     {
       "key": "b",
-      "name": "Buffers / Editors",
+      "name": "[b]uffers / Editors",
       "type": "bindings",
       "bindings": [
         {
-          "key": "c",
-          "name": "Close Other Editors",
-          "type": "command",
-          "command": "workbench.action.closeOtherEditors"
-        },
-        {
           "key": "d",
-          "name": "Close Active Editor",
+          "name": "[d]elete Active Buffer",
           "type": "command",
           "command": "workbench.action.closeActiveEditor"
         },
         {
-          "key": "n",
-          "name": "Next Editor",
+          "key": "c",
+          "name": "[c]lose Other Editors",
           "type": "command",
-          "command": "workbench.action.nextEditor"
+          "command": "workbench.action.closeOtherEditors"
         },
         {
-          "key": "p",
-          "name": "Previous Editor",
+          "key": "n",
+          "name": "[n]ew Untitled Buffer (New blank file)",
           "type": "command",
-          "command": "workbench.action.previousEditor"
+          "command": "workbench.action.files.newUntitledFile"
         },
+
         {
           "key": "m",
-          "name": "Move Editor Into [+]",
+          "name": "[m]ove Editor Into [+]",
           "type": "bindings",
           "bindings": [
             {
               "key": "h",
-              "name": "Move editor into LEFT group",
+              "name": "Move editor into LEFT [h] group",
               "type": "command",
               "command": "workbench.action.moveEditorToLeftGroup"
             },
             {
               "key": "j",
-              "name": "Move editor into BELOW group",
+              "name": "Move editor into BELOW [j] group",
               "type": "command",
               "command": "workbench.action.moveEditorToBelowGroup"
             },
             {
               "key": "k",
-              "name": "Move editor into ABOVE group",
+              "name": "Move editor into ABOVE [k] group",
               "type": "command",
               "command": "workbench.action.moveEditorToAboveGroup"
             },
             {
               "key": "l",
-              "name": "Move editor into RIGHT group",
+              "name": "Move editor into RIGHT [l] group",
               "type": "command",
               "command": "workbench.action.moveEditorToRightGroup"
             }
           ]
         },
         {
-          "key": "N",
-          "name": "New Untitled Editor (New blank file)",
-          "type": "command",
-          "command": "workbench.action.files.newUntitledFile"
-        },
-        {
           "key": "u",
-          "name": "Reopen Closed Editor",
+          "name": "Reopen ([u]ndo) Closed Editor",
           "type": "command",
           "command": "workbench.action.reopenClosedEditor"
         },
         {
           "key": "y",
-          "name": "Copy Buffer to Clipboard (Copy All File [Ctrl + a])",
+          "name": "Copy ([y]ark) Buffer to Clipboard (Copy All File [Ctrl + a])",
           "type": "commands",
           "commands": [
             "editor.action.selectAll",
@@ -524,18 +526,52 @@
       ]
     },
     {
-      "key": "-",
-      "name": "──────────────────────────────"
+      "key": "p",
+      "name": "[p]roject Manager",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "l",
+          "name": "[l]ist Projects to Open in New Window",
+          "type": "command",
+          "command": "projectManager.listProjectsNewWindow"
+        },
+        {
+          "key": "L",
+          "name": "[L]ist Projects to Open",
+          "type": "command",
+          "command": "projectManager.listProjects"
+        },
+        {
+          "key": "e",
+          "name": "[e]dit Project",
+          "type": "command",
+          "command": "projectManager.editProjects"
+        },
+        {
+          "key": "r",
+          "name": "[r]efresh Projects",
+          "type": "command",
+          "command": "projectManager.refreshProjects"
+        },
+        {
+          "key": "w",
+          "name": "[w]hat's News",
+          "type": "command",
+          "command": "projectManager.whatsNew"
+        }
+      ]
     },
+
     {
       "key": "c",
-      "name": "CodeSnap",
+      "name": "[c]odeSnap",
       "type": "bindings",
       "bindings": [
         {
           "key": "s",
           "type": "command",
-          "name": "Start CodeSnap",
+          "name": "[s]tart CodeSnap",
           "command": "codesnap.start",
           "when": "selected && editorTextFocus"
         }
@@ -543,60 +579,62 @@
     },
     {
       "key": "m",
-      "name": "Bookmarks",
+      "name": "Book[m]arks",
       "type": "bindings",
       "bindings": [
         {
           "key": "t",
-          "name": "Add / Remove (Toggle) Bookmarks",
+          "name": "[t]oggle Bookmarks",
           "type": "command",
           "command": "bookmarks.toggle",
           "when": "editorTextFocus"
         },
         {
+          "key": "n",
+          "name": "Toggle Lable [n]ame",
+          "type": "command",
+          "command": "bookmarks.toggleLabeled",
+          "when": "editorTextFocus"
+        },
+        {
           "key": "l",
-          "name": "List Bookmarks (In File)",
+          "name": "[l]ist Bookmarks (In File)",
           "type": "command",
           "command": "bookmarks.list",
           "when": "editorTextFocus"
         },
         {
           "key": "L",
-          "name": "List Bookmarks (All Files)",
+          "name": "[L]ist Bookmarks (All Files)",
           "type": "command",
           "command": "bookmarks.listFromAllFiles",
           "when": "editorTextFocus"
         },
         {
           "key": "r",
-          "name": "Refresh",
+          "name": "[r]efresh",
           "type": "command",
           "command": "bookmarks.refresh"
         },
         {
           "key": "c",
-          "name": "Clear",
+          "name": "[c]lear",
           "type": "command",
           "command": "bookmarks.clear"
         },
         {
           "key": "C",
-          "name": "Clear (All Files)",
+          "name": "[C]lear (All Files)",
           "type": "command",
           "command": "bookmarks.clearFromAllFiles"
         },
         {
           "key": "s",
-          "name": "Support",
+          "name": "[s]upport",
           "type": "command",
           "command": "bookmarks.supportBookmarks"
         }
       ]
-    },
-
-    {
-      "key": "-",
-      "name": "──────────────────────────────"
     },
     {
       "key": "L",
@@ -623,7 +661,6 @@
         }
       ]
     },
-
     {
       "key": "d",
       "name": "Debug",
@@ -894,7 +931,7 @@
           "type": "command",
           "command": "editor.action.refactor",
           "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
-          },
+        },
         {
           "key": "a",
           "name": "Auto Fix",
@@ -955,7 +992,7 @@
         //   "command": "editor.action.rename",
         //   "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
         // },
-        
+
         {
           "key": "s",
           "name": "Go To Symbol",
@@ -971,136 +1008,128 @@
       ]
     },
     {
-      "key": "p",
-      "name": "Peek",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "d",
-          "name": "Definition",
-          "type": "command",
-          "command": "editor.action.peekDefinition",
-          "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
-        },
-        {
-          "key": "i",
-          "name": "Implementation",
-          "type": "command",
-          "command": "editor.action.peekImplementation",
-          "when": "editorHasImplementationProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
-        },
-        {
-          "key": "D",
-          "name": "Declaration",
-          "type": "command",
-          "command": "editor.action.peekDeclaration"
-        },
-        {
-          "key": "p",
-          "name": "Toggle Focus",
-          "type": "command",
-          "command": "togglePeekWidgetFocus",
-          "when": "inReferenceSearchEditor || referenceSearchVisible"
-        },
-        {
-          "key": "r",
-          "name": "References",
-          "type": "command",
-          "command": "editor.action.referenceSearch.trigger"
-        },
-        {
-          "key": "t",
-          "name": "Type Definition",
-          "type": "command",
-          "command": "editor.action.peekTypeDefinition"
-        }
-      ]
-    },
-    {
-      "key": "-",
-      "name": "──────────────────────────────"
-    },
-    {
-      "key": "C",
-      "name": "Custom CSS and JS Loader",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "r",
-          "name": "Reload",
-          "type": "command",
-          "command": "extension.updateCustomCSS"
-        }
-      ]
-    },
-    {
       "key": "s",
-      "name": "Settings",
+      "name": "[s]ettings",
       "type": "bindings",
       "bindings": [
         {
-          "key": "o",
-          "name": "Open Settings (UI)",
+          "key": "c",
+          "name": "Show All Commands",
+          "type": "command",
+          "command": "workbench.action.showCommands"
+        },
+        {
+          "key": "u",
+          "name": "Open Settings ([u]I)",
           "type": "command",
           "command": "workbench.action.openSettings"
         },
         {
           "key": "j",
-          "name": "Open Settings (JSON)",
+          "name": "Open Settings ([j]SON)",
           "type": "command",
           "command": "workbench.action.openSettingsJson"
         },
         {
-          "key": "c",
-          "name": "Open Keybindings (UI)",
-          "type": "command",
-          "command": "workbench.action.openGlobalKeybindings"
-        },
-        {
           "key": "k",
-          "name": "Open Keybindings (JSON)",
-          "type": "command",
-          "command": "workbench.action.openGlobalKeybindingsFile"
+          "name": "[K]eybindings [+]",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "u",
+              "name": "Open Keybindings ([u]I)",
+              "type": "command",
+              "command": "workbench.action.openGlobalKeybindings"
+            },
+            {
+              "key": "j",
+              "name": "Open Keybindings ([j]SON)",
+              "type": "command",
+              "command": "workbench.action.openGlobalKeybindingsFile"
+            }
+          ]
         },
         {
           "key": "t",
-          "name": "Select Color Theme",
+          "name": "Select Color [t]heme",
           "type": "command",
           "command": "workbench.action.selectTheme"
         },
         {
-          "key": "-",
-          "name": "----------------------------------------------"
-        },
-        {
           "key": "i",
-          "name": "Toggle Icon Theme",
+          "name": "Toggle [i]con Theme",
           "type": "command",
           "command": "workbench.action.selectIconTheme"
         },
         {
-          "key": "e",
-          "name": "Toggle Editor Minimap",
-          "type": "command",
-          "command": "editor.action.toggleMinimap"
-        },
+          "key": "d",
+          "name": "[d]eveloper [+]",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "r",
+              "name": "[r]eload Window",
+              "type": "command",
+              "command": "workbench.action.reloadWindow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "E",
+      "name": "[E]xtensions",
+      "type": "bindings",
+      "bindings": [
         {
-          "key": "l",
-          "name": "Toggle Line Numbers",
-          "type": "command",
-          "command": "workbench.action.toggleRenderLineNumbers"
-        },
-        {
-          "key": "r",
-          "name": "Reload Window",
-          "type": "command",
-          "command": "workbench.action.reloadWindow"
+          "key": "c",
+          "name": "Extension [c]ustom CSS and JS Loaded [+]",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "u",
+              "name": "Reload/[u]pdate",
+              "type": "command",
+              "command": "extension.updateCustomCSS"
+            }
+          ]
         },
         {
           "key": "p",
-          "name": "Open Command Palette",
-          "type": "command",
-          "command": "workbench.action.showCommands"
+          "name": "Extension [p]eacock [+]",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "c",
+              "name": "[c]hange to a Favorite Color",
+              "type": "command",
+              "command": "peacock.changeColorToFavorite"
+            },
+            {
+              "key": "e",
+              "name": "[e]nter a Color",
+              "type": "command",
+              "command": "peacock.enterColor"
+            },
+            {
+              "key": "s",
+              "name": "[s]ave Current Color to Favorites",
+              "type": "command",
+              "command": "peacock.saveColorToFavorites"
+            },
+            {
+              "key": "r",
+              "name": "Surprise Me with a [r]andom Color",
+              "type": "command",
+              "command": "peacock.changeColorToRandom"
+            },
+            {
+              "key": "R",
+              "name": "[R]eset Workspace Colors",
+              "type": "command",
+              "command": "peacock.resetWorkspaceColors"
+            }
+          ]
         }
       ]
     }
@@ -1140,17 +1169,17 @@
     "statusBar.debuggingBackground": "#1F7D53",
     "statusBar.foreground": "#FFFFFF",
     "statusBar.debuggingForeground": "#FFFFFF",
-    "activityBar.activeBackground": "#2a73aa",
-    "activityBar.background": "#2a73aa",
-    "activityBar.foreground": "#e7e7e7",
-    "activityBar.inactiveForeground": "#e7e7e799",
-    "activityBarBadge.background": "#661945",
-    "activityBarBadge.foreground": "#e7e7e7",
+    "activityBar.activeBackground": "#af5afd",
+    "activityBar.background": "#af5afd",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#fdb362",
+    "activityBarBadge.foreground": "#15202b",
     "commandCenter.border": "#e7e7e799",
-    "sash.hoverBorder": "#2a73aa",
-    "titleBar.activeBackground": "#205781",
+    "sash.hoverBorder": "#af5afd",
+    "titleBar.activeBackground": "#9728fc",
     "titleBar.activeForeground": "#e7e7e7",
-    "titleBar.inactiveBackground": "#20578199",
+    "titleBar.inactiveBackground": "#9728fc99",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
   "window.commandCenter": false,
