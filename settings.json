@@ -761,7 +761,7 @@
 
     {
       "key": "g",
-      "name": "Git",
+      "name": "[g]it [+]",
       "type": "bindings",
       "bindings": [
         {
