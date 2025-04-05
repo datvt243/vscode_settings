@@ -1,4 +1,7 @@
 # Cài đặt cá nhân hóa VSCode
+
+💡 **Tip**: Kết hợp các extension trên giúp tối ưu trải nghiệm làm việc trong VSCode! 🚀
+
 <p align="center">
   <img src="/images/01.png" alt="Which Key" width="100%">
 </p>
@@ -29,16 +32,27 @@ Mở `keybinding.json` bằng cách nhấn:
 ---
 
 # Extensions
+
 [1. VIM](#1-vim-extension)
+
 [2. Bookmarks](#2-bookmarks)
+
 [3. Custom CSS and JS Loader](#3-custom-css-and-js-loader)
+
 [4. VSCode Animations](#4-vscode-animations)
+
 [5. Which Key ](#5-which-key)
+
 [6. Fuzzy Search](#6-fuzzy-search)
+
 [7. VSCode Harpoon](#7-vscode-harpoon)
+
 [8. Better Comments](#8-better-comments)
+
 [9. Multi-Command](#9-multi-command)
+
 [10. CodeSnap](#10-codesnap)
+
 [11. Caps Lock State](#11-caps-lock-state)
 
 ## 1. Vim Extension
@@ -46,6 +60,7 @@ Mở `keybinding.json` bằng cách nhấn:
 **Mô tả**: Mang lại trải nghiệm chỉnh sửa văn bản theo phong cách Vim ngay trong VSCode.
 
 🔗 [Vim Extension](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
+
 🔗 [Vim Cheatsheet](https://marketplace.visualstudio.com/items?itemName=AndenetAlexander.vim-cheatsheet): Hướng dẫn các motion cơ bản của VIM
 
 **Cài đặt (settings.json)**
@@ -107,6 +122,7 @@ Mở `keybinding.json` bằng cách nhấn:
 **Cài đặt (settings.json)**
 
 --- Mac
+
 ```json
 "vscode_custom_css.imports": [
   "file:///Users/_user/vscode-custom/vscode-script.js",
@@ -115,12 +131,13 @@ Mở `keybinding.json` bằng cách nhấn:
 ]
 ```
 --- Win
+
 ```json
 "vscode_custom_css.imports": [
   "file:///C:/Users/_user/Documents/vscode-settings/vscode-script.js",
   "file:///C:/Users/_user/Documents/vscode-settings/vscode-styles.css",
   "file:///C:/Users/_user/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
-],
+]
 ```
 
 ## 4. VSCode Animations
@@ -229,7 +246,7 @@ Hỗ trợ cài đặt nhiều combo commands cho VIM
 Forcus Ter -> New Ter -> nhập lệnh `git log --online`
 
 ```json
-multiCommand.commands": [
+"multiCommand.commands": [
   {
     "command": "multiCommand.runGitLog",
     "sequence": [
@@ -241,7 +258,7 @@ multiCommand.commands": [
       }
     ]
   }
-],
+]
 ```
 
 ## 10. CodeSnap
@@ -259,6 +276,5 @@ Hỗ trợ hiển thị trạng thái của capslock (on/off)
 🔗 [Caps Lock State](https://marketplace.visualstudio.com/items?itemName=Elling.caps-lock-state)
 
 ---
-💡 **Tip**: Kết hợp các extension trên giúp tối ưu trải nghiệm làm việc trong VSCode! 🚀
 
 
