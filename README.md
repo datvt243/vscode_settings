@@ -1,6 +1,6 @@
 # Cài đặt cá nhân hóa VSCode
 
-💡 **Tip**: Kết hợp các extension trên giúp tối ưu trải nghiệm làm việc trong VSCode! 🚀
+💡 **Tip**: Kết hợp các Extensions giúp tối ưu trải nghiệm làm việc trong VSCode! 🚀
 
 <p align="center">
   <img src="/images/01.png" alt="Which Key" width="100%">
@@ -55,6 +55,8 @@ Mở `keybinding.json` bằng cách nhấn:
 
 [11. Caps Lock State](#11-caps-lock-state)
 
+[12. Peacock](#12-peacock)
+
 ## 1. Vim Extension
 
 **Mô tả**: Mang lại trải nghiệm chỉnh sửa văn bản theo phong cách Vim ngay trong VSCode.
@@ -82,6 +84,12 @@ Mở `keybinding.json` bằng cách nhấn:
 "extensions.experimental.affinity": {
   "vscodevim.vim": 1
 },
+```
+
+Nếu xài [Peacock](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock), setting sau giúp tránh việc ảnh hưởng đến màu sắc thanh statusBar (khi chuyển mode)
+
+```json
+"peacock.affectStatusBar": false, // tắt ảnh hưởng đến StatusBar
 ```
 
 | Command  | Description |
@@ -140,6 +148,7 @@ Mở `keybinding.json` bằng cách nhấn:
 ]
 ```
 
+
 ## 4. VSCode Animations
 
 **Mô tả**: Thêm hiệu ứng động cho các thao tác trong VSCode.
@@ -148,7 +157,6 @@ Mở `keybinding.json` bằng cách nhấn:
 </p>
 
 🔗 [VSCode Animations](https://marketplace.visualstudio.com/items?itemName=brandonkirbyson.vscode-animations)
-
 
 
 ## 5. Which Key
@@ -182,6 +190,7 @@ Mở `keybinding.json` bằng cách nhấn:
 },
 ```
 
+
 ## 6. Fuzzy Search
 
 **Mô tả**: Hỗ trợ tìm kiếm nhanh trong VSCode mà không cần khớp chính xác từ khóa.
@@ -201,6 +210,7 @@ Mở `keybinding.json` bằng cách nhấn:
 ]
 ```
 
+
 ## 7. VSCode Harpoon
 
 **Mô tả**: Hỗ trợ ghi nhớ (bookmark) các file đang làm việc để chuyển đổi nhanh chóng giữa chúng.
@@ -216,6 +226,7 @@ Mở `keybinding.json` bằng cách nhấn:
   { "before": ["<leader>", "h", "e"], "commands": ["vscode-harpoon.editEditors"] },
 ]
 ```
+
 
 ## 8. Better Comments
 
@@ -233,7 +244,6 @@ Mở `keybinding.json` bằng cách nhấn:
 ]
 ```
 
----
 
 ## 9. Multi-Command
 
@@ -275,6 +285,21 @@ Hỗ trợ hiển thị trạng thái của capslock (on/off)
 
 🔗 [Caps Lock State](https://marketplace.visualstudio.com/items?itemName=Elling.caps-lock-state)
 
----
+## 12. Peacock
 
+**Mô tả**: Giúp tùy chỉnh màu sắc của cửa sổ VSCode theo các màu sắc bạn lựa chọn, giúp dễ dàng nhận diện và phân biệt giữa các cửa sổ hoặc dự án đang mở.
 
+<p align="center"><img src="https://raw.githubusercontent.com/johnpapa/vscode-peacock/main/resources/hero.png" alt="Peacock Windows" title="Peacock windows" width="450px"></p>
+
+```json
+"peacock.favoriteColors": [
+  { "name": "Jazzberry Jam", "value": "#AC1754" },
+  { "name": "Dark Cerulean", "value": "#205781" },
+  { "name": "Tangerine", "value": "#C14600" },
+  { "name": "Persian Blue", "value": "#211C84" },
+  { "name": "Rich Lavender", "value": "#AA60C8" },
+  { "name": "Blue Lagoon", "value": "#0A97B0" },
+  { "name": "Dark Gunmetal", "value": "#343131" },
+  { "name": "Medium Aquamarine", "value": "#66D2CE" }
+]
+```
