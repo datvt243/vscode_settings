@@ -253,12 +253,12 @@ multiCommand.commands": [
 ## 11. Caps Lock State
 
 **Mô tả**: Xài keyboard rời và không biết caps đang on/off, ảnh hưởng đến motion của VIM -> Hỗ trợ hiển thị trạng thái của capslock
-
+Hỗ trợ hiển thị trạng thái của capslock (on/off)
 <p align="center"><img src="https://github.com/elling19/vscode-extension-caps-lock-state/blob/master/assets/md_1.gif?raw=true" alt="Switch different display methods"></p>
 
 🔗 [Caps Lock State](https://marketplace.visualstudio.com/items?itemName=Elling.caps-lock-state)
 
 ---
-
 💡 **Tip**: Kết hợp các extension trên giúp tối ưu trải nghiệm làm việc trong VSCode! 🚀
+
 
