@@ -10,24 +10,22 @@
 
 ## Settings & Key Bindings
 
-### 1. Cài đặt giao diện
+#### 1. Cài đặt giao diện
 
 | Setting | Value                 |
 | ------- | --------------------- |
-| Theme   | "Aura Dracula Spirit" |
-| Icon    | "material-icon-theme" |
+| Theme   | Aura Dracula Spirit |
+| File Icon    | `material-icon-theme` |
+| Product Icon | `developer-icons` |
+| Font family | FiraCode Nerd Font Mono |
 
-### 2. Cấu hình Settings (settings.json)
+#### 2. Cấu hình Settings (settings.json)
 
-Mở `settings.json` bằng cách nhấn:
+Mở `settings.json`: `Preferences: Open User Settings (JSON)`
 
-- Gõ: `Preferences: Open User Settings (JSON)`
+#### 3. Cấu hình Key Bindings (keybinding.json)
 
-### 3. Cấu hình Key Bindings (keybinding.json)
-
-Mở `keybinding.json` bằng cách nhấn:
-
-- Gõ: `Preferences: Open Keyboard Shortcuts`
+Mở `keybinding.json`: `Preferences: Open Keyboard Shortcuts`
 
 ---
 
@@ -89,8 +87,11 @@ Mở `keybinding.json` bằng cách nhấn:
 Nếu xài [Peacock](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock), setting sau giúp tránh việc ảnh hưởng đến màu sắc thanh statusBar (khi chuyển mode)
 
 ```json
-"peacock.affectStatusBar": false, // tắt ảnh hưởng đến StatusBar
+// tắt ảnh hưởng đến StatusBar
+"peacock.affectStatusBar": false
 ```
+
+**Motions**
 
 | Command  | Description |
 | -------- | ---------------------------------- |
