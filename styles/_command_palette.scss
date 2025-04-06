@@ -1,18 +1,47 @@
 @use "variables";
 /* Command Palette */
-.quick-input-widget {
-  transform: translateY(-50%) !important;
-  top: 50% !important;
-  border: 2px solid variables.$pink !important;
-  padding: 10px !important;
-  //background: $bgPrimary !important;
-  backdrop-filter: blur(0) !important;
-  border-radius: 5px !important;
+.quick-input {
+
+  // WIDGET
+  &-widget {
+    transform: translateY(-50%) !important;
+    top: 50% !important;
+    border: 2px solid variables.$pink !important;
+    padding: 10px !important;
+    //background: $bgPrimary !important;
+    backdrop-filter: blur(0) !important;
+    border: 4px solid var(--vscode-quickInputList-focusForeground) !important;
+    border-radius: 0 !important;
+    min-height: 400px;
+  }
+
+  // FILTER
+  &-filter {
+    .monaco-inputbox {
+      border-radius: 5px !important;
+      padding: 10px !important;
+      border: none !important;
+      font-size: 14px !important;
+      margin-bottom: 10px !important;
+      border: 1px solid var(--vscode-quickInputList-focusForeground) !important; 
+    }
+  }
 }
 
-.quick-input-list, .quick-input-list .list_id_6 {
-  min-height: 400px !important;
+// .monaco {
+
+//   &-icon-label {
+//     > .monaco-icon-label-container > .monaco-icon-description-container > .label-description {
+//       opacity: .45 !important;
+//     }
+//   }
+
+// }
+
+.monaco-icon-label>.monaco-icon-label-container>.monaco-icon-description-container>.label-description {
+  opacity: .45 !important;
 }
+
 
 /* Command palette's input box placeholder. */
 .monaco-inputbox input::placeholder {
@@ -24,14 +53,6 @@
   max-width: none !important;
 }
 /* Command palette text input */
-.quick-input-filter .monaco-inputbox {
-  border-radius: 5px !important;
-  padding: 10px !important;
-  border: none !important;
-  font-size: 14px !important;
-  margin-bottom: 10px !important;
-}
-
 #command-blur {
   position: absolute;
   width: 100%;

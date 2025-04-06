@@ -55,6 +55,8 @@ Mở `keybinding.json`: `Preferences: Open Keyboard Shortcuts`
 
 [12. Peacock](#12-peacock)
 
+[13. Project Manager](#13-project-manager)
+
 ## 1. Vim Extension
 
 **Mô tả**: Mang lại trải nghiệm chỉnh sửa văn bản theo phong cách Vim ngay trong VSCode.
@@ -66,6 +68,11 @@ Mở `keybinding.json`: `Preferences: Open Keyboard Shortcuts`
 **Cài đặt (settings.json)**
 
 ```json
+
+// hiển thị số dòng theo cách tương đối - dễ dàng di chuyển với vim 
+"editor.lineNumbers": "relative",
+
+// Vim settings
 "vim.leader": "<Space>",
 "vim.normalModeKeyBindingsNonRecursive": [],
 "vim.visualModeKeyBindings": [],
@@ -292,6 +299,8 @@ Hỗ trợ hiển thị trạng thái của capslock (on/off)
 
 <p align="center"><img src="https://raw.githubusercontent.com/johnpapa/vscode-peacock/main/resources/hero.png" alt="Peacock Windows" title="Peacock windows" width="450px"></p>
 
+🔗 [Peacock](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock)
+
 ```json
 "peacock.favoriteColors": [
   { "name": "Jazzberry Jam", "value": "#AC1754" },
@@ -304,3 +313,9 @@ Hỗ trợ hiển thị trạng thái của capslock (on/off)
   { "name": "Medium Aquamarine", "value": "#66D2CE" }
 ]
 ```
+
+## 13. Project Manager
+
+**Mô tả**: Giúp quản lý các project, mở và di chuyển qua lại các project dễ dàng
+
+🔗 [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager)
