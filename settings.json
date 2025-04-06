@@ -2,7 +2,6 @@
   // --------------------------------------
   //
   // --------------------------------------
-  "files.autoSave": "onFocusChange",
   "editor.wordWrap": "on",
   "editor.tabSize": 2,
   "editor.fontSize": 13,
@@ -20,6 +19,7 @@
   "editor.guides.indentation": true,
   "editor.wordWrapColumn": 140,
   "editor.fontFamily": "FiraCode Nerd Font Mono, Menlo, Monaco, 'Courier New', monospac",
+  "editor.suggestFontSize": 14, // font size ô gợi ý code
 
   // --------------------------------------
   // BREADCRUMBS
@@ -29,6 +29,7 @@
   // --------------------------------------
   // WINDOW
   // --------------------------------------
+  "window.commandCenter": false,
   "window.newWindowDimensions": "default", // Kích thước cửa sổ khi mở VSCode
 
   // --------------------------------------
@@ -46,6 +47,7 @@
   // --------------------------------------
   // FILES
   // --------------------------------------
+  "files.autoSave": "onFocusChange",
   "files.eol": "\n", // Xác định kiểu ký tự kết thúc dòng (End Of Line - EOL) khi lưu file.
   "files.trimTrailingWhitespace": false, // Tự động xóa khoảng trắng dư thừa ở cuối dòng khi lưu file.
   "files.insertFinalNewline": true, // Thêm một dòng trống cuối file khi lưu.
@@ -60,7 +62,8 @@
   // --------------------------------------
   // WORKBENCH
   // --------------------------------------
-  "workbench.colorTheme": "Aura Dracula Spirit", // Theme
+  "workbench.colorTheme": "lazyvim theme", // Theme
+  "workbench.productIconTheme": "developer-icons",
   "workbench.sideBar.location": "right",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.editor.showTabs": "single", // chỉ hiển thị 1 tab duy nhất
@@ -110,7 +113,7 @@
   // --------------------------------------
   // PEACOCK
   // --------------------------------------
-  "peacock.affectStatusBar": false, // Khi bật, Peacock sẽ thay đổi màu thanh bên (Sidebar)
+  "peacock.affectStatusBar": false,
   "peacock.affectActivityBar": true, // Định nghĩa danh sách các màu yêu thích để dễ dàng chọn nhanh
   "peacock.favoriteColors": [
     { "name": "Jazzberry Jam", "value": "#AC1754" },
@@ -149,7 +152,7 @@
   "vim.ignorecase": true, // Không phân biệt chữ hoa/thường khi tìm kiếm
   "vim.smartcase": true, // Phân biệt chữ hoa khi tìm kiếm nếu nhập chữ hoa
   "vim.mouseSelectionGoesIntoVisualMode": true,
-  "vim.useCtrlKeys": true,
+  "vim.useCtrlKeys": true, // Bật phím Ctrl của Vim để ghi đè các thao tác VS Code phổ biến như sao chép, dán, tìm kiếm, v.v.
   //"vim.cursorStylePerMode.normal": "",
   "vim.statusBarColorControl": true,
   "vim.statusBarColors": {
@@ -354,8 +357,10 @@
     { "before": ["<C-z>"], "commands": ["undo"] }
   ],
   "vim.handleKeys": {
+    "<C-c>": false, // copy
+    "<C-v>": false, // past
     "<C-r>": true, // redu
-    "<C-n>": true, // new file - vscode default
+    "<C-n>": false, // new file - vscode default
     "<C-z>": true
   },
 
@@ -562,7 +567,6 @@
         }
       ]
     },
-
     {
       "key": "c",
       "name": "[c]odeSnap",
@@ -758,10 +762,9 @@
         }
       ]
     },
-
     {
       "key": "g",
-      "name": "[g]it [+]",
+      "name": "[g]it",
       "type": "bindings",
       "bindings": [
         {
@@ -772,157 +775,154 @@
           "when": "gitlens:enabled && config.gitlens.keymap == 'alternate'"
         },
         {
+          "key": ".",
+          "name": "View Changes (Review)",
+          "type": "command",
+          "command": "git.viewChanges"
+        },
+        {
           "key": "a",
-          "name": "Stage",
+          "name": "Stage All Change (git [a]dd .)",
           "type": "command",
-          "command": "git.stage"
-        },
-        {
-          "key": "b",
-          "name": "Checkout",
-          "type": "command",
-          "command": "git.checkout"
-        },
-        {
-          "key": "B",
-          "name": "Browse",
-          "type": "command",
-          "command": "gitlens.openFileInRemote"
+          "command": "git.stageAll"
         },
         {
           "key": "c",
-          "name": "Commit",
+          "name": "[c]ommit",
           "type": "command",
           "command": "git.commit"
         },
         {
-          "key": "C",
-          "name": "Cherry Pick",
+          "key": "p",
+          "name": "[p]ush to ...",
           "type": "command",
-          "command": "gitlens.views.cherryPick"
+          "command": "git.pushTo",
+          // "command": "multiCommand.pushTo"
         },
         {
-          "key": "d",
-          "name": "Delete Branch",
-          "type": "command",
-          "command": "git.deleteBranch"
-        },
-        {
-          "key": "f",
-          "name": "Fetch",
-          "type": "command",
-          "command": "git.fetch"
-        },
-        {
-          "key": "F",
-          "name": "Pull From",
+          "key": "P",
+          "name": "[p]ull from ...",
           "type": "command",
           "command": "git.pullFrom"
         },
         {
-          "key": "g",
-          "name": "Graph",
+          "key": "u",
+          "name": "Unstage (git reset <file>)",
           "type": "command",
-          "command": "git-graph.view"
-        },
-        {
-          "key": "h",
-          "name": "Heatmap",
-          "type": "command",
-          "command": "gitlens.toggleFileHeatmap"
-        },
-        {
-          "key": "H",
-          "name": "History",
-          "type": "command",
-          "command": "git.viewFileHistory"
-        },
-        {
-          "key": "i",
-          "name": "Init",
-          "type": "command",
-          "command": "git.init"
-        },
-        {
-          "key": "j",
-          "name": "Next Change",
-          "type": "command",
-          "command": "workbench.action.editor.nextChange"
+          "command": "git.unstage"
         },
         {
           "key": "k",
-          "name": "Previous Change",
+          "name": "Chec[k]out",
           "type": "command",
-          "command": "workbench.action.editor.previousChange"
+          "command": "git.checkout"
         },
         {
-          "key": "l",
-          "name": "Toggle Line Blame",
-          "type": "command",
-          "command": "gitlens.toggleLineBlame",
-          "when": "editorTextFocus && gitlens:canToggleCodeLens && gitlens:enabled && config.gitlens.keymap == 'alternate'"
+          "key": "C",
+          "name": "[C]herry [+]",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "p",
+              "name": "Cherry [p]ick...",
+              "type": "command",
+              "command": "git.cherryPick"
+            },
+            {
+              "key": "a",
+              "name": "[a]bort Cherry Pick",
+              "type": "command",
+              "command": "git.cherryPickAbort"
+            }
+          ]
         },
         {
-          "key": "L",
-          "name": "Toggle GitLens",
-          "type": "command",
-          "command": "gitlens.toggleCodeLens",
-          "when": "editorTextFocus && gitlens:canToggleCodeLens && gitlens:enabled && config.gitlens.keymap == 'alternate'"
+          "key": "d",
+          "name": "[d]elete [+]",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "b",
+              "name": "Delete [b]ranch",
+              "type": "command",
+              "command": "git.deleteBranch"
+            },
+            {
+              "key": "r",
+              "name": "Delete [R]emote Branch",
+              "type": "command",
+              "command": "git.deleteRemoteBranch"
+            }
+          ]
         },
         {
-          "key": "m",
-          "name": "Merge",
-          "type": "command",
-          "command": "git.merge"
+          "key": "D",
+          "name": "[d]iscard [+]",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "c",
+              "name": "Discard Changes (Current file)",
+              "type": "command",
+              "command": "git.clean"
+            },
+            {
+              "key": "a",
+              "name": "Discard Changes (All)",
+              "type": "command",
+              "command": "git.cleanAll"
+            }
+          ]
         },
         {
-          "key": "p",
-          "name": "Push",
-          "type": "command",
-          "command": "git.push"
-        },
-        {
-          "key": "P",
-          "name": "Pull",
-          "type": "command",
-          "command": "git.pull"
-        },
-        {
-          "key": "s",
-          "name": "Stash",
-          "type": "command",
-          "command": "workbench.view.scm"
-        },
-        {
-          "key": "S",
-          "name": "Status",
-          "type": "command",
-          "command": "gitlens.showQuickRepoStatus",
-          "when": "gitlens:enabled && config.gitlens.keymap == 'alternate'"
+          "key": "o",
+          "name": "[o]pen [+]",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "c",
+              "name": "Open Changes",
+              "type": "command",
+              "command": "git.viewChanges"
+            },
+            {
+              "key": "s",
+              "name": "Open Staged Changes",
+              "type": "command",
+              "command": "git.viewStagedChanges"
+            },
+            {
+              "key": "b",
+              "name": "Browse... (Open File In Remote)",
+              "type": "command",
+              "command": "gitlens.openFileInRemote"
+            }
+          ]
         },
         {
           "key": "t",
-          "name": "Create Tag",
-          "type": "command",
-          "command": "git.createTag"
-        },
-        {
-          "key": "T",
-          "name": "Delete Tag",
-          "type": "command",
-          "command": "git.deleteTag"
-        },
-        {
-          "key": "U",
-          "name": "Unstage",
-          "type": "command",
-          "command": "git.unstage"
+          "name": "[t]ag [+]",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "c",
+              "name": "[c]reate Tag",
+              "type": "command",
+              "command": "git.createTag"
+            },
+            {
+              "key": "d",
+              "name": "[d]elete Tag",
+              "type": "command",
+              "command": "git.deleteTag"
+            }
+          ]
         }
       ]
     },
     {
       "key": "l",
-      "name": "LSP (Language Server Protocol)",
+      "name": "LSP ([l]anguage Server Protocol)",
       "type": "bindings",
       "bindings": [
         {
@@ -945,13 +945,6 @@
           "type": "command",
           "command": "workbench.actions.view.problems"
         },
-        // {
-        //   "key": "i",
-        //   "name": "Implementation",
-        //   "type": "command",
-        //   "command": "editor.action.goToImplementation",
-        //   "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
-        // },
         {
           "key": "l",
           "name": "Code Lens",
@@ -977,33 +970,6 @@
           "type": "command",
           "command": "editor.action.quickFix",
           "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
-        },
-        // {
-        //   "key": "r",
-        //   "name": "References",
-        //   "type": "command",
-        //   "command": "editor.action.goToReferences",
-        //   "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
-        // },
-        // {
-        //   "key": "R",
-        //   "name": "Rename (Var, function, etc...)",
-        //   "type": "command",
-        //   "command": "editor.action.rename",
-        //   "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
-        // },
-
-        {
-          "key": "s",
-          "name": "Go To Symbol",
-          "type": "command",
-          "command": "workbench.action.gotoSymbol"
-        },
-        {
-          "key": "S",
-          "name": "Show All Symbols",
-          "type": "command",
-          "command": "workbench.action.showAllSymbols"
         }
       ]
     },
@@ -1061,24 +1027,24 @@
           "type": "command",
           "command": "workbench.action.selectIconTheme"
         },
+      ]
+    },
+    {
+      "key": "D",
+      "name": "[D]eveloper [+]",
+      "type": "bindings",
+      "bindings": [
         {
-          "key": "d",
-          "name": "[d]eveloper [+]",
-          "type": "bindings",
-          "bindings": [
-            {
-              "key": "r",
-              "name": "[r]eload Window",
-              "type": "command",
-              "command": "workbench.action.reloadWindow"
-            }
-          ]
+          "key": "r",
+          "name": "[r]eload Window",
+          "type": "command",
+          "command": "workbench.action.reloadWindow"
         }
       ]
     },
     {
       "key": "E",
-      "name": "[E]xtensions",
+      "name": "[E]xtensions [+]",
       "type": "bindings",
       "bindings": [
         {
@@ -1087,8 +1053,8 @@
           "type": "bindings",
           "bindings": [
             {
-              "key": "u",
-              "name": "Reload/[u]pdate",
+              "key": "r",
+              "name": "[r]eload/update",
               "type": "command",
               "command": "extension.updateCustomCSS"
             }
@@ -1149,8 +1115,28 @@
           "args": { "text": "git log --oneline\n" }
         }
       ]
-    }
+    },
+    // {
+    //   "command": "multiCommand.pushTo",
+    //   "sequence": [
+    //     "workbench.action.terminal.focus",
+    //     "workbench.action.terminal.new",
+    //     {
+    //       "command": "workbench.action.terminal.sendSequence",
+    //       "args": {
+    //         "text": "git push origin ${input:branch}\u000D"
+    //       }
+    //     }
+    //   ]
+    // }
   ],
+  // "multiCommand.inputs": {
+  //   "branch": {
+  //     "type": "promptString",
+  //     "description": "Nhập tên branch để push"
+  //   }
+  // },
+
 
   // To improve performance
   "extensions.experimental.affinity": {
@@ -1169,20 +1155,20 @@
     "statusBar.debuggingBackground": "#1F7D53",
     "statusBar.foreground": "#FFFFFF",
     "statusBar.debuggingForeground": "#FFFFFF",
-    "activityBar.activeBackground": "#af5afd",
-    "activityBar.background": "#af5afd",
-    "activityBar.foreground": "#15202b",
-    "activityBar.inactiveForeground": "#15202b99",
-    "activityBarBadge.background": "#fdb362",
-    "activityBarBadge.foreground": "#15202b",
+    "activityBar.activeBackground": "#2a73aa",
+    "activityBar.background": "#2a73aa",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#661945",
+    "activityBarBadge.foreground": "#e7e7e7",
     "commandCenter.border": "#e7e7e799",
-    "sash.hoverBorder": "#af5afd",
-    "titleBar.activeBackground": "#9728fc",
+    "sash.hoverBorder": "#2a73aa",
+    "titleBar.activeBackground": "#205781",
     "titleBar.activeForeground": "#e7e7e7",
-    "titleBar.inactiveBackground": "#9728fc99",
+    "titleBar.inactiveBackground": "#20578199",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "window.commandCenter": false,
-  "workbench.productIconTheme": "developer-icons",
-  "settingsSync.ignoredExtensions": []
+  "settingsSync.ignoredExtensions": [],
+  "caps-lock-state.choose_display_method": "method_gutter_icon",
+  "chat.editor.fontSize": 14,
 }
