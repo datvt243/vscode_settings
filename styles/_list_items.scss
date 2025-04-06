@@ -17,6 +17,7 @@
       }
     }
     &.focused {
+      background-color: var(--vscode-list-hoverBackground) !important;
       transform: none !important;
     }
   } 

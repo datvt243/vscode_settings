@@ -101,6 +101,7 @@
   opacity: 1 !important;
 }
 .monaco-list .monaco-list-row.focused {
+  background-color: var(--vscode-list-hoverBackground) !important;
   transform: none !important;
 }
 
