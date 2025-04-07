@@ -65,6 +65,14 @@ Mở `keybinding.json`: `Preferences: Open Keyboard Shortcuts`
 
 🔗 [Vim Cheatsheet](https://marketplace.visualstudio.com/items?itemName=AndenetAlexander.vim-cheatsheet): Hướng dẫn các motion cơ bản của VIM
 
+**Plugins có sẵn** [🔗](https://github.com/VSCodeVim/Vim?tab=readme-ov-file#-emulated-plugins)
+- vim-airline (Thay đổi màu statusBar theo mode)
+- vim-easymotion (Di chuyển nhanh)
+- vim-surround (Thêm xóa và thay đổi `'`, `"`, `(` ... )
+- vim-commentary (comment code)
+- vim-indent-object (thao tác với đối tượng object)
+- vim-sneak (di chuyển nhanh thông qua 2 kí tự)
+
 **Cài đặt (settings.json)**
 
 ```json
@@ -100,12 +108,24 @@ Nếu xài [Peacock](https://marketplace.visualstudio.com/items?itemName=johnpap
 
 **Motions**
 
+Di chuyển
+
 | Command  | Description |
 | -------- | ---------------------------------- |
-| `d` | Quay lại vị trí chỉnh sửa gần nhất |
+| `:ju[mps]` | The jump list |
+| `g;` | Quay lại vị trí chỉnh sửa gần nhất |
 | `g,` | Tiến đến vị trí chỉnh sửa sau đó |
 | `''` | Quay lại dòng trước đó |
 | ` `` ` | Quay lại vị trí con trỏ trước đó |
+
+Search
+
+| Command  | Description |
+| -------- | ---------------------------------- |
+| `*` | Search từ tại vị trí con trỏ (Tìm về trước) |
+| `#` | Search từ tại vị trí con trỏ (Tìm về sau) |
+| `g*` | Giống `*` (Tìm khớp 1 phần) |
+| `g#` | Giống `#` (Tìm khớp 1 phần) |
 
 ## 2. Bookmarks
 **Mô tả**: Giúp bạn dễ dàng đánh dấu các dòng hoặc đoạn mã quan trọng trong code, giúp quay lại nhanh chóng trong lần làm việc tiếp theo.
