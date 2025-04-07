@@ -21,6 +21,8 @@
   "editor.fontFamily": "FiraCode Nerd Font Mono, Menlo, Monaco, 'Courier New', monospac",
   "editor.suggestFontSize": 14, // font size ô gợi ý code
 
+  "settingsSync.ignoredExtensions": [],
+
   // --------------------------------------
   // BREADCRUMBS
   // --------------------------------------
@@ -66,8 +68,7 @@
   "workbench.productIconTheme": "developer-icons",
   "workbench.sideBar.location": "right",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.editor.showTabs": "single", // chỉ hiển thị 1 tab duy nhất
-  "workbench.statusBar.visible": true, // StatusBar -  thanh dưới cùng
+  "workbench.editor.showTabs": "single", // StatusBar -  thanh dưới cùng
   "workbench.startupEditor": "none", // Khi mở vscode, không hiển thị welcome or any file
   "workbench.tips.enabled": false, // Tắt gợi ý mẹo
   "workbench.tree.enableStickyScroll": false, // Chế độ Sticky Scroll trong cây thư mục (tính năng hiển thị dòng tiêu đề ở trên cùng khi cuộn).
@@ -99,6 +100,8 @@
   // --------------------------------------
   // GITLENS
   // --------------------------------------
+  "gitlens.launchpad.indicator.enabled": false,
+  "gitlens.graph.statusBar.enabled": false,
   "gitlens.advanced.messages": {
     "suppressGitMissingWarning": true
   },
@@ -115,6 +118,7 @@
   // --------------------------------------
   "peacock.affectStatusBar": false,
   "peacock.affectActivityBar": true, // Định nghĩa danh sách các màu yêu thích để dễ dàng chọn nhanh
+  "peacock.showColorInStatusBar": false,
   "peacock.favoriteColors": [
     { "name": "Jazzberry Jam", "value": "#AC1754" },
     { "name": "Dark Cerulean", "value": "#205781" },
@@ -129,53 +133,63 @@
   // --------------------------------------
   //  VIM
   // --------------------------------------
-  "vim.easymotion": true, // Bật chế độ di chuyển nhanh
-  "vim.surround": true,
-  "vim.commentary": true, // Comment code
-  "vim.indentObject": true, // Chọn theo khối indentation - vii - vai
-  "vim.sneak": true, // Cho phép nhảy nhanh bằng ký tự
+  "vim.leader": "<Space>",
   "vim.sneakUseIgnorecaseAndSmartcase": true, // Áp dụng ignorecase và smartcase vào sneak
-
   "vim.highlightedyank.enable": true, // Highlight Yanked Text
   "vim.highlightedyank.color": "#a9dc7660",
   "vim.highlightedyank.duration": 250,
-
-  "vim.leader": "<Space>",
   "vim.useSystemClipboard": true, // Sử dụng clipboard hệ thống
   "vim.overrideCopy": true, // Dùng `y` để copy vào clipboard hệ thống
   "vim.hlsearch": true, // Highlight kết quả tìm kiếm
   "vim.searchHighlightColor": "#FFBF00",
   "vim.searchHighlightTextColor": "#333333",
   "vim.searchMatchTextColor": "pink",
-
   "vim.incsearch": true, // Hiển thị kết quả tìm kiếm khi nhập
   "vim.ignorecase": true, // Không phân biệt chữ hoa/thường khi tìm kiếm
   "vim.smartcase": true, // Phân biệt chữ hoa khi tìm kiếm nếu nhập chữ hoa
   "vim.mouseSelectionGoesIntoVisualMode": true,
   "vim.useCtrlKeys": true, // Bật phím Ctrl của Vim để ghi đè các thao tác VS Code phổ biến như sao chép, dán, tìm kiếm, v.v.
-  //"vim.cursorStylePerMode.normal": "",
-  "vim.statusBarColorControl": true,
-  "vim.statusBarColors": {
-    "normal": ["#1F7D53", "#FFFFFF"], // Xanh lá đậm (Normal Mode)
-    "insert": ["#E52020", "#FFFFFF"], // Xanh dương (Insert Mode)
-    "visual": ["#9C27B0", "#FFFFFF"], // Tím (Visual Mode)
-    "visualline": ["#8E24AA", "#FFFFFF"], // Tím đậm (Visual Line Mode)
-    "visualblock": ["#6A1B9A", "#FFFFFF"], // Tím tối hơn (Visual Block Mode)
-    "replace": ["#D84315", "#FFFFFF"], // Cam đậm (Replace Mode)
-    "commandlineinprogress": ["#DC143C", "#FFFFFF"], // Cam sáng (Command Mode)
-    "searchinprogressmode": ["#FFBF00", "#333333"], // Vàng (Search Mode)
-    "easymotionmode": ["#0288D1", "#FFFFFF"], // Xanh biển (EasyMotion)
-    "easymotioninputmode": ["#03A9F4", "#FFFFFF"], // Xanh nước biển nhạt (EasyMotion Input)
-    "surroundinputmode": ["#009688", "#FFFFFF"] // Xanh lục bảo (Surround Mode)
-  },
-  "vim.undoHistory": 1000, // Lưu lịch sử undo lên đến 1000 bước
-  "vim.undoAfterCursorMove": false, // Không reset undo khi di chuyển con trỏ
   "vim.autoindent": true,
   "vim.showcmd": true,
+
+  // ReplaceWithRegister
+  "vim.replaceWithRegister": false,
+
+  // vim-sneak
+  "vim.sneak": true, // Cho phép nhảy nhanh bằng ký tự
+
+  // vim-easymotion
+  "vim.easymotion": true, // Bật chế độ di chuyển nhanh
+  "vim.easymotionMarkerBackgroundColor": "#FFBF00",
+  "vim.easymotionMarkerForegroundColorOneChar": "#DC143C",
+  "vim.easymotionMarkerForegroundColorTwoCharFirst": "#DC143C",
+  "vim.easymotionMarkerForegroundColorTwoCharSecond": "#D84315",
+  "vim.easymotionIncSearchForegroundColor": "#FFBF00",
+  "vim.easymotionDimColor": "#777777",
+
+  // vim-airline
+  "vim.statusBarColorControl": true,
+  "vim.statusBarColors.normal": ["#1F7D53", "#ffffff"],
+  "vim.statusBarColors.insert": ["#E52020", "#ffffff"],
+  "vim.statusBarColors.visual": ["#9C27B0", "#ffffff"],
+  "vim.statusBarColors.visualline": ["#8E24AA", "#ffffff"],
+  "vim.statusBarColors.visualblock": ["#6A1B9A", "#ffffff"],
+  "vim.statusBarColors.replace": ["#D84315", "#ffffff"],
+  "vim.statusBarColors.commandlineinprogress": ["#DC143C", "#ffffff"],
+  "vim.statusBarColors.searchinprogressmode": ["#FFBF00", "#ffffff"],
+  "vim.statusBarColors.easymotionmode": ["#0288D1", "#ffffff"],
+  "vim.statusBarColors.easymotioninputmode": ["#03A9F4", "#ffffff"],
+  "vim.statusBarColors.surroundinputmode": ["#009688", "#ffffff"],
+
+  // vim-surround
+  "vim.surround": true,
 
   "vim.normalModeKeyBindingsNonRecursive": [
     { "before": ["/"], "commands": ["fuzzySearch.activeTextEditor"] },
     { "before": ["\\"], "commands": ["whichkey.show"] },
+
+    // vim-easymotion
+    { "before": ["."], "after": ["<leader>", "<leader>", "/"] },
 
     { "before": ["<S-tab>"], "commands": ["editor.action.outdentLines"] },
     { "before": ["<tab>"], "commands": ["editor.action.indentLines"] },
@@ -197,27 +211,40 @@
       "before": ["<C-Down>"],
       "commands": ["editor.action.moveLinesDownAction"]
     },
-    {
-      "before": ["<C-k>"],
-      "commands": ["editor.action.moveLinesUpAction"]
-    },
-    {
-      "before": ["<C-Up>"],
-      "commands": ["editor.action.moveLinesUpAction"]
-    },
-    { "before": ["<C-c>"], "commands": ["editor.action.copyLinesDownAction"] },
-    // Editor
-    // { "before": ["<leader>", "e", "x"], "commands": ["workbench.action.closeActiveEditor"] },
+    { "before": ["<C-k>"], "commands": ["editor.action.moveLinesUpAction"] },
+    { "before": ["<C-Up>"], "commands": ["editor.action.moveLinesUpAction"] },
+    { "before": ["<C-d>"], "commands": ["editor.action.copyLinesDownAction"] },
 
-    /**
-      LEADER
-    **/
+    // Điều hướng giữa các lỗi (Diagnostics)
+    { "before": ["[", "d"], "commands": ["editor.action.marker.prev"] },
+    { "before": ["]", "d"], "commands": ["editor.action.marker.prev"] },
 
-    {
-      "before": ["<leader>", "e"],
-      "commands": ["workbench.action.toggleSidebarVisibility"]
-    },
+    // LSP
+    { "before": ["g", "d"], "commands": ["editor.action.revealDefinition"] },
+    { "before": ["g", "p"], "commands": ["editor.action.peekDefinition"] },
+    { "before": ["g", "D"], "commands": ["editor.action.revealDeclaration"] },
+    { "before": ["g", "r"], "commands": ["editor.action.goToReferences"] },
+    { "before": ["g", "R"], "commands": ["references-view.find"] },
+    { "before": ["g", "i"], "commands": ["editor.action.goToImplementation"] },
+    { "before": ["g", "t"], "commands": ["editor.action.peekTypeDefinition"] },
+    { "before": ["g", "s"], "commands": ["workbench.action.gotoSymbol"] },
+    { "before": ["g", "S"], "commands": ["workbench.action.showAllSymbols"] },
+    { "before": ["K"], "commands": ["editor.action.showHover"] },
+
+    // #Bookmarks - use extension Bookmarks
+    { "before": ["m", "t"], "commands": ["bookmarks.toggle"] },
+    { "before": ["m", "e"], "commands": ["bookmarks.toggleLabeled"] },
+    { "before": ["m", "n"], "commands": ["bookmarks.jumpToNext"] },
+    { "before": ["m", "p"], "commands": ["bookmarks.jumpToPrevious"] },
+    { "before": ["m", "l"], "commands": ["bookmarks.list"] },
+    { "before": ["m", "C"], "commands": ["bookmarks.clear"] },
+    { "before": ["m", "L"], "commands": ["bookmarks.listFromAllFiles"] },
+
     // Buffers
+    {
+      "before": ["Q", "Q"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    }, // Close buffer
     { "before": ["<S-h>"], "commands": [":bprevious"] },
     { "before": ["<S-l>"], "commands": [":bnext"] },
     {
@@ -226,10 +253,6 @@
     }, // New Buffer/UntitiledFile
     {
       "before": ["<leader>", "b", "q"],
-      "commands": ["workbench.action.closeActiveEditor"]
-    }, // Close buffer
-    {
-      "before": ["Q", "Q"],
       "commands": ["workbench.action.closeActiveEditor"]
     }, // Close buffer
     {
@@ -245,10 +268,17 @@
       ]
     }, // copy all file (Ctr+A - Ctrl C )
     {
+      "before": ["<leader>", "b", "p"],
+      "commands": ["editor.action.selectAll", "editor.action.past"]
+    }, // selected all file and past
+    {
       "before": ["<leader>", "b", "c"],
       "commands": ["workbench.action.closeOtherEditors"]
     }, // Close others buffer
-
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
     // splits - mở cửa sổ editer trái phải
     { "before": ["<leader>", "v"], "commands": [":vsplit"] },
     { "before": ["<leader>", "s"], "commands": [":split"] },
@@ -271,10 +301,6 @@
       "commands": ["workbench.action.focusRightGroup"]
     },
 
-    // Điều hướng giữa các lỗi (Diagnostics)
-    { "before": ["[", "d"], "commands": ["editor.action.marker.prev"] },
-    { "before": ["]", "d"], "commands": ["editor.action.marker.prev"] },
-
     // LEADER
     { "before": ["<leader>", "r"], "commands": ["editor.action.rename"] },
     { "before": ["<leader>", "p"], "commands": ["workbench.action.quickOpen"] },
@@ -287,27 +313,6 @@
       "before": ["<leader>", "f", "a"],
       "commands": ["workbench.action.findInFiles"]
     },
-
-    // LSP
-    { "before": ["g", "d"], "commands": ["editor.action.revealDefinition"] },
-    { "before": ["g", "p"], "commands": ["editor.action.peekDefinition"] },
-    { "before": ["g", "D"], "commands": ["editor.action.revealDeclaration"] },
-    { "before": ["g", "r"], "commands": ["editor.action.goToReferences"] },
-    { "before": ["g", "R"], "commands": ["references-view.find"] },
-    { "before": ["g", "i"], "commands": ["editor.action.goToImplementation"] },
-    { "before": ["g", "t"], "commands": ["editor.action.peekTypeDefinition"] },
-    { "before": ["g", "s"], "commands": ["workbench.action.gotoSymbol"] },
-    { "before": ["g", "S"], "commands": ["workbench.action.showAllSymbols"] },
-    { "before": ["K"], "commands": ["editor.action.showHover"] },
-
-    // #Bookmarks - use extension Bookmarks
-    { "before": ["m", "t"], "commands": ["bookmarks.toggle"] },
-    { "before": ["m", "e"], "commands": ["bookmarks.toggleLabeled"] },
-    { "before": ["m", "n"], "commands": ["bookmarks.jumpToNext"] },
-    { "before": ["m", "p"], "commands": ["bookmarks.jumpToPrevious"] },
-    { "before": ["m", "l"], "commands": ["bookmarks.list"] },
-    { "before": ["m", "C"], "commands": ["bookmarks.clear"] },
-    { "before": ["m", "L"], "commands": ["bookmarks.listFromAllFiles"] },
 
     // #harpoon
     {
@@ -343,8 +348,6 @@
     // Move selected lines while staying in visual mode
     { "before": ["<A-j>"], "commands": ["editor.action.moveLinesDownAction"] },
     { "before": ["<A-k>"], "commands": ["editor.action.moveLinesUpAction"] },
-    //{ "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
-    //{ "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] }
 
     {
       "before": ["<leader>", "f"],
@@ -361,7 +364,7 @@
     "<C-v>": false, // past
     "<C-r>": true, // redu
     "<C-n>": false, // new file - vscode default
-    "<C-z>": true
+    "<C-z>": false
   },
 
   // --------------------------------------
@@ -796,7 +799,7 @@
           "key": "p",
           "name": "[p]ush to ...",
           "type": "command",
-          "command": "git.pushTo",
+          "command": "git.pushTo"
           // "command": "multiCommand.pushTo"
         },
         {
@@ -1026,7 +1029,7 @@
           "name": "Toggle [i]con Theme",
           "type": "command",
           "command": "workbench.action.selectIconTheme"
-        },
+        }
       ]
     },
     {
@@ -1115,7 +1118,7 @@
           "args": { "text": "git log --oneline\n" }
         }
       ]
-    },
+    }
     // {
     //   "command": "multiCommand.pushTo",
     //   "sequence": [
@@ -1137,7 +1140,6 @@
   //   }
   // },
 
-
   // To improve performance
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1
@@ -1147,14 +1149,6 @@
   //  WORKBENCH COLOR CUSTOM
   // --------------------------------------
   "workbench.colorCustomizations": {
-    "editorGutter.modifiedBackground": "#FFA500",
-    "editorGutter.addedBackground": "#00FF00",
-    "editorGutter.deletedBackground": "#FF0000",
-    "statusBar.background": "#1F7D53",
-    "statusBar.noFolderBackground": "#1F7D53",
-    "statusBar.debuggingBackground": "#1F7D53",
-    "statusBar.foreground": "#FFFFFF",
-    "statusBar.debuggingForeground": "#FFFFFF",
     "activityBar.activeBackground": "#2a73aa",
     "activityBar.background": "#2a73aa",
     "activityBar.foreground": "#e7e7e7",
@@ -1166,9 +1160,11 @@
     "titleBar.activeBackground": "#205781",
     "titleBar.activeForeground": "#e7e7e7",
     "titleBar.inactiveBackground": "#20578199",
-    "titleBar.inactiveForeground": "#e7e7e799"
-  },
-  "settingsSync.ignoredExtensions": [],
-  "caps-lock-state.choose_display_method": "method_gutter_icon",
-  "chat.editor.fontSize": 14,
+    "titleBar.inactiveForeground": "#e7e7e799",
+    "statusBar.background": "#1F7D53",
+    "statusBar.noFolderBackground": "#1F7D53",
+    "statusBar.debuggingBackground": "#1F7D53",
+    "statusBar.foreground": "#ffffff",
+    "statusBar.debuggingForeground": "#ffffff"
+  }
 }
