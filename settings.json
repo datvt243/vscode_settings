@@ -184,6 +184,7 @@
   // vim-surround
   "vim.surround": true,
 
+  // vim settings binding key
   "vim.normalModeKeyBindingsNonRecursive": [
     { "before": ["/"], "commands": ["fuzzySearch.activeTextEditor"] },
     { "before": ["\\"], "commands": ["whichkey.show"] },
@@ -207,10 +208,7 @@
 
     // move lines
     { "before": ["<C-j>"], "commands": ["editor.action.moveLinesDownAction"] },
-    {
-      "before": ["<C-Down>"],
-      "commands": ["editor.action.moveLinesDownAction"]
-    },
+    { "before": ["<C-Down>"], "commands": ["editor.action.moveLinesDownAction"] },
     { "before": ["<C-k>"], "commands": ["editor.action.moveLinesUpAction"] },
     { "before": ["<C-Up>"], "commands": ["editor.action.moveLinesUpAction"] },
     { "before": ["<C-d>"], "commands": ["editor.action.copyLinesDownAction"] },
@@ -241,96 +239,37 @@
     { "before": ["m", "L"], "commands": ["bookmarks.listFromAllFiles"] },
 
     // Buffers
-    {
-      "before": ["Q", "Q"],
-      "commands": ["workbench.action.closeActiveEditor"]
-    }, // Close buffer
+    { "before": ["Q", "Q"], "commands": ["workbench.action.closeActiveEditor"] }, // Close buffer
     { "before": ["<S-h>"], "commands": [":bprevious"] },
     { "before": ["<S-l>"], "commands": [":bnext"] },
-    {
-      "before": ["<leader>", "b", "n"],
-      "commands": ["workbench.action.files.newUntitledFile"]
-    }, // New Buffer/UntitiledFile
-    {
-      "before": ["<leader>", "b", "q"],
-      "commands": ["workbench.action.closeActiveEditor"]
-    }, // Close buffer
-    {
-      "before": ["<leader>", "b", "u"],
-      "commands": ["workbench.action.reopenClosedEditor"]
-    }, // Re-open buffer
-    {
-      "before": ["<leader>", "b", "y"],
-      "commands": [
-        "editor.action.selectAll",
-        "editor.action.clipboardCopyAction",
-        "cancelSelection"
-      ]
-    }, // copy all file (Ctr+A - Ctrl C )
-    {
-      "before": ["<leader>", "b", "p"],
-      "commands": ["editor.action.selectAll", "editor.action.past"]
-    }, // selected all file and past
-    {
-      "before": ["<leader>", "b", "c"],
-      "commands": ["workbench.action.closeOtherEditors"]
-    }, // Close others buffer
-    {
-      "before": ["<leader>", "e"],
-      "commands": ["workbench.action.toggleSidebarVisibility"]
-    },
-    // splits - mở cửa sổ editer trái phải
+    { "before": ["<leader>", "b", "n"], "commands": ["workbench.action.files.newUntitledFile"] }, // New Buffer/UntitiledFile
+    { "before": ["<leader>", "b", "q"], "commands": ["workbench.action.closeActiveEditor"] }, // Close buffer
+    { "before": ["<leader>", "b", "u"], "commands": ["workbench.action.reopenClosedEditor"] }, // Re-open buffer
+    { "before": ["<leader>", "b", "y"], "commands": [ "editor.action.selectAll", "editor.action.clipboardCopyAction", "cancelSelection" ] }, // copy all file (Ctr+A - Ctrl C )
+    { "before": ["<leader>", "b", "p"], "commands": ["editor.action.selectAll", "editor.action.past"] }, // selected all file and past
+    { "before": ["<leader>", "b", "c"], "commands": ["workbench.action.closeOtherEditors"] }, // Close others buffer
+    { "before": ["<leader>", "e"], "commands": ["workbench.action.toggleSidebarVisibility"] }, // splits - mở cửa sổ editer trái phải
     { "before": ["<leader>", "v"], "commands": [":vsplit"] },
     { "before": ["<leader>", "s"], "commands": [":split"] },
 
     // Chuyển sang cửa sổ (editor) bên
-    {
-      "before": ["<leader>", "h"],
-      "commands": ["workbench.action.focusLeftGroup"]
-    },
-    {
-      "before": ["<leader>", "j"],
-      "commands": ["workbench.action.focusBelowGroup"]
-    },
-    {
-      "before": ["<leader>", "k"],
-      "commands": ["workbench.action.focusAboveGroup"]
-    },
-    {
-      "before": ["<leader>", "l"],
-      "commands": ["workbench.action.focusRightGroup"]
-    },
+    { "before": ["<leader>", "h"], "commands": ["workbench.action.focusLeftGroup"] },
+    { "before": ["<leader>", "j"], "commands": ["workbench.action.focusBelowGroup"] },
+    { "before": ["<leader>", "k"], "commands": ["workbench.action.focusAboveGroup"] },
+    { "before": ["<leader>", "l"], "commands": ["workbench.action.focusRightGroup"] },
 
     // LEADER
     { "before": ["<leader>", "r"], "commands": ["editor.action.rename"] },
     { "before": ["<leader>", "p"], "commands": ["workbench.action.quickOpen"] },
-    {
-      "before": ["<leader>", "P"],
-      "commands": ["workbench.action.showCommands"]
-    },
+    { "before": ["<leader>", "P"], "commands": ["workbench.action.showCommands"] },
     { "before": ["<leader>", "f"], "commands": ["actions.find"] },
-    {
-      "before": ["<leader>", "f", "a"],
-      "commands": ["workbench.action.findInFiles"]
-    },
+    { "before": ["<leader>", "f", "a"], "commands": ["workbench.action.findInFiles"] },
 
     // #harpoon
-    {
-      "before": ["<leader>", "h", "p"],
-      "commands": ["vscode-harpoon.editorQuickPick"]
-    },
-    {
-      "before": ["<leader>", "h", "a"],
-      "commands": ["vscode-harpoon.addEditor"]
-    },
-    {
-      "before": ["<leader>", "h", "e"],
-      "commands": ["vscode-harpoon.editEditors"]
-    },
-    {
-      "before": ["<leader>", "h", "e"],
-      "commands": ["vscode-harpoon.editEditors"]
-    },
+    { "before": ["<leader>", "h", "p"], "commands": ["vscode-harpoon.editorQuickPick"] },
+    { "before": ["<leader>", "h", "a"], "commands": ["vscode-harpoon.addEditor"] },
+    { "before": ["<leader>", "h", "e"], "commands": ["vscode-harpoon.editEditors"] },
+    { "before": ["<leader>", "h", "e"], "commands": ["vscode-harpoon.editEditors"] },
 
     //
     { "before": ["<leader>", "y"], "commands": ["vim.showRegisters"] },
@@ -370,11 +309,11 @@
   // --------------------------------------
   // VSCode Animations:
   // --------------------------------------
-  "animations.Command-Palette": "Slide", // Hiệu ứng animation cho Command Palette - "None", "Scale", "Slide", "Fade"
-  "animations.Tabs": "Scale", // Hiệu ứng animation cho tab - "None", "Scale", "Slide", "Flip"
-  "animations.Scrolling": "None", // Hiệu ứng animation khi cuộn - "None", "Scale", "Slide", "Fade"
-  "animations.Active": "Indent", // Hiệu ứng animation cho item đang hoạt động - "None", "Scale", "Indent"
-  "animations.CursorAnimation": true, // Hiệu ứng làm mờ khi mất focus
+  "animations.Command-Palette": "Slide",    // Hiệu ứng animation cho Command Palette - "None", "Scale", "Slide", "Fade"
+  "animations.Tabs": "Scale",               // Hiệu ứng animation cho tab - "None", "Scale", "Slide", "Flip"
+  "animations.Scrolling": "None",           // Hiệu ứng animation khi cuộn - "None", "Scale", "Slide", "Fade"
+  "animations.Active": "Indent",            // Hiệu ứng animation cho item đang hoạt động - "None", "Scale", "Indent"
+  "animations.CursorAnimation": true,       // Hiệu ứng làm mờ khi mất focus
   "animations.CursorAnimationOptions": {
     "Color": "#333",
     "CursorStyle": "line",
@@ -393,6 +332,11 @@
     "file:///Users/_david/vscode-custom/vscode-styles.css",
     "file:///Users/_david/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
   ],
+  // "vscode_custom_css.imports": [
+  //    "file:///C:/Users/DanielVo/Documents/vscode-settings/vscode-script.js",
+  //    "file:///C:/Users/DanielVo/Documents/vscode-settings/vscode-styles.css",
+  //    "file:///C:/Users/DanielVo/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
+  // ],
 
   // --------------------------------------
   //  WHICH KEY
@@ -1037,12 +981,7 @@
       "name": "[D]eveloper [+]",
       "type": "bindings",
       "bindings": [
-        {
-          "key": "r",
-          "name": "[r]eload Window",
-          "type": "command",
-          "command": "workbench.action.reloadWindow"
-        }
+        { "key": "r", "name": "[r]eload Window", "type": "command", "command": "workbench.action.reloadWindow" }
       ]
     },
     {
@@ -1055,12 +994,7 @@
           "name": "Extension [c]ustom CSS and JS Loaded [+]",
           "type": "bindings",
           "bindings": [
-            {
-              "key": "r",
-              "name": "[r]eload/update",
-              "type": "command",
-              "command": "extension.updateCustomCSS"
-            }
+            { "key": "r", "name": "[r]eload/update", "type": "command", "command": "extension.updateCustomCSS" }
           ]
         },
         {
@@ -1119,27 +1053,8 @@
         }
       ]
     }
-    // {
-    //   "command": "multiCommand.pushTo",
-    //   "sequence": [
-    //     "workbench.action.terminal.focus",
-    //     "workbench.action.terminal.new",
-    //     {
-    //       "command": "workbench.action.terminal.sendSequence",
-    //       "args": {
-    //         "text": "git push origin ${input:branch}\u000D"
-    //       }
-    //     }
-    //   ]
-    // }
   ],
-  // "multiCommand.inputs": {
-  //   "branch": {
-  //     "type": "promptString",
-  //     "description": "Nhập tên branch để push"
-  //   }
-  // },
-
+  
   // To improve performance
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1
