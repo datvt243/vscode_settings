@@ -1,0 +1,50 @@
+Màu nền và chữ
+--vscode-editor-background                      /* Màu nền của editor */
+--vscode-editor-foreground                      /* Màu chữ của editor */
+--vscode-editorCursor-foreground                /* Màu con trỏ */
+--vscode-editor-selectionBackground             /* Màu nền khi bôi đen */
+--vscode-editor-inactiveSelectionBackground     /* Màu nền khi mất focus */
+--vscode-editorLineNumber-foreground            /* Màu số dòng */
+--vscode-editorLineNumber-activeForeground      /* Màu số dòng hiện tại */
+
+Tab & Sidebar
+--vscode-tab-activeBackground                   /* Màu tab đang mở */
+--vscode-tab-inactiveBackground                 /* Màu tab không hoạt động */
+--vscode-tab-hoverBackground                    /* Màu tab khi hover */
+--vscode-editorGroupHeader-tabsBackground       /* Màu nền header tabs */
+--vscode-sidebar-background                     /* Màu nền sidebar */
+--vscode-sidebar-foreground                     /* Màu chữ trong sidebar */
+
+Scrollbar & Minimap
+--vscode-scrollbarSlider-background             /* Màu thanh cuộn */
+--vscode-scrollbarSlider-hoverBackground        /* Màu thanh cuộn khi hover */
+--vscode-minimap-background                     /* Màu nền minimap */
+
+Syntax Highlighting (Màu code)
+--vscode-editorIndentGuide-background           /* Màu guide line (gạch thụt lề) */
+--vscode-editorError-foreground                 /* Màu lỗi */
+--vscode-editorWarning-foreground               /* Màu cảnh báo */
+--vscode-editorInfo-foreground                  /* Màu thông tin */
+
+Tùy chỉnh Terminal
+--vscode-terminal-background                    /* Màu nền terminal */
+--vscode-terminal-foreground                    /* Màu chữ terminal */
+--vscode-terminalCursor-foreground              /* Màu con trỏ terminal */
+--vscode-terminal-selectionBackground           /* Màu nền khi chọn trong terminal */
+
+Các biến màu liên quan đến List
+--vscode-list-background                        /* Màu nền danh sách */
+--vscode-list-foreground                        /* Màu chữ danh sách */
+--vscode-list-hoverBackground                   /* Màu nền khi hover */
+--vscode-list-hoverForeground                   /* Màu chữ khi hover */
+--vscode-list-activeSelectionBackground         /* Màu nền item đang chọn (có focus) */
+--vscode-list-activeSelectionForeground         /* Màu chữ item đang chọn (có focus) */
+--vscode-list-inactiveSelectionBackground       /* Màu nền item được chọn nhưng không focus */
+--vscode-list-inactiveSelectionForeground       /* Màu chữ item được chọn nhưng không focus */
+--vscode-list-dropBackground                    /* Màu nền khi kéo thả */
+--vscode-list-highlightForeground               /* Màu chữ được highlight (ví dụ khi tìm kiếm) */
+
+Các biến liên quan đến Tree (Cây thư mục)
+--vscode-tree-indentGuidesStroke      /* Màu của các đường thụt lề trong cây thư mục */
+--vscode-tree-tableColumnsBorder      /* Màu viền giữa các cột trong danh sách dạng bảng */
+--vscode-tree-tableOddRowsBackground  /* Màu nền của các dòng lẻ trong danh sách bảng */

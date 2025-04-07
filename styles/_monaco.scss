@@ -26,8 +26,15 @@
 
   &-workbench {
     .notifications-list-container {
-        border: 2px solid var(--vscode-quickInputList-focusForeground) !important;
-        border-radius: 0 !important;
+      border: 2px solid var(--vscode-quickInputList-focusForeground) !important;
+      border-radius: 0 !important;
+      box-shadow: -2px 2px 0px 0px #fff !important;
+      &:hover {
+        transition: all .3s ease-out;
+      }
+    }
+    .title .tabs-container>.tab .tab-label .label-name {
+      color: yellow !important
     }
   }
 
@@ -56,9 +63,5 @@
     } 
   }
  
-}
-
-.monaco-icon-label > .monaco-icon-label-container > .monaco-icon-description-container > .label-description {
-  opacity: .45 !important;
 }
 

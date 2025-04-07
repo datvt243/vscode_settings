@@ -18,6 +18,13 @@
 .monaco-workbench .notifications-list-container {
   border: 2px solid var(--vscode-quickInputList-focusForeground) !important;
   border-radius: 0 !important;
+  box-shadow: -2px 2px 0px 0px #fff !important;
+}
+.monaco-workbench .notifications-list-container:hover {
+  transition: all 0.3s ease-out;
+}
+.monaco-workbench .title .tabs-container > .tab .tab-label .label-name {
+  color: yellow !important;
 }
 .monaco-list .monaco-list-rows {
   background: transparent !important;
@@ -35,10 +42,6 @@
 .monaco-list .monaco-list-row.focused {
   background-color: var(--vscode-list-hoverBackground) !important;
   transform: none !important;
-}
-
-.monaco-icon-label > .monaco-icon-label-container > .monaco-icon-description-container > .label-description {
-  opacity: 0.45 !important;
 }
 
 /* Sidebar title */
@@ -66,12 +69,15 @@
 .quick-input-widget {
   transform: translateY(-50%) !important;
   top: 50% !important;
-  border: 2px solid #E50046 !important;
   padding: 10px !important;
   backdrop-filter: blur(0) !important;
   border: 4px solid var(--vscode-quickInputList-focusForeground) !important;
   border-radius: 0 !important;
   min-height: 400px;
+  box-shadow: -4px 4px 0px 0px #fff !important;
+}
+.quick-input-widget .monaco-list-row:hover .label-name {
+  color: yellow;
 }
 .quick-input-filter .monaco-inputbox {
   border-radius: 5px !important;
