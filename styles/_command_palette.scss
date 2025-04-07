@@ -1,4 +1,5 @@
 @use "variables";
+
 /* Command Palette */
 .quick-input {
 
@@ -28,25 +29,6 @@
   }
 }
 
-// .monaco {
-
-//   &-icon-label {
-//     > .monaco-icon-label-container > .monaco-icon-description-container > .label-description {
-//       opacity: .45 !important;
-//     }
-//   }
-
-// }
-
-.monaco-icon-label>.monaco-icon-label-container>.monaco-icon-description-container>.label-description {
-  opacity: .45 !important;
-}
-
-
-/* Command palette's input box placeholder. */
-.monaco-inputbox input::placeholder {
-  color: rgba(255, 255, 255, .3) !important;
-}
 
 /* Container that holds the VS Code home icon. */
 .editor-group-watermark {

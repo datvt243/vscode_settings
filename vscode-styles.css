@@ -1,6 +1,44 @@
-.mtk3 {
-  font-style: italic !important;
-  color: #008c7d !important;
+.monaco {
+  /* Command palette's input box placeholder. */
+}
+.monaco-editor-hover, .monaco-hover {
+  background-color: var(--vscode-list-hoverBackground) !important;
+  border-radius: 5px !important;
+  border: 1px solid var(--vscode-quickInputList-focusForeground) !important;
+}
+.monaco-resizable-hover {
+  border: none !important;
+}
+.monaco-editor .zone-widget {
+  border: 2px solid var(--vscode-quickInputList-focusForeground) !important;
+}
+.monaco .monaco-inputbox input::placeholder {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+.monaco-workbench .notifications-list-container {
+  border: 2px solid var(--vscode-quickInputList-focusForeground) !important;
+  border-radius: 0 !important;
+}
+.monaco-list .monaco-list-rows {
+  background: transparent !important;
+}
+.monaco-list .monaco-list-row.selected {
+  background-color: var(--vscode-list-hoverBackground) !important;
+  opacity: 1 !important;
+  border-top: 1px var(--vscode-quickInputList-focusForeground) solid;
+  border-bottom: 1px var(--vscode-quickInputList-focusForeground) solid;
+}
+.monaco-list .monaco-list-row.selected .label-name {
+  color: #fff !important;
+  opacity: 1 !important;
+}
+.monaco-list .monaco-list-row.focused {
+  background-color: var(--vscode-list-hoverBackground) !important;
+  transform: none !important;
+}
+
+.monaco-icon-label > .monaco-icon-label-container > .monaco-icon-description-container > .label-description {
+  opacity: 0.45 !important;
 }
 
 /* Sidebar title */
@@ -19,20 +57,11 @@
 
 /* Scroll Bar */
 .slider {
-  border-radius: 5px;
+  border-radius: 0;
   width: 999px;
 }
 
 /* Tooltip box style */
-.monaco-editor-hover, .monaco-hover {
-  background-color: #333 !important;
-  border-radius: 5px !important;
-  border: 1px solid #E50046 !important;
-}
-.monaco-resizable-hover {
-  border: none !important;
-}
-
 /* Command Palette */
 .quick-input-widget {
   transform: translateY(-50%) !important;
@@ -51,15 +80,6 @@
   font-size: 14px !important;
   margin-bottom: 10px !important;
   border: 1px solid var(--vscode-quickInputList-focusForeground) !important;
-}
-
-.monaco-icon-label > .monaco-icon-label-container > .monaco-icon-description-container > .label-description {
-  opacity: 0.45 !important;
-}
-
-/* Command palette's input box placeholder. */
-.monaco-inputbox input::placeholder {
-  color: rgba(255, 255, 255, 0.3) !important;
 }
 
 /* Container that holds the VS Code home icon. */
@@ -87,30 +107,8 @@
 }
 
 /* List item label name */
-.monaco-list .monaco-list-rows {
-  background: transparent !important;
-}
-.monaco-list .monaco-list-row.selected {
-  background-color: #4f5971 !important;
-  opacity: 1 !important;
-  border-top: 1px #727b90 solid;
-  border-bottom: 1px #727b90 solid;
-}
-.monaco-list .monaco-list-row.selected .label-name {
-  color: #fff !important;
-  opacity: 1 !important;
-}
-.monaco-list .monaco-list-row.focused {
-  background-color: var(--vscode-list-hoverBackground) !important;
-  transform: none !important;
-}
-
 .quick-input-list .monaco-list .monaco-list-rows .monaco-list-row {
   height: auto !important;
-}
-
-.monaco-editor .zone-widget {
-  border: 2px solid #E50046;
 }
 
 /* Match Text */
