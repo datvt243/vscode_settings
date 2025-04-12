@@ -57,7 +57,7 @@ Mở `keybinding.json`: `Preferences: Open Keyboard Shortcuts`
 
 [13. Project Manager](#13-project-manager)
 
-[14. Find It Faster](#13-find-it-faster)
+[14. Find It Faster](#14-find-it-faster)
 
 ## 1. Vim Extension
 
@@ -158,6 +158,10 @@ Search
 🔗 [Custom CSS & JS Loader](https://marketplace.visualstudio.com/items?itemName=be5invis.vscode-custom-css)
 
 **Cài đặt (settings.json)**
+
+Dùng 2 file `js` và `css`
+ - `vscode-script.js`
+ - `vscode-styles.css`
 
 --- Mac
 
