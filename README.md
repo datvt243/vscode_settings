@@ -3,7 +3,7 @@
 💡 **Tip**: Kết hợp các Extensions giúp tối ưu trải nghiệm làm việc trong VSCode! 🚀
 
 <p align="center">
-  <img src="/images/01.png" alt="Which Key" width="100%">
+  <img src="/src/images/01.png" alt="Which Key" width="100%">
 </p>
 
 ---
@@ -56,6 +56,8 @@ Mở `keybinding.json`: `Preferences: Open Keyboard Shortcuts`
 [12. Peacock](#12-peacock)
 
 [13. Project Manager](#13-project-manager)
+
+[14. Find It Faster](#13-find-it-faster)
 
 ## 1. Vim Extension
 
@@ -150,7 +152,7 @@ Search
 
 **Mô tả**: Cho phép tùy chỉnh giao diện VSCode bằng cách nạp các file CSS và JavaScript bên ngoài.
 <p align="center">
-  <img src="/images/02.png" alt="Which Key" width="100%">
+  <img src="/src/images/02.png" alt="Which Key" width="100%">
 </p>
 
 🔗 [Custom CSS & JS Loader](https://marketplace.visualstudio.com/items?itemName=be5invis.vscode-custom-css)
@@ -192,7 +194,7 @@ Search
 **Mô tả**: Hiển thị các tổ hợp phím có sẵn khi nhấn `\`.
 
 <p align="center">
-  <img src="/images/which_key.png" alt="Which Key" width="100%">
+  <img src="/src/images/whichkey.png" alt="Which Key" width="100%">
 </p>
 
 🔗 [Which Key](https://marketplace.visualstudio.com/items?itemName=VSpaceCode.whichkey)
@@ -223,7 +225,7 @@ Search
 
 **Mô tả**: Hỗ trợ tìm kiếm nhanh trong VSCode mà không cần khớp chính xác từ khóa.
 <p align="center">
-  <img src="/images/fuzzysearch.png" alt="Which Key" width="100%">
+  <img src="/src/images/fuzzysearch.png" alt="Which Key" width="100%">
 </p>
 
 
@@ -309,6 +311,7 @@ Forcus Ter -> New Ter -> nhập lệnh `git log --online`
 
 **Mô tả**: Xài keyboard rời và không biết caps đang on/off, ảnh hưởng đến motion của VIM -> Hỗ trợ hiển thị trạng thái của capslock
 Hỗ trợ hiển thị trạng thái của capslock (on/off)
+
 <p align="center"><img src="https://github.com/elling19/vscode-extension-caps-lock-state/blob/master/assets/md_1.gif?raw=true" alt="Switch different display methods"></p>
 
 🔗 [Caps Lock State](https://marketplace.visualstudio.com/items?itemName=Elling.caps-lock-state)
@@ -339,3 +342,19 @@ Hỗ trợ hiển thị trạng thái của capslock (on/off)
 **Mô tả**: Giúp quản lý các project, mở và di chuyển qua lại các project dễ dàng
 
 🔗 [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager)
+
+## 14. Find It Faster
+
+**Mô tả**: Tìm tệp và văn bản trong tệp, nhưng nhanh hơn VS Code thông thường.
+
+Đảm bảo kiểm tra các Yêu cầu bên dưới (TL; DR: có fzf, rg, bat trên PATH của bạn).
+  - [`fzf ("command-line fuzzy finder")`](https://github.com/junegunn/fzf)
+  - [`rg ("ripgrep")`](https://github.com/BurntSushi/ripgrep)
+  - [`bat ("a cat clone with wings")`](https://github.com/sharkdp/bat)
+
+<p align="center">
+  <img src="https://github.com/tomrijndorp/vscode-finditfaster/raw/main/media/find_files.gif" alt="Find Files">
+</p>
+
+
+🔗 [Find it faster](https://marketplace.visualstudio.com/items?itemName=TomRijndorp.find-it-faster#requirements)
