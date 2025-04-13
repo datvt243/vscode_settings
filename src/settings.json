@@ -1,3 +1,4 @@
+
 {
   // --------------------------------------
   //
@@ -17,7 +18,7 @@
   "editor.cursorStyle": "line", // Đổi con trỏ sang dạng khối (block) thay vì kiểu gạch đứng (line) mặc định.
   "editor.stickyScroll.enabled": false, // Tắt Sticky Scroll, không hiển thị tiêu đề function/class khi cuộn code.
   "editor.guides.indentation": true,
-  "editor.wordWrapColumn": 140,
+  "editor.wordWrapColumn": 160,
   "editor.fontFamily": "FiraCode Nerd Font Mono, Menlo, Monaco, 'Courier New', monospac",
   "editor.suggestFontSize": 14, // font size ô gợi ý code
 
@@ -64,7 +65,7 @@
   // --------------------------------------
   // WORKBENCH
   // --------------------------------------
-  "workbench.colorTheme": "lazyvim theme", // Theme
+  "workbench.colorTheme": "React Theme", // Theme
   "workbench.productIconTheme": "developer-icons",
   "workbench.sideBar.location": "right",
   "workbench.iconTheme": "material-icon-theme",
@@ -112,6 +113,12 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 
   // --------------------------------------
   // PEACOCK
@@ -131,6 +138,14 @@
   ],
 
   // --------------------------------------
+  // FIND IT FASTER
+  // --------------------------------------
+  "find-it-faster.general.useTerminalInEditor": true,
+  "find-it-faster.general.killTerminalAfterUse": true,
+  "find-it-faster.general.shellPathForTerminal": "",
+  "find-it-faster.general.batTheme": "Dracula",
+
+  // --------------------------------------
   //  VIM
   // --------------------------------------
   "vim.leader": "<Space>",
@@ -141,8 +156,8 @@
   "vim.useSystemClipboard": true, // Sử dụng clipboard hệ thống
   "vim.overrideCopy": true, // Dùng `y` để copy vào clipboard hệ thống
   "vim.hlsearch": true, // Highlight kết quả tìm kiếm
-  "vim.searchHighlightColor": "#FFBF00",
-  "vim.searchHighlightTextColor": "#333333",
+  "vim.searchHighlightColor": "#FFBF00", // "#FFBF00",
+  "vim.searchHighlightTextColor": "#FFFFFF",
   "vim.searchMatchTextColor": "pink",
   "vim.incsearch": true, // Hiển thị kết quả tìm kiếm khi nhập
   "vim.ignorecase": true, // Không phân biệt chữ hoa/thường khi tìm kiếm
@@ -155,8 +170,9 @@
   // ReplaceWithRegister
   "vim.replaceWithRegister": false,
 
-  // vim-sneak
-  "vim.sneak": true, // Cho phép nhảy nhanh bằng ký tự
+  // vim-sneak - used key `s <char> <char>`
+  // Cho phép nhảy nhanh bằng ký tự
+  "vim.sneak": true,
 
   // vim-easymotion
   "vim.easymotion": true, // Bật chế độ di chuyển nhanh
@@ -176,16 +192,16 @@
   "vim.statusBarColors.visualblock": ["#6A1B9A", "#ffffff"],
   "vim.statusBarColors.replace": ["#D84315", "#ffffff"],
   "vim.statusBarColors.commandlineinprogress": ["#DC143C", "#ffffff"],
-  "vim.statusBarColors.searchinprogressmode": ["#FFBF00", "#ffffff"],
-  "vim.statusBarColors.easymotionmode": ["#0288D1", "#ffffff"],
+  "vim.statusBarColors.searchinprogressmode": ["#FF0B55", "#ffffff"],
+  "vim.statusBarColors.easymotionmode": ["#3A59D1", "#ffffff"],
   "vim.statusBarColors.easymotioninputmode": ["#03A9F4", "#ffffff"],
-  "vim.statusBarColors.surroundinputmode": ["#009688", "#ffffff"],
+  "vim.statusBarColors.surroundinputmode": ["#222222", "#ffffff"],
 
   // vim-surround
   "vim.surround": true,
 
   "vim.normalModeKeyBindingsNonRecursive": [
-    { "before": ["/"], "commands": ["fuzzySearch.activeTextEditor"] },
+    // Quick-key
     { "before": ["\\"], "commands": ["whichkey.show"] },
 
     // vim-easymotion
@@ -194,10 +210,9 @@
     { "before": ["<S-tab>"], "commands": ["editor.action.outdentLines"] },
     { "before": ["<tab>"], "commands": ["editor.action.indentLines"] },
 
-    // Undo
-    { "before": ["<C-z>"], "commands": ["undo"] },
-    
-    // move
+    { "before": ["<PgUp>"], "commands": ["whichkey.show"] },
+
+    // Move
     { "before": ["j"], "after": ["g", "j", "z", "z"] },
     { "before": ["k"], "after": ["g", "k", "z", "z"] },
     { "before": ["<Down>"], "after": ["g", "j", "z", "z"] },
@@ -205,7 +220,17 @@
     { "before": ["}"], "after": ["}", "z", "z"] },
     { "before": ["{"], "after": ["{", "z", "z"] },
 
-    // move lines
+    // used key `[`, `]`
+    { "before": ["]", "m"], "commands": ["bookmarks.jumpToNext"] },
+    { "before": ["[", "m"], "commands": ["bookmarks.jumpToPrevious"] },
+    // Điều hướng giữa các lỗi (Diagnostics)
+    // { "before": ["[", "d"], "commands": ["editor.action.marker.prev"] },
+    // { "before": ["]", "d"], "commands": ["editor.action.marker.prev"] },
+
+    // used Ctrl `C`
+    // Undo
+    { "before": ["<C-z>"], "commands": ["undo"] },
+    // Move lines
     { "before": ["<C-j>"], "commands": ["editor.action.moveLinesDownAction"] },
     {
       "before": ["<C-Down>"],
@@ -214,12 +239,21 @@
     { "before": ["<C-k>"], "commands": ["editor.action.moveLinesUpAction"] },
     { "before": ["<C-Up>"], "commands": ["editor.action.moveLinesUpAction"] },
     { "before": ["<C-d>"], "commands": ["editor.action.copyLinesDownAction"] },
+    { "before": ["<C-f>"], "commands": ["actions.find"] },
+    { "before": ["<C-p>"], "commands": ["workbench.action.quickOpen"] },
+    // { "before": ["<C-[>"], "after": ["<C>", "d"] },
+    // { "before": ["<C-]>"], "after": ["<C>", "u"] },
 
-    // Điều hướng giữa các lỗi (Diagnostics)
-    { "before": ["[", "d"], "commands": ["editor.action.marker.prev"] },
-    { "before": ["]", "d"], "commands": ["editor.action.marker.prev"] },
+    // Control Window
+    // <C-q>: quit buffer
+    // <C-h/j/k/l>: goto left/down/up/right buffer
+    // <C-s/v>: split/split_vertically window
+
+    // vim-sneak
+    // used key `s`
 
     // LSP
+    // used key `g`
     { "before": ["g", "d"], "commands": ["editor.action.revealDefinition"] },
     { "before": ["g", "p"], "commands": ["editor.action.peekDefinition"] },
     { "before": ["g", "D"], "commands": ["editor.action.revealDeclaration"] },
@@ -229,64 +263,97 @@
     { "before": ["g", "t"], "commands": ["editor.action.peekTypeDefinition"] },
     { "before": ["g", "s"], "commands": ["workbench.action.gotoSymbol"] },
     { "before": ["g", "S"], "commands": ["workbench.action.showAllSymbols"] },
-    { "before": ["K"], "commands": ["editor.action.showHover"] },
+    { "before": ["g", "f"], "commands": ["fuzzySearch.activeTextEditor"] },
+    { "before": ["g", "k"], "commands": ["editor.action.showHover"] },
 
     // #Bookmarks - use extension Bookmarks
+    // used key `m`
     { "before": ["m", "t"], "commands": ["bookmarks.toggle"] },
     { "before": ["m", "e"], "commands": ["bookmarks.toggleLabeled"] },
     { "before": ["m", "n"], "commands": ["bookmarks.jumpToNext"] },
     { "before": ["m", "p"], "commands": ["bookmarks.jumpToPrevious"] },
     { "before": ["m", "l"], "commands": ["bookmarks.list"] },
-    { "before": ["m", "C"], "commands": ["bookmarks.clear"] },
     { "before": ["m", "L"], "commands": ["bookmarks.listFromAllFiles"] },
+    { "before": ["m", "C"], "commands": ["bookmarks.clear"] },
 
     // Buffers
-    { "before": ["Q", "Q"], "commands": ["workbench.action.closeActiveEditor"] }, // Close buffer
+    {
+      "before": ["Q", "Q"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    }, // Close buffer
     { "before": ["<S-h>"], "commands": [":bprevious"] },
     { "before": ["<S-l>"], "commands": [":bnext"] },
-    { "before": ["<leader>", "b", "n"], "commands": ["workbench.action.files.newUntitledFile"] }, // New Buffer/UntitiledFile
-    { "before": ["<leader>", "b", "q"], "commands": ["workbench.action.closeActiveEditor"] }, // Close buffer
-    { "before": ["<leader>", "b", "u"], "commands": ["workbench.action.reopenClosedEditor"] }, // Re-open buffer
-    { "before": ["<leader>", "b", "y"], "commands": [ "editor.action.selectAll", "editor.action.clipboardCopyAction", "cancelSelection" ] }, // copy all file (Ctr+A - Ctrl C )
-    { "before": ["<leader>", "b", "p"], "commands": ["editor.action.selectAll", "editor.action.past"] }, // selected all file and past
-    { "before": ["<leader>", "b", "c"], "commands": ["workbench.action.closeOtherEditors"] }, // Close others buffer
-    { "before": ["<leader>", "e"], "commands": ["workbench.action.toggleSidebarVisibility"] },
+    {
+      "before": ["<leader>", "b", "n"],
+      "commands": ["workbench.action.files.newUntitledFile"]
+    }, // New Buffer/UntitiledFile
+    {
+      "before": ["<leader>", "b", "q"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    }, // Close buffer
+    {
+      "before": ["<leader>", "b", "u"],
+      "commands": ["workbench.action.reopenClosedEditor"]
+    }, // Re-open buffer
+    {
+      "before": ["<leader>", "b", "y"],
+      "commands": [
+        "editor.action.selectAll",
+        "editor.action.clipboardCopyAction",
+        "cancelSelection"
+      ]
+    }, // copy all file (Ctr+A - Ctrl C )
+    {
+      "before": ["<leader>", "b", "p"],
+      "commands": ["editor.action.selectAll", "editor.action.past"]
+    }, // selected all file and past
+    {
+      "before": ["<leader>", "b", "c"],
+      "commands": ["workbench.action.closeOtherEditors"]
+    }, // Close others buffer
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
     // splits - mở cửa sổ editer trái phải
     { "before": ["<leader>", "v"], "commands": [":vsplit"] },
     { "before": ["<leader>", "s"], "commands": [":split"] },
 
-    // Chuyển sang cửa sổ (editor) bên
-    {
-      "before": ["<leader>", "h"],
-      "commands": ["workbench.action.focusLeftGroup"]
-    },
-    {
-      "before": ["<leader>", "j"],
-      "commands": ["workbench.action.focusBelowGroup"]
-    },
-    {
-      "before": ["<leader>", "k"],
-      "commands": ["workbench.action.focusAboveGroup"]
-    },
-    {
-      "before": ["<leader>", "l"],
-      "commands": ["workbench.action.focusRightGroup"]
-    },
+    // custom paste <leader-p>
+    { "before": ["<leader>", "p", "i", "q"], "after": ["v", "i", "q", "p"] },
+    { "before": ["<leader>", "p", "a", "q"], "after": ["v", "a", "q", "p"] },
+    { "before": ["<leader>", "p", "i", "B"], "after": ["v", "i", "B", "p"] },
+    { "before": ["<leader>", "p", "a", "B"], "after": ["v", "a", "B", "p"] },
+    { "before": ["<leader>", "p", "i", "b"], "after": ["v", "i", "b", "p"] },
+    { "before": ["<leader>", "p", "a", "b"], "after": ["v", "a", "b", "p"] },
+    { "before": ["<leader>", "p", "i", "t"], "after": ["v", "i", "t", "p"] },
+    { "before": ["<leader>", "p", "a", "t"], "after": ["v", "a", "b", "t"] },
 
     // LEADER
     { "before": ["<leader>", "r"], "commands": ["editor.action.rename"] },
-    { "before": ["<leader>", "p"], "commands": ["workbench.action.quickOpen"] },
+
+    // { "before": ["<leader>", "f"], "commands": ["actions.find"] },
+    // { "before": ["<leader>", "f", "a"], "commands": ["workbench.action.findInFiles"] },
+
+    // # find - need installed extension FindItFaster
     {
-      "before": ["<leader>", "P"],
-      "commands": ["workbench.action.showCommands"]
+      "before": ["<leader>", "f", "f"],
+      "commands": ["find-it-faster.findFiles"]
     },
-    { "before": ["<leader>", "f"], "commands": ["actions.find"] },
     {
-      "before": ["<leader>", "f", "a"],
-      "commands": ["workbench.action.findInFiles"]
+      "before": ["<leader>", "f", "F"],
+      "commands": ["find-it-faster.findFilesWithType"]
+    },
+    {
+      "before": ["<leader>", "f", "s"],
+      "commands": ["find-it-faster.findWithinFiles"]
+    },
+    {
+      "before": ["<leader>", "f", "S"],
+      "commands": ["find-it-faster.findWithinFilesWithType"]
     },
 
-    // #harpoon
+    // #harpoon - nedd installed extension Harpoon
     {
       "before": ["<leader>", "h", "p"],
       "commands": ["vscode-harpoon.editorQuickPick"]
@@ -311,6 +378,13 @@
   "vim.visualModeKeyBindings": [
     { "before": ["\\"], "commands": ["whichkey.show"] },
 
+    // Fuzzy search
+    {
+      "before": ["g", "f"],
+      "commands": ["fuzzySearch.activeTextEditorWithCurrentSelection"]
+    },
+
+    // vim-comment
     { "before": ["<leader>", "c"], "commands": ["editor.action.blockComment"] },
 
     // Stay in visual mode while indenting
@@ -318,8 +392,8 @@
     { "before": ["<tab>"], "commands": ["editor.action.indentLines"] },
 
     // Move selected lines while staying in visual mode
-    { "before": ["<A-j>"], "commands": ["editor.action.moveLinesDownAction"] },
-    { "before": ["<A-k>"], "commands": ["editor.action.moveLinesUpAction"] },
+    { "before": ["<C-j>"], "commands": ["editor.action.moveLinesDownAction"] },
+    { "before": ["<C-k>"], "commands": ["editor.action.moveLinesUpAction"] },
 
     {
       "before": ["<leader>", "f"],
@@ -365,6 +439,11 @@
     "file:///Users/_david/vscode-custom/vscode-styles.css",
     "file:///Users/_david/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
   ],
+  //   "vscode_custom_css.imports": [
+  //   "file:///C:/Users/DanielVo/Documents/vscode-settings/vscode-script.js",
+  //   "file:///C:/Users/DanielVo/Documents/vscode-settings/vscode-styles.css",
+  //   "file:///C:/Users/DanielVo/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
+  // ],
 
   // --------------------------------------
   //  WHICH KEY
@@ -886,6 +965,12 @@
               "command": "git.createTag"
             },
             {
+              "key": "p",
+              "name": "[p]ush Tags",
+              "type": "command",
+              "command": "git.pushTags"
+            },
+            {
               "key": "d",
               "name": "[d]elete Tag",
               "type": "command",
@@ -1119,6 +1204,7 @@
     "statusBar.debuggingBackground": "#1F7D53",
     "statusBar.foreground": "#ffffff",
     "statusBar.debuggingForeground": "#ffffff"
-  },
-  
+  }
 }
+
+
