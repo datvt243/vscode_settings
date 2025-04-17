@@ -16,9 +16,9 @@
   color: rgba(255, 255, 255, 0.3) !important;
 }
 .monaco-workbench .notifications-list-container {
-  border: 2px solid var(--vscode-quickInputList-focusForeground) !important;
-  border-radius: 0 !important;
-  box-shadow: -2px 2px 0px 0px #fff !important;
+  border: 2px solid #F7374F !important;
+  border-radius: 2px !important;
+  box-shadow: -2px 2px 0px 0px #FFFFFF !important;
 }
 .monaco-workbench .notifications-list-container:hover {
   transition: all 0.3s ease-out;

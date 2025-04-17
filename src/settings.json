@@ -1,4 +1,3 @@
-
 {
   // --------------------------------------
   //
@@ -210,8 +209,6 @@
     { "before": ["<S-tab>"], "commands": ["editor.action.outdentLines"] },
     { "before": ["<tab>"], "commands": ["editor.action.indentLines"] },
 
-    { "before": ["<PgUp>"], "commands": ["whichkey.show"] },
-
     // Move
     { "before": ["j"], "after": ["g", "j", "z", "z"] },
     { "before": ["k"], "after": ["g", "k", "z", "z"] },
@@ -229,7 +226,7 @@
 
     // used Ctrl `C`
     // Undo
-    { "before": ["<C-z>"], "commands": ["undo"] },
+    // { "before": ["<C-z>"], "commands": ["undo"] },
     // Move lines
     { "before": ["<C-j>"], "commands": ["editor.action.moveLinesDownAction"] },
     {
@@ -327,14 +324,16 @@
     { "before": ["<leader>", "p", "i", "b"], "after": ["v", "i", "b", "p"] },
     { "before": ["<leader>", "p", "a", "b"], "after": ["v", "a", "b", "p"] },
     { "before": ["<leader>", "p", "i", "t"], "after": ["v", "i", "t", "p"] },
-    { "before": ["<leader>", "p", "a", "t"], "after": ["v", "a", "b", "t"] },
+    { "before": ["<leader>", "p", "a", "t"], "after": ["v", "a", "t", "p"] },
 
-    // LEADER
-    { "before": ["<leader>", "r"], "commands": ["editor.action.rename"] },
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["editor.action.rename"],
+      "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    { "before": ["<leader>", "/"], "commands": ["fuzzySearch.activeTextEditor"] },
 
-    // { "before": ["<leader>", "f"], "commands": ["actions.find"] },
-    // { "before": ["<leader>", "f", "a"], "commands": ["workbench.action.findInFiles"] },
-
+    
     // # find - need installed extension FindItFaster
     {
       "before": ["<leader>", "f", "f"],
@@ -353,7 +352,7 @@
       "commands": ["find-it-faster.findWithinFilesWithType"]
     },
 
-    // #harpoon - nedd installed extension Harpoon
+    // #harpoon - need installed extension Harpoon
     {
       "before": ["<leader>", "h", "p"],
       "commands": ["vscode-harpoon.editorQuickPick"]
@@ -366,13 +365,9 @@
       "before": ["<leader>", "h", "e"],
       "commands": ["vscode-harpoon.editEditors"]
     },
-    {
-      "before": ["<leader>", "h", "e"],
-      "commands": ["vscode-harpoon.editEditors"]
-    },
 
     //
-    { "before": ["<leader>", "y"], "commands": ["vim.showRegisters"] },
+    { "before": ["<leader>", "y"], "commands": [":reg"] },
     { "before": ["<leader>", "n"], "commands": [":nohlsearch"] }
   ],
   "vim.visualModeKeyBindings": [
@@ -408,9 +403,9 @@
   "vim.handleKeys": {
     "<C-c>": false, // copy
     "<C-v>": false, // past
-    "<C-r>": true, // redu
     "<C-n>": false, // new file - vscode default
-    "<C-z>": false
+    "<C-z>": false,
+    "<C-x>": false,
   },
 
   // --------------------------------------
@@ -435,8 +430,8 @@
   // VSCODE CUSTOM CSS
   // --------------------------------------
   "vscode_custom_css.imports": [
-    "file:///Users/_david/vscode-custom/vscode-script.js",
-    "file:///Users/_david/vscode-custom/vscode-styles.css",
+    "file:///Users/_david/vscode-custom/src/vscode-script.js",
+    "file:///Users/_david/vscode-custom/src/vscode-styles.css",
     "file:///Users/_david/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
   ],
   //   "vscode_custom_css.imports": [
@@ -477,13 +472,13 @@
           "type": "command",
           "command": "workbench.action.quickOpen"
         },
-        {
-          "key": "r",
-          "name": "[r]ename (Var, function, etc...)",
-          "type": "command",
-          "command": "editor.action.rename",
-          "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
-        },
+        // {
+        //   "key": "r",
+        //   "name": "[r]ename (Var, function, etc...)",
+        //   "type": "command",
+        //   "command": "editor.action.rename",
+        //   "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+        // },
         {
           "key": "l",
           "name": "Git [l]og (oneline)",
@@ -534,7 +529,6 @@
           "type": "command",
           "command": "workbench.action.files.newUntitledFile"
         },
-
         {
           "key": "m",
           "name": "[m]ove Editor Into [+]",
@@ -834,6 +828,12 @@
           "type": "command",
           "command": "git.viewChanges"
         },
+        // {
+        //   "key": "h",
+        //   "name": "View History",
+        //   "type": "command",
+        //   "command": "gitlens.History"
+        // },
         {
           "key": "a",
           "name": "Stage All Change (git [a]dd .)",
@@ -1199,12 +1199,11 @@
     "titleBar.activeForeground": "#e7e7e7",
     "titleBar.inactiveBackground": "#20578199",
     "titleBar.inactiveForeground": "#e7e7e799",
-    "statusBar.background": "#1F7D53",
-    "statusBar.noFolderBackground": "#1F7D53",
-    "statusBar.debuggingBackground": "#1F7D53",
+    "statusBar.background": "#9C27B0",
+    "statusBar.noFolderBackground": "#9C27B0",
+    "statusBar.debuggingBackground": "#9C27B0",
     "statusBar.foreground": "#ffffff",
     "statusBar.debuggingForeground": "#ffffff"
   }
 }
-
 
