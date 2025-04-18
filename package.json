@@ -4,8 +4,8 @@
   "description": "## Settings (settings.json) `Ctr + Shift + P`: Preferences: Open user settings (JSON)",
   "main": "vscode-script.js",
   "scripts": {
-    "build": "sass --no-source-map  src/styles/vscode-styles.scss src/styles/vscode-styles.css",
-    "build:watch": "sass --no-source-map --watch src/styles/vscode-styles.scss src/styles/vscode-styles.css"
+    "build": "sass --no-source-map  src/styles/vscode-styles.scss src/vscode-styles.css",
+    "build:watch": "sass --no-source-map --watch src/styles/vscode-styles.scss src/vscode-styles.css"
   },
   "author": "",
   "license": "ISC",

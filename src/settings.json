@@ -4,7 +4,7 @@
   // --------------------------------------
   "editor.wordWrap": "on",
   "editor.tabSize": 2,
-  "editor.fontSize": 13,
+  "editor.fontSize": 14,
   "editor.cursorBlinking": "phase",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.renderWhitespace": "all",
@@ -325,6 +325,9 @@
     { "before": ["<leader>", "p", "a", "b"], "after": ["v", "a", "b", "p"] },
     { "before": ["<leader>", "p", "i", "t"], "after": ["v", "i", "t", "p"] },
     { "before": ["<leader>", "p", "a", "t"], "after": ["v", "a", "t", "p"] },
+
+    // GIT
+    { "before": ["<leader>", "g", "d"], "commands": ["git.viewChanges"]},
 
     {
       "before": ["<leader>", "r"],
@@ -1204,6 +1207,9 @@
     "statusBar.debuggingBackground": "#9C27B0",
     "statusBar.foreground": "#ffffff",
     "statusBar.debuggingForeground": "#ffffff"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
   }
 }
 

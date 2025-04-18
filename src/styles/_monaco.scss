@@ -3,18 +3,27 @@
 .monaco {
   &-editor-hover,
   &-hover {
-    background-color: var(--vscode-list-hoverBackground) !important; 
-    border-radius: 5px !important;
-    border: 1px solid var(--vscode-quickInputList-focusForeground) !important;
+    background-color: #333 !important; 
+    border-radius: 2px !important;
+    border: 1px solid orangered !important;
   };
 
   &-resizable-hover {
     border: none !important;
+    // background: #333;
   } 
 
   &-editor {
     .zone-widget {
-      border: 2px solid var(--vscode-quickInputList-focusForeground) !important;
+      &-container {
+        $border: '3px';
+        border-top-width: #{$border} !important;
+        border-bottom-width: #{$border} !important;
+      }
+    }
+    
+    .scroll-decoration {
+      box-shadow: none !important;
     }
   }
   
@@ -25,16 +34,32 @@
   }
 
   &-workbench {
-    .notifications-list-container {
-      border: 2px solid #F7374F !important;
-      border-radius: 2px !important;
-      box-shadow: -2px 2px 0px 0px #FFFFFF!important;
-      &:hover {
-        transition: all .3s ease-out;
+    .notification {
+      &-toast {
+        box-shadow: none !important;
+      }
+      &-list {
+        &-item {
+          border: 2px solid variables.$green !important;
+          border-radius: 2px !important;
+          // box-shadow: -2px 2px 0px 0px #FFFFFF!important;
+          &:hover {
+            transition: all .3s ease-out;
+          }
+        }
       }
     }
+    
     .title .tabs-container>.tab .tab-label .label-name {
       color: yellow !important
+    }
+    .part {
+      &.panel {
+        border-top: 2px solid variables.$green;
+        .content {
+          border-top: 1px solid variables.$green;
+        }
+      }
     }
   }
 

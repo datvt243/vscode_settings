@@ -1,16 +1,11 @@
 
 @use './variables.scss';
 
-@use './comment.scss';
-@use './monaco.scss';
-// @use './sidebar.scss';
-@use './file_explorer.scss';
-@use './scroll_bar.scss';
-@use './tooltip.scss';
 @use './command_palette.scss';
-@use './unk.scss';
+@use './file_explorer.scss';
 @use './list_items.scss';
-@use './zone_widget.scss';
+@use './monaco.scss';
+@use './unk.scss';
 
 
 /* Match Text */
@@ -18,4 +13,7 @@
   background: #000 !important;
 }
 
-
+.slider {
+  border-radius: 0;
+  width: 999px;
+}
