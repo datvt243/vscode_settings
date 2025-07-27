@@ -49,15 +49,17 @@ Mở `keybinding.json`: `Preferences: Open Keyboard Shortcuts`
 
 [9. Multi-Command](#9-multi-command)
 
-[10. CodeSnap](#10-codesnap)
+[10. Command Variable](#10-command-variable)
 
-[11. Caps Lock State](#11-caps-lock-state)
+[11. CodeSnap](#11-codesnap)
 
-[12. Peacock](#12-peacock)
+[12. Caps Lock State](#12-caps-lock-state)
 
-[13. Project Manager](#13-project-manager)
+[13. Peacock](#13-peacock)
 
-[14. Find It Faster](#14-find-it-faster)
+[14. Project Manager](#14-project-manager)
+
+[15. Find It Faster](#15-find-it-faster)
 
 ## 1. Vim Extension
 
@@ -305,13 +307,21 @@ Forcus Ter -> New Ter -> nhập lệnh `git log --online`
 ]
 ```
 
-## 10. CodeSnap
+## 10. Command Variable
+
+**Mô tả**: extension hỗ trợ nhập liệu
+Hỗ trợ tạo các multiCommand.commands với giá trị được nhập từ người dùng
+Ví dụ: `git checkout -b [branch_name]`
+
+🔗 [Command-Variable](https://marketplace.visualstudio.com/items?itemName=rioj7.command-variable)
+
+## 11. CodeSnap
 
 **Mô tả**: Hỗ trợ chụp ảnh mã nguồn đẹp mắt để chia sẻ nhanh chóng.
 
 🔗 [CodeSnap](https://marketplace.visualstudio.com/items?itemName=adpyke.codesnap)
 
-## 11. Caps Lock State
+## 12. Caps Lock State
 
 **Mô tả**: Xài keyboard rời và không biết caps đang on/off, ảnh hưởng đến motion của VIM -> Hỗ trợ hiển thị trạng thái của capslock
 Hỗ trợ hiển thị trạng thái của capslock (on/off)
@@ -320,7 +330,7 @@ Hỗ trợ hiển thị trạng thái của capslock (on/off)
 
 🔗 [Caps Lock State](https://marketplace.visualstudio.com/items?itemName=Elling.caps-lock-state)
 
-## 12. Peacock
+## 13. Peacock
 
 **Mô tả**: Giúp tùy chỉnh màu sắc của cửa sổ VSCode theo các màu sắc bạn lựa chọn, giúp dễ dàng nhận diện và phân biệt giữa các cửa sổ hoặc dự án đang mở.
 
@@ -341,13 +351,13 @@ Hỗ trợ hiển thị trạng thái của capslock (on/off)
 ]
 ```
 
-## 13. Project Manager
+## 14. Project Manager
 
 **Mô tả**: Giúp quản lý các project, mở và di chuyển qua lại các project dễ dàng
 
 🔗 [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager)
 
-## 14. Find It Faster
+## 15. Find It Faster
 
 **Mô tả**: Tìm tệp và văn bản trong tệp, nhưng nhanh hơn VS Code thông thường.
 

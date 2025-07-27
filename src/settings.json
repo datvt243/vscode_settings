@@ -217,9 +217,9 @@
     { "before": ["}"], "after": ["}", "z", "z"] },
     { "before": ["{"], "after": ["{", "z", "z"] },
 
-    // used key `[`, `]`
-    { "before": ["]", "m"], "commands": ["bookmarks.jumpToNext"] },
-    { "before": ["[", "m"], "commands": ["bookmarks.jumpToPrevious"] },
+    // Used key `[`, `]`
+    // { "before": ["]", "m"], "commands": ["bookmarks.jumpToNext"] },
+    // { "before": ["[", "m"], "commands": ["bookmarks.jumpToPrevious"] },
     // Điều hướng giữa các lỗi (Diagnostics)
     // { "before": ["[", "d"], "commands": ["editor.action.marker.prev"] },
     // { "before": ["]", "d"], "commands": ["editor.action.marker.prev"] },
@@ -236,15 +236,7 @@
     { "before": ["<C-k>"], "commands": ["editor.action.moveLinesUpAction"] },
     { "before": ["<C-Up>"], "commands": ["editor.action.moveLinesUpAction"] },
     { "before": ["<C-d>"], "commands": ["editor.action.copyLinesDownAction"] },
-    { "before": ["<C-f>"], "commands": ["actions.find"] },
-    { "before": ["<C-p>"], "commands": ["workbench.action.quickOpen"] },
-    // { "before": ["<C-[>"], "after": ["<C>", "d"] },
-    // { "before": ["<C-]>"], "after": ["<C>", "u"] },
 
-    // Control Window
-    // <C-q>: quit buffer
-    // <C-h/j/k/l>: goto left/down/up/right buffer
-    // <C-s/v>: split/split_vertically window
 
     // vim-sneak
     // used key `s`
@@ -274,10 +266,6 @@
     { "before": ["m", "C"], "commands": ["bookmarks.clear"] },
 
     // Buffers
-    {
-      "before": ["Q", "Q"],
-      "commands": ["workbench.action.closeActiveEditor"]
-    }, // Close buffer
     { "before": ["<S-h>"], "commands": [":bprevious"] },
     { "before": ["<S-l>"], "commands": [":bnext"] },
     {
@@ -299,7 +287,7 @@
         "editor.action.clipboardCopyAction",
         "cancelSelection"
       ]
-    }, // copy all file (Ctr+A - Ctrl C )
+    }, // copy all file (Ctr+A - Ctrl+C)
     {
       "before": ["<leader>", "b", "p"],
       "commands": ["editor.action.selectAll", "editor.action.past"]
@@ -308,6 +296,8 @@
       "before": ["<leader>", "b", "c"],
       "commands": ["workbench.action.closeOtherEditors"]
     }, // Close others buffer
+    
+    // Explore
     {
       "before": ["<leader>", "e"],
       "commands": ["workbench.action.toggleSidebarVisibility"]
@@ -328,15 +318,16 @@
 
     // GIT
     { "before": ["<leader>", "g", "d"], "commands": ["git.viewChanges"]},
+    { "before": ["<leader>", "g", "p"], "commands": ["git.pullFrom"]},
 
     {
       "before": ["<leader>", "r"],
       "commands": ["editor.action.rename"],
       "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
     },
-    { "before": ["<leader>", "/"], "commands": ["fuzzySearch.activeTextEditor"] },
-
     
+    // Find & Search
+    { "before": ["<leader>", "/"], "commands": ["fuzzySearch.activeTextEditor"] },
     // # find - need installed extension FindItFaster
     {
       "before": ["<leader>", "f", "f"],
@@ -392,11 +383,7 @@
     // Move selected lines while staying in visual mode
     { "before": ["<C-j>"], "commands": ["editor.action.moveLinesDownAction"] },
     { "before": ["<C-k>"], "commands": ["editor.action.moveLinesUpAction"] },
-
-    {
-      "before": ["<leader>", "f"],
-      "commands": ["editor.actions.addSectionToNextFindMatch"]
-    }
+    
   ],
   "vim.insertModeKeyBindings": [
     { "before": ["<D-s>"], "commands": [":w", "<Esc>"] },
@@ -1212,4 +1199,3 @@
     "editor.defaultFormatter": "Vue.volar"
   }
 }
-
