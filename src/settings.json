@@ -316,9 +316,22 @@
     { "before": ["<leader>", "p", "i", "t"], "after": ["v", "i", "t", "p"] },
     { "before": ["<leader>", "p", "a", "t"], "after": ["v", "a", "t", "p"] },
 
-    // GIT
-    { "before": ["<leader>", "g", "d"], "commands": ["git.viewChanges"]},
-    { "before": ["<leader>", "g", "p"], "commands": ["git.pullFrom"]},
+    // #GIT
+    { "before": ["<leader>", "g", "l"], "commands": ["multiCommand.runGitLog"] },
+    { "before": ["<leader>", "g", "d"], "commands": ["git.viewChanges"] },
+    { "before": ["<leader>", "g", "f"], "commands": ["git.fetch"] },
+    { "before": ["<leader>", "g", "a"], "commands": ["git.stageAll"] },
+    { "before": ["<leader>", "g", "c"], "commands": ["git.commit"] },
+    { "before": ["<leader>", "g", "k"], "commands": ["git.checkout"] },
+    { "before": ["<leader>", "g", "p", "s"], "commands": ["multiCommand.runGitPush"] },
+    { "before": ["<leader>", "g", "p", "l"], "commands": ["multiCommand.runGitPull"] },
+    // { "before": ["<leader>", "g", "p", "l"], "commands": ["git.pullFrom"] },
+    { "before": ["<leader>", "g", "u", "c"], "commands": ["git.undoCommit"] },
+    { "before": ["<leader>", "g", "r", "a"], "commands": ["git.addRemote"] },
+    { "before": ["<leader>", "g", "c", "p"], "commands": ["gitlens.createPullRequestOnRemote"] },
+    { "before": ["<leader>", "g", "s"], "commands": ["gitlens.showCommitSearch"] },
+    { "before": ["<leader>", "g", "h"], "commands": ["gitlens.gitCommand.history"] },
+    { "before": ["<leader>", "g", "o"], "commands": ["multiCommand.runGitCheckoutNewBranch"] },
 
     {
       "before": ["<leader>", "r"],
@@ -1165,7 +1178,31 @@
           "args": { "text": "git log --oneline\n" }
         }
       ]
-    }
+    },
+    {
+      "command": "multiCommand.runGitPush",
+      "sequence": [
+        "workbench.action.terminal.focus",
+        "workbench.action.terminal.new",
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": { "text": "git push -u origin $(git branch --show-current)\u000D" }
+        }
+      ],
+      
+    },
+    {
+      "command": "multiCommand.runGitPull",
+      "sequence": [
+        "workbench.action.terminal.focus",
+        "workbench.action.terminal.new",
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": { "text": "git pull origin $(git branch --show-current)\u000D" }
+        },
+      ],
+      
+    },
   ],
 
   // To improve performance
