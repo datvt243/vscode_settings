@@ -2,37 +2,81 @@
   // --------------------------------------
   //
   // --------------------------------------
-  "editor.wordWrap": "on",
-  "editor.tabSize": 2,
-  "editor.fontSize": 14,
-  "editor.cursorBlinking": "phase",
-  "editor.cursorSmoothCaretAnimation": "on",
-  "editor.renderWhitespace": "all",
-  "editor.linkedEditing": true,
-  "editor.lineNumbers": "relative",
-  "editor.detectIndentation": false, // Không tự động phát hiện indentation từ file, giữ nguyên giá trị tabSize.
-  "editor.showFoldingControls": "always", // biểu tượng thu gọn/mở rộng code (> bên lề trái).
-  "editor.minimap.enabled": false, // ẨN mini-map
-  "editor.multiCursorModifier": "ctrlCmd", // Cho phép sử dụng Ctrl (Windows/Linux) hoặc Cmd (macOS) để thêm nhiều con trỏ (multi-cursor).
-  "editor.cursorStyle": "line", // Đổi con trỏ sang dạng khối (block) thay vì kiểu gạch đứng (line) mặc định.
-  "editor.stickyScroll.enabled": false, // Tắt Sticky Scroll, không hiển thị tiêu đề function/class khi cuộn code.
-  "editor.guides.indentation": true,
-  "editor.wordWrapColumn": 160,
-  "editor.fontFamily": "FiraCode Nerd Font Mono, Menlo, Monaco, 'Courier New', monospac",
-  "editor.suggestFontSize": 14, // font size ô gợi ý code
 
+  // Tự động xuống dòng khi dòng quá dài (không cần scroll ngang)
+  "editor.wordWrap": "on",
+
+  // Số khoảng trắng cho mỗi tab (thường dùng 2 cho frontend)
+  "editor.tabSize": 2,
+
+  // Kích thước chữ trong editor
+  "editor.fontSize": 14,
+
+  // Hiệu ứng nhấp nháy của con trỏ (phase = mượt, dễ nhìn)
+  "editor.cursorBlinking": "phase",
+
+  // Hiệu ứng trượt mượt khi di chuyển con trỏ (caret animation)
+  "editor.cursorSmoothCaretAnimation": "on",
+
+  // Hiển thị ký tự khoảng trắng (space, tab) → dễ phát hiện lỗi format
+  "editor.renderWhitespace": "all",
+
+  // Sửa đồng thời các thẻ/keyword liên quan (HTML, JSX, XML...)
+  "editor.linkedEditing": true,
+
+  // Hiển thị số dòng tương đối (phù hợp Vim mode)
+  "editor.lineNumbers": "relative",
+
+  // Không tự động phát hiện indentation từ file, giữ nguyên giá trị tabSize.
+  "editor.detectIndentation": false,
+
+  // Luôn hiển thị nút gập/mở code (fold/unfold) ở lề trái editor
+  "editor.showFoldingControls": "always", 
+  
+  // ẨN mini-map
+  "editor.minimap.enabled": false, 
+  
+  // Cho phép sử dụng Ctrl (Windows/Linux) hoặc Cmd (macOS) để thêm nhiều con trỏ (multi-cursor).
+  "editor.multiCursorModifier": "ctrlCmd", 
+ 
+  // Kiểu hiển thị con trỏ dạng vạch đứng (line cursor)
+  "editor.cursorStyle": "line", 
+  
+  // Tắt Sticky Scroll (không ghim header function/class ở trên cùng khi scroll)
+  "editor.stickyScroll.enabled": true,
+
+  // Hiển thị các đường guide dọc theo mức thụt dòng (indentation guides)
+  "editor.guides.indentation": true,
+
+  // Độ dài tối đa của dòng trước khi word wrap (chỉ có tác dụng khi wordWrap ≠ off)
+  "editor.wordWrapColumn": 160,
+
+  // Font chữ dùng cho editor (ưu tiên FiraCode Nerd Font Mono, fallback nếu không có)
+  "editor.fontFamily": "FiraCode Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
+
+  // Cỡ chữ trong popup gợi ý code (IntelliSense)
+  "editor.suggestFontSize": 14,
+
+  // Danh sách extension KHÔNG đồng bộ khi dùng Settings Sync
   "settingsSync.ignoredExtensions": [],
 
   // --------------------------------------
   // BREADCRUMBS
   // --------------------------------------
+  // Tắt Breadcrumbs (thanh điều hướng ở trên editor)
   "breadcrumbs.enabled": false,
+  "breadcrumbs.icons": true,
+  "breadcrumbs.filePath": "on", 
+  "breadcrumbs.symbolPath": "on",
 
   // --------------------------------------
   // WINDOW
   // --------------------------------------
+  // Tắt Command Center (thanh lệnh ở giữa title bar)
   "window.commandCenter": false,
-  "window.newWindowDimensions": "default", // Kích thước cửa sổ khi mở VSCode
+
+  // Kích thước cửa sổ khi mở VS Code instance mới
+  "window.newWindowDimensions": "default",
 
   // --------------------------------------
   // CHAT
@@ -64,17 +108,40 @@
   // --------------------------------------
   // WORKBENCH
   // --------------------------------------
-  "workbench.colorTheme": "Dracula Theme", // Theme
+  // Theme màu giao diện VS Code
+  "workbench.colorTheme": "Dracula Theme",
+
+  // Bộ icon cho các nút sản phẩm (Run, Debug, Source Control…)
   "workbench.productIconTheme": "developer-icons",
+
+  // Vị trí thanh Side Bar (Explorer, Search, Git…)
   "workbench.sideBar.location": "right",
+
+  // Bộ icon cho file & folder trong Explorer
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.editor.showTabs": "single", // StatusBar -  thanh dưới cùng
-  "workbench.startupEditor": "none", // Khi mở vscode, không hiển thị welcome or any file
-  "workbench.tips.enabled": false, // Tắt gợi ý mẹo
-  "workbench.tree.enableStickyScroll": false, // Chế độ Sticky Scroll trong cây thư mục (tính năng hiển thị dòng tiêu đề ở trên cùng khi cuộn).
-  "workbench.tree.renderIndentGuides": "always", // Hiển thị đường kẻ dọc giúp căn chỉnh cấp bậc thư mục.
+
+  // Cách hiển thị tab editor (chỉ hiện 1 tab duy nhất)
+  "workbench.editor.showTabs": "single",
+
+  // Khi mở VS Code: không mở Welcome, không mở file nào
+  "workbench.startupEditor": "none",
+
+  // Tắt các tips/mẹo hướng dẫn của VS Code
+  "workbench.tips.enabled": false,
+
+  // Tắt Sticky Scroll trong cây thư mục (Explorer)
+  "workbench.tree.enableStickyScroll": false,
+
+  // Luôn hiển thị đường kẻ hướng dẫn cấp bậc thư mục
+  "workbench.tree.renderIndentGuides": "always",
+
+  // Khoảng thụt mỗi cấp thư mục trong Explorer (px)
   "workbench.tree.indent": 16,
+
+  // Tắt nút điều khiển layout (Move/Reset layout)
   "workbench.layoutControl.enabled": false,
+
+  // Tắt nút điều hướng (Back / Forward)
   "workbench.navigationControl.enabled": false,
 
   // --------------------------------------
@@ -86,11 +153,21 @@
   // --------------------------------------
   // EXPLORER
   // --------------------------------------
-  "explorer.compactFolders": false, // Tính năng gom nhóm các thư mục con vào một dòng nếu chỉ có một thư mục con duy nhất.
-  "explorer.confirmDragAndDrop": true, // Hộp thoại xác nhận khi kéo thả file/thư mục.
-  "explorer.confirmDelete": false, // Hộp thoại xác nhận khi xóa file/thư mục.
-  "explorer.decorations.badges": true, // Hiển thị dấu hiệu (badges) trên file/thư mục (ví dụ: dấu hiệu Git thay đổi, lỗi, v.v.).
-  "git.decorations.enabled": true, // Các ký hiệu của Git trong Explorer (ví dụ: chữ “M” màu vàng cho file bị sửa đổi).
+  // Không gộp các thư mục lồng nhau chỉ có 1 con thành 1 dòng 
+  // (hiển thị đầy đủ từng cấp)
+  "explorer.compactFolders": false,
+
+  // Hiện hộp thoại xác nhận khi kéo–thả file/thư mục
+  "explorer.confirmDragAndDrop": true,
+
+  // Tắt hộp thoại xác nhận khi xóa file/thư mục
+  "explorer.confirmDelete": false,
+
+  // Hiển thị badges (ký hiệu) trên file/thư mục: Git, lỗi, cảnh báo…
+  "explorer.decorations.badges": true,
+
+  // Hiển thị ký hiệu Git (M, A, D, U…) trong Explorer
+  "git.decorations.enabled": true,
 
   // --------------------------------------
   // TAILWIND CSS
@@ -100,9 +177,15 @@
   // --------------------------------------
   // GITLENS
   // --------------------------------------
+  // Tắt indicator GitLens Launchpad (biểu tượng/đếm issue, PR…)
   "gitlens.launchpad.indicator.enabled": false,
+
+  // Tắt hiển thị trạng thái Git Graph trên Status Bar
   "gitlens.graph.statusBar.enabled": false,
+
+  // Cấu hình nâng cao cho GitLens (ẩn các thông báo nâng cao)
   "gitlens.advanced.messages": {
+    // Không hiển thị cảnh báo khi Git không được tìm thấy
     "suppressGitMissingWarning": true
   },
 
@@ -123,7 +206,10 @@
   // PEACOCK
   // --------------------------------------
   "peacock.affectStatusBar": false,
-  "peacock.affectActivityBar": true, // Định nghĩa danh sách các màu yêu thích để dễ dàng chọn nhanh
+  
+  // Định nghĩa danh sách các màu yêu thích để dễ dàng chọn nhanh
+  "peacock.affectActivityBar": true, 
+  
   "peacock.showColorInStatusBar": false,
   "peacock.favoriteColors": [
     { "name": "Jazzberry Jam", "value": "#AC1754" },
@@ -147,23 +233,58 @@
   // --------------------------------------
   //  VIM
   // --------------------------------------
+  // Phím leader của Vim 
   "vim.leader": "<Space>",
-  "vim.sneakUseIgnorecaseAndSmartcase": true, // Áp dụng ignorecase và smartcase vào sneak
-  "vim.highlightedyank.enable": true, // Highlight Yanked Text
+
+  // Áp dụng ignorecase + smartcase cho sneak (nhảy nhanh bằng s, S)
+  "vim.sneakUseIgnorecaseAndSmartcase": true,
+
+  // Bật highlight vùng text vừa yank (copy)
+  "vim.highlightedyank.enable": true,
+
+  // Màu highlight khi yank (RGBA – có alpha)
   "vim.highlightedyank.color": "#a9dc7660",
+
+  // Thời gian highlight yank (ms)
   "vim.highlightedyank.duration": 250,
-  "vim.useSystemClipboard": true, // Sử dụng clipboard hệ thống
-  "vim.overrideCopy": true, // Dùng `y` để copy vào clipboard hệ thống
-  "vim.hlsearch": true, // Highlight kết quả tìm kiếm
-  "vim.searchHighlightColor": "#FFBF00", // "#FFBF00",
+
+  // Sử dụng clipboard hệ thống
+  "vim.useSystemClipboard": true,
+
+  // Ghi đè hành vi copy của VS Code, dùng `y` để copy thẳng vào clipboard
+  "vim.overrideCopy": true,
+
+  // Highlight kết quả tìm kiếm
+  "vim.hlsearch": true,
+
+  // Màu nền highlight kết quả tìm kiếm
+  "vim.searchHighlightColor": "#FFBF00",
+
+  // Màu chữ của kết quả tìm kiếm
   "vim.searchHighlightTextColor": "#FFFFFF",
+
+  // Màu chữ của match hiện tại
   "vim.searchMatchTextColor": "pink",
-  "vim.incsearch": true, // Hiển thị kết quả tìm kiếm khi nhập
-  "vim.ignorecase": true, // Không phân biệt chữ hoa/thường khi tìm kiếm
-  "vim.smartcase": true, // Phân biệt chữ hoa khi tìm kiếm nếu nhập chữ hoa
+
+  // Hiển thị kết quả tìm kiếm ngay khi đang nhập
+  "vim.incsearch": true,
+
+  // Không phân biệt hoa/thường khi tìm kiếm
+  "vim.ignorecase": true,
+
+  // Tự động phân biệt hoa/thường nếu trong pattern có chữ hoa
+  "vim.smartcase": true,
+
+  // Dùng chuột chọn text → tự vào Visual mode
   "vim.mouseSelectionGoesIntoVisualMode": true,
-  "vim.useCtrlKeys": true, // Bật phím Ctrl của Vim để ghi đè các thao tác VS Code phổ biến như sao chép, dán, tìm kiếm, v.v.
+
+  // Bật các phím Ctrl của Vim (Ctrl+d, Ctrl+u, Ctrl+r…)
+  "vim.useCtrlKeys": true,
+
+  // Tự động indent theo ngữ cảnh code
   "vim.autoindent": true,
+
+  // Hiển thị command đang gõ (vd: d2w, ci")
   "vim.showcmd": true,
 
   // ReplaceWithRegister
@@ -389,19 +510,43 @@
   // --------------------------------------
   // VSCode Animations:
   // --------------------------------------
-  "animations.Command-Palette": "Slide", // Hiệu ứng animation cho Command Palette - "None", "Scale", "Slide", "Fade"
-  "animations.Tabs": "Scale", // Hiệu ứng animation cho tab - "None", "Scale", "Slide", "Flip"
-  "animations.Scrolling": "None", // Hiệu ứng animation khi cuộn - "None", "Scale", "Slide", "Fade"
-  "animations.Active": "Indent", // Hiệu ứng animation cho item đang hoạt động - "None", "Scale", "Indent"
-  "animations.CursorAnimation": true, // Hiệu ứng làm mờ khi mất focus
+  // Hiệu ứng animation khi mở Command Palette (Ctrl/Cmd + Shift + P)
+  "animations.Command-Palette": "Slide", // None | Scale | Slide | Fade
+
+  // Hiệu ứng animation khi chuyển / mở tab editor
+  "animations.Tabs": "Scale", // None | Scale | Slide | Flip
+
+  // Hiệu ứng animation khi cuộn nội dung
+  "animations.Scrolling": "None", // None | Scale | Slide | Fade
+
+  // Hiệu ứng cho item đang active (tab / item được focus)
+  "animations.Active": "Indent", // None | Scale | Indent
+
+  // Bật animation cho con trỏ khi editor mất focus
+  "animations.CursorAnimation": true,
+
+  // Tuỳ chọn chi tiết cho animation con trỏ
   "animations.CursorAnimationOptions": {
+    // Màu của hiệu ứng con trỏ (sẽ bị override nếu dùng cursor color)
     "Color": "#333",
+
+    // Kiểu con trỏ dùng cho animation
     "CursorStyle": "line",
+
+    // Độ dài “vệt” animation theo sau con trỏ
     "TrailLength": 8
   },
+
+  // Dùng màu con trỏ hiện tại thay vì màu custom ở trên
   "animations.UseCursorColorForCursorAnimation": true,
+
+  // Mức độ làm mờ khi editor mất focus (0–100)
   "animations.Focus-Dimming-Amount": 100,
-  "animations.Focus-Dimming-Mode": "Full Window",
+
+  // Phạm vi làm mờ khi mất focus
+  "animations.Focus-Dimming-Mode": "Full Window", // Full Window | Editor | Tab
+
+  // Cách extension inject animation (Custom CSS & JS)
   "animations.Install-Method": "Custom CSS and JS",
 
   // --------------------------------------
@@ -944,9 +1089,9 @@
     "titleBar.activeForeground": "#e7e7e7",
     "titleBar.inactiveBackground": "#20578199",
     "titleBar.inactiveForeground": "#e7e7e799",
-    "statusBar.background": "#1F7D53",
-    "statusBar.noFolderBackground": "#1F7D53",
-    "statusBar.debuggingBackground": "#1F7D53",
+    "statusBar.background": "#9C27B0",
+    "statusBar.noFolderBackground": "#9C27B0",
+    "statusBar.debuggingBackground": "#9C27B0",
     "statusBar.foreground": "#ffffff",
     "statusBar.debuggingForeground": "#ffffff"
   },
@@ -959,3 +1104,4 @@
   "leetcode.defaultLanguage": "javascript",
   "terminal.integrated.defaultProfile.osx": "zsh"
 }
+
