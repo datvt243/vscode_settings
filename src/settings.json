@@ -295,6 +295,7 @@
   "vim.sneak": true,
 
   // vim-easymotion
+  // giúp bạn di chuyển con trỏ trong Vim/Neovim cực nhanh
   "vim.easymotion": true, // Bật chế độ di chuyển nhanh
   "vim.easymotionMarkerBackgroundColor": "#FFBF00",
   "vim.easymotionMarkerForegroundColorOneChar": "#DC143C",
@@ -304,6 +305,7 @@
   "vim.easymotionDimColor": "#777777",
 
   // vim-airline
+  // thay thế thanh trạng thái mặc định của Vim bằng một thanh trực quan hơn
   "vim.statusBarColorControl": true,
   "vim.statusBarColors.normal": ["#1F7D53", "#ffffff"],
   "vim.statusBarColors.insert": ["#E52020", "#ffffff"],
@@ -318,6 +320,7 @@
   "vim.statusBarColors.surroundinputmode": ["#222222", "#ffffff"],
 
   // vim-surround
+  // cho phép thao tác với các “bao quanh” (surroundings),
   "vim.surround": true,
 
   "vim.normalModeKeyBindingsNonRecursive": [
@@ -333,25 +336,41 @@
     { "before": ["<tab>"], "commands": ["editor.action.indentLines"] },
 
     // Move
-    { "before": ["j"], "after": ["g", "j", "z", "z"] },
-    { "before": ["k"], "after": ["g", "k", "z", "z"] },
-    { "before": ["<Down>"], "after": ["g", "j", "z", "z"] },
-    { "before": ["<Up>"], "after": ["g", "k", "z", "z"] },
+    { "before": ["j"], "after": ["g", "j"] },
+    { "before": ["k"], "after": ["g", "k"] },
+    { "before": ["<Down>"], "after": ["g", "j"] },
+    { "before": ["<Up>"], "after": ["g", "k"] },
     { "before": ["}"], "after": ["}", "z", "z"] },
     { "before": ["{"], "after": ["{", "z", "z"] },
 
     // used Ctrl `C`
     // Move lines
     // not use C-x C-c C-v
-    { "before": ["<C-j>"], "commands": ["editor.action.moveLinesDownAction"] },
-    { "before": ["<C-Down>"], "commands": ["editor.action.moveLinesDownAction"] },
-    { "before": ["<C-k>"], "commands": ["editor.action.moveLinesUpAction"] },
-    { "before": ["<C-Up>"], "commands": ["editor.action.moveLinesUpAction"] },
+    { 
+      "before": ["<C-j>"], 
+      "commands": ["editor.action.moveLinesDownAction"] 
+    },
+    {
+      "before": ["<C-Down>"],
+      "commands": ["editor.action.moveLinesDownAction"],
+    },
+    { 
+      "before": ["<C-k>"], 
+      "commands": ["editor.action.moveLinesUpAction"] 
+    },
+    { 
+      "before": ["<C-Up>"], 
+      "commands": ["editor.action.moveLinesUpAction"] 
+    },
     { "before": ["<C-f>"], "commands": ["actions.find"] },
     { "before": ["<C-p>"], "commands": ["workbench.action.quickOpen"] },
-    { "before": ["<C-m>"], "commands": ["workbench.action.editor.changeLanguageMode"] },
+    { 
+      "before": ["<C-m>"], 
+      "commands": ["workbench.action.editor.changeLanguageMode"] 
+    },
 
     // vim-sneak
+    // giúp bạn nhảy đến vị trí bất kỳ trong file chỉ bằng 2 ký tự
     // used key `s`
 
     // LSP
